@@ -2,6 +2,8 @@
 ISA JSON format
 ===============
 
+:Status: ISA-JSON v1.0 specification document, September 2016.
+
 Introduction
 ------------
 Investigation/Study/Assay (ISA) `ISAtools website`_ is a model for the description of experimental data. It was designed
@@ -38,37 +40,37 @@ Investigation
     the set of associated studies (one or more).
 
 .. literalinclude:: ./schemas/investigation_schema.json
-:language: json
-        :caption: investigation_schema.json
+    :language: json
+    :caption: investigation_schema.json
 
 .. literalinclude:: ./schemas/ontology_source_reference_schema.json
-:language: json
-        :caption: ontology_source_reference_schema.json
+    :language: json
+    :caption: ontology_source_reference_schema.json
 
-.. literalinclude:: ./schemas/publication_schema.json.json
-:language: json
-        :caption: publication_schema.json
+.. literalinclude:: ./schemas/publication_schema.json
+    :language: json
+    :caption: publication_schema.json
 
 .. literalinclude:: ./schemas/person_schema.json
-:language: json
-        :caption: person_schema.json
+    :language: json
+    :caption: person_schema.json
 
 .. literalinclude:: ./schemas/source_schema.json
-:language: json
-        :caption: source_schema.json
+    :language: json
+    :caption: source_schema.json
 
 .. literalinclude:: ./schemas/sample_schema.json
-:language: json
-        :caption: sample_schema.json
+    :language: json
+    :caption: sample_schema.json
 
 .. literalinclude:: ./schemas/material_attribute_schema.json
-:language: json
-        :caption: material_attribute_schema.json
+    :language: json
+    :caption: material_attribute_schema.json
 
 .. literalinclude:: ./schemas/factor_schema.json
-:language: json
-        :caption: factor_schema.json
+    :language: json
+    :caption: factor_schema.json
 
 .. literalinclude:: ./schemas/factor_value_schema.json
-:language: json
-        :caption: factor_value_schema.json
+    :language: json
+    :caption: factor_value_schema.json
