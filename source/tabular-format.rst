@@ -178,6 +178,57 @@ this repeatable block, although their order may vary; the fields must remain wit
 :Study Factor Type Term Accession Number: The accession number from the Term Source associated with the selected term.
 :Study Factor Type Term Source REF: Identifies the controlled vocabulary or ontology that this term comes from. The Source REF has to match one of the Term Source Name declared in the Ontology Source Reference section.
 
+**STUDY ASSAYS**
+
+The Study Assay section declares and describes each of the Assay files associated with the current Study.
+
+:Study Assay Measurement Type: A term to qualify the endpoint, or what is being measured (e.g. gene expression profiling or protein identification). The term can be free text or from, for example, a controlled vocabulary or an ontology. If the latter source is used the Term Accession Number and Term Source REF fields below are required.
+:Study Assay Measurement Type Term Accession Number: The accession number from the Term Source associated with the selected term.
+:Study Assay Measurement Type Term Source REF: The Source REF has to match one of the Term Source Name declared in the Ontology Source Reference section.
+:Study Assay Technology Type: Term to identify the technology used to perform the measurement, e.g. DNA microarray, mass spectrometry. The term can be free text or from, for example, a controlled vocabulary or an ontology. If the latter source is used the Term Accession Number and Term Source REF fields below are required.
+:Study Assay Technology Type Term Accession Number: The accession number from the Term Source associated with the selected term.
+:Study Assay Technology Type Term Source REF: Identifies the controlled vocabulary or ontology that this term comes from. The Source REF has to match one of the Term Source Names declared in the Ontology Source Reference section.
+:Study Assay Technology Platform: Manufacturer and platform name, e.g. Bruker AVANCE
+:Study Assay File Name: A field to specify the name of the Assay Table file corresponding the definition of that assay. There can be only one file per cell.
+
+**STUDY PROTOCOLS**
+
+:Study Protocol Name: The name of the protocols used within the ISA-Tab document. The names are used as identifiers within the ISA-Tab document and will be referenced in the Study and Assay files in the Protocol REF columns. Names can be either local identifiers, unique within the ISA Archive which contains them, or fully qualified external accession numbers.
+:Study Protocol Type: Term to classify the protocol. The term can be free text or from, for example, a controlled vocabulary or an ontology. If the latter source is used the Term Accession Number and Term Source REF fields below are required.
+:Study Protocol Type Term Accession Number: The accession number from the Term Source associated with the selected term.
+:Study Protocol Type Term Source REF: Identifies the controlled vocabulary or ontology that this term comes from. The Source REF has to match one of the Term Source Name declared in the Ontology Source Reference section.
+:Study Protocol Description: A free-text description of the protocol.
+:Study Protocol URI: Pointer to protocol resources external to the ISA-Tab that can be accessed by their Uniform Resource Identifier (URI).
+:Study Protocol Version: An identifier for the version to ensure protocol tracking.
+:Study Protocol Parameters Name: A semicolon-delimited (";") list of parameter names, used as an identifier within the ISA-Tab document. These names are used in the Study and Assay files (in the "Parameter Value [<parameter name>]" column heading) to list the values used for each protocol parameter. Refer to section Multiple values fields in the Investigation File on how to encode multiple values in one field and match term sources
+:Study Protocol Parameters Term Accession Number: The accession number from the Term Source associated with the selected term.
+:Study Protocol Parameters Term Source REF: Identifies the controlled vocabulary or ontology that this term comes from. The Source REF has to match one of the Term Source Name declared in the Ontology Source Reference section.
+:Study Protocol Components Name: A semicolon-delimited (";") list of a protocol’s components; e.g. instrument names, software names, and reagents names. Refer to section Multiple values fields in the Investigation File on how to encode multiple components in one field and match term sources.
+:Study Protocol Components Type: Term to classify the protocol components listed for example, instrument, software, detector or reagent. The term can be free text or from, for example, a controlled vocabulary or an ontology. If the latter source is used the Term Accession Number and Term Source REF fields below are required.
+:Study Protocol Components Type Term Accession Number: The accession number from the Source associated to the selected terms.
+:Study Protocol Components Type Term Source REF: Identifies the controlled vocabulary or ontology that this term comes from. The Source REF has to match a Term Source Name previously declared in the ontology section
+
+**STUDY CONTACTS**
+:Study Person Last Name: The last name of a person associated with the study.
+:Study Person First Name: The first name of a person associated with the study.
+:Study Person Mid Initials: The middle initials of a person associated with the study.
+:Study Person Email: The email address of a person associated with the study
+:Study Person Phone: The telephone number of a person associated with the study.
+:Study Person Fax: The fax number of a person associated with the study.
+:Study Person Address: The address of a person associated with the study.
+:Study Person Affiliation: The organization affiliation for a person associated with the study.
+:Study Person Roles: Term to classify the role(s) performed by this person in the context of the study, which means that the roles reported here need not correspond to roles held withing their affiliated organization. Multiple annotations or values attached to one person may be provided by using a semicolon (";") as a separator, for example: "submitter;funder;sponsor” .The term can be free text or from, for example, a controlled vocabulary or an ontology. If the latter source is used the Term Accession Number and Term Source REF fields below are required.
+:Study Person Roles Term Accession Number: The accession number from the Term Source associated with the selected term.
+:Study Person Roles Term Source REF: Identifies the controlled vocabulary or ontology that this term comes from. The Source REF has to match one of the Term Source Name declared in the Ontology Source Reference section.
+
+Several ISA-Tab example files are available from the project page www.isa-tools.org. The example below shows an
+Investigation File
+with one Study and two Assays. The column A holds headers for sections (e.g., INVESTIGATION PUBLICATIONS) and
+fields (e.g., Investigation Pubmed ID); while subsequent columns hold the value(s) for the fields named. In this 
+example, where only one Study has been created, the Investigation section is left empty. It is important to note 
+that each section is independent of any other, therefore the values in a column are related only within each 
+section (i.e., between headings), never between sections. For example, the values in column B in the STUDY FACTORS 
+section are not necessarily connected to the values in the same column in the STUDY ASSAYS section.
 
 Study Table file
 ================
