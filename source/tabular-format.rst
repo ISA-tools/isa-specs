@@ -230,6 +230,7 @@ that each section is independent of any other, therefore the values in a column 
 section (i.e., between headings), never between sections. For example, the values in column B in the STUDY FACTORS 
 section are not necessarily connected to the values in the same column in the STUDY ASSAYS section.
 
+
 Study Table file
 ================
 In this file, information is structured on a per-row basis with the first row being used for column headers. The
