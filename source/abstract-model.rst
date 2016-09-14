@@ -20,9 +20,8 @@ Investigation there may be one or more Studies associated with it; for each Stud
 Investigation
 =============
 
-The Investigation object is intended to meet 3 needs:
+The Investigation object is intended to:
 
-#. to track provenance of the terminologies (controlled vocabularies or ontologies) that are used, where applicable
 #. to record metadata relating to a given investigation
 #. to link related Study objects under an Investigation (this only becomes necessary when two or more Study objects need to be grouped)
 
@@ -68,3 +67,17 @@ TODO
 
 .. _ISA ontology: http://purl.org/isaterms
 .. _linkedISA: http://dx.doi.org/10.1186%2F1471-2105-15-S14-S4
+
+Investigation, Study and Assay are the three key entities around which the ISA-Tab framework is built. They assist
+in structuring and classifying information relevant to the subject under study and the different technologies employed.
+Note that 'subject' as used above could to refer inter alia to an organism, or tissue, or an environmental sample.
+Study is the central unit, containing information on the subject under study, its characteristics and any treatments
+applied.
+
+A Study has associated Assays; these are measurements performed either on the whole initial subject or on sample taken
+from the subject, which produce qualitative or quantitative data. Assays can be characterized as the smallest complete
+unit of experimentation producing data associated to a subject; i.e. one hybridization is treated as one assay; each
+technical replicate represents an additional assay; one LC-MS run equals one assay; a multiplexed microarray with n a
+layouts of the same design corresponds to n hybridizations; and a MALDI MS chip with n spots could perform up to n
+assays (i.e. all spots analyzed). Investigation is a higher-order object, whose primary role is to group related
+Studies.

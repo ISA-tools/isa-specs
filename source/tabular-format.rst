@@ -18,25 +18,12 @@ listed at the ISA-Tab project page (2) under 'Contributors'.
 .. [5] Rosetta Biosoftware, Seattle, Washington.
 .. [6] BC Cancer Research Centre (BCCRC), Vancouver, Canada.
 
-Definitions
-===========
-Investigation, Study and Assay are the three key entities around which the ISA-Tab framework is built. They assist
-in structuring and classifying information relevant to the subject under study and the different technologies employed.
-Note that 'subject' as used above could to refer inter alia to an organism, or tissue, or an environmental sample.
-Study is the central unit, containing information on the subject under study, its characteristics and any treatments
-applied.
+As a pre-requisite, please make sure you have read and understood the ISA Abstract Model that the ISA-Tab format is
+based on.
 
-A Study has associated Assays; these are measurements performed either on the whole initial subject or on sample taken
-from the subject, which produce qualitative or quantitative data. Assays can be characterized as the smallest complete
-unit of experimentation producing data associated to a subject; i.e. one hybridization is treated as one assay; each
-technical replicate represents an additional assay; one LC-MS run equals one assay; a multiplexed microarray with n a
-layouts of the same design corresponds to n hybridizations; and a MALDI MS chip with n spots could perform up to n
-assays (i.e. all spots analyzed). Investigation is a higher-order object, whose primary role is to group related
-Studies.
-
--------------------------------
-ISA-Tab v1.0 structure overview
--------------------------------
+---------------------
+ISA-Tab v2.0 overview
+---------------------
 ISA-Tab uses three types of file to capture the experimental metadata:
  - Investigation file
  - Study file
@@ -44,24 +31,48 @@ ISA-Tab uses three types of file to capture the experimental metadata:
 
 The Investigation file contains all the information needed to understand the overall goals and means used in an
 experiment; experimental steps (or sequences of events) are described in the Study and in the Assay file(s). For each
-Investigation file there may be one or more Study files; for each Study file there may be one or more Assay files.
+Investigation file there may be one or more Studies defined with a corresponding Study file; for each Study there may
+be one or more Assays defined with corresponding Assay files.
 
-Each file has a defined structure, with fields being organized on a per-column or per-row basis; each file is described
-briefly in the subsections below and more fully in section 4.
+ISA-Tab files
+=============
+Files should be encoded using UTF-8.
+
+Column delimiters should be the Unicode Horizontal Tab character (unicode codepoint 0009).
+
+In order to facilitate identification of ISA-Tab component files in an ISArchive, specific naming patterns should follow:
+
+ - i_*.txt for identifying the Investigation file
+ - s_*.txt for identifying Study file(s)
+ - a_*.txt for identifying Assay file(s)
+
+All labels are case-sensitive:
+
+ - In the Investigation file, section headers are completely written in upper case (e.g. STUDY), field headers have the first letter of each word in upper case (e.g. Study Identifier); with the exception of the referencing label (REF).
+ - In the Study or Assay files, column headers also have the first letter of each word in upper case, with the exception of the  referencing label (REF).
+
+Dates should be supplied in the ISO8601 format "YYYY-MM-DD".
+
+Rows in which the first character in the first column is Unicode U+0023 (the # character) will be interpreted as
+comments. ISA-Tab parsers should ignore those lines entirely.
 
 Investigation file
 ==================
-The Investigation file is intended to meet four needs: (i) to define key entities, such as factors, protocols,
-which may be referenced in the other files; (ii) to track provevance of the terminologies (controlled vocabularies
-or ontologies) there are used, where applicable; (iii) to relate Assay files to Study files; and optionally, (iv)
-to relate each Study file to an Investigation (this only becomes necessary when two or more Study files need to
-be grouped).
+The Investigation file fulfils four needs:
 
-The optional Investigation section of an Investigation file is a flexible solution to group two or more Study files,
-as required by several use cases. In the toxicogenomics domain, for example, acute toxicity studies are followed by
-long term toxicity studies and in vitro toxicity studies. For clarity, the users would link these Study files by
-filling the Investigation section. Another example comes from the environmental genomics domain, where several studies
-carried out in the same area can be usefully related under the same Investigation. See also section 4.1.
+#. to define key entities, such as factors, protocols, which may be referenced in the other files
+#. to track provevance of the terminologies (controlled vocabularies or ontologies) there are used, where applicable
+#. to relate Assay files to Studies
+#. to relate each Study file to an Investigation (this only becomes necessary when two or more Study files need to be grouped).
+
+An Investigation file is structured as a table with vertical headings along the first column, and corresponding values
+in the subsequent columns. The following sections appear in the Investigation file (in order).
+
+:ONTOLOGY SOURCE REFERENCE:
+:Term Source Name: The name of the source of a term; i.e. the source controlled vocabulary or ontology. These names will be used in all corresponding Term Source REF fields that occur elsewhere.
+:Term Source File: A file name or a URI of an official resource.
+:Term Source Version: The version number of the Term Source to support terms tracking.
+:Term Source Description: Use for disambiguating resources when homologous prefixes have been used.
 
 Study file
 ==========
