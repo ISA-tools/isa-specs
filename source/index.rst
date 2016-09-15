@@ -8,8 +8,8 @@ ISA Specification 2.0
    :titlesonly:
 
    ISA Abstract Model <abstract-model>
-   ISA JSON format <json-format>
-   ISA-Tab format <tabular-format>
+   ISA JSON format <isajson>
+   ISA-Tab format <isatab>
 
 Indices and tables
 ==================
