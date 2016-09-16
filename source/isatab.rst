@@ -4,6 +4,9 @@ ISA-Tab format
 
 :Status: ISA-Tab v2.0 specification document, September 2016.
 
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and
+"OPTIONAL" in this document are to be interpreted as described in RFC 2119.
+
 Authors
 =======
 Initially drafted by Philippe Rocca-Serra [1]_, Susanna-Assunta Sansone [1]_ and Marco Brandizi [1]_ (1) this
@@ -36,11 +39,11 @@ be one or more Assays defined with corresponding Assay files.
 
 ISA-Tab files
 =============
-Files should be encoded using UTF-8.
+Files SHOULD be encoded using UTF-8.
 
-Column delimiters should be the Unicode Horizontal Tab character (Unicode U+0009).
+Column delimiters SHOULD be the Unicode Horizontal Tab character (Unicode U+0009).
 
-In order to facilitate identification of ISA-Tab component files, specific naming patterns should follow:
+In order to facilitate identification of ISA-Tab component files, specific naming patterns SHOULD follow:
 
  - i_*.txt for identifying the Investigation file
  - s_*.txt for identifying Study file(s)
@@ -48,15 +51,15 @@ In order to facilitate identification of ISA-Tab component files, specific namin
 
 All labels are case-sensitive:
 
- - In the Investigation file, section headers are completely written in upper case (e.g. STUDY), field headers have the first letter of each word in upper case (e.g. Study Identifier); with the exception of the referencing label (REF).
- - In the Study or Assay files, column headers also have the first letter of each word in upper case, with the exception of the  referencing label (REF).
+ - In the Investigation file, section headers MUST be completely written in upper case (e.g. STUDY), field headers MUST have the first letter of each word in upper case (e.g. Study Identifier); with the exception of the referencing label (REF).
+ - In the Study or Assay files, column headers MUST also have the first letter of each word in upper case, with the exception of the referencing label (REF).
 
-Dates should be supplied in the ISO8601 format "YYYY-MM-DD".
+Dates SHOULD be supplied in the ISO8601 format "YYYY-MM-DD".
 
-Rows in which the first character in the first column is Unicode U+0023 (the # character) will be interpreted as
-comments. Reference implementation parsers should ignore those lines entirely.
+Rows in which the first character in the first column is Unicode U+0023 (the # character) MUST be interpreted as
+comments. Reference implementation parsers SHOULD ignore those lines entirely.
 
-All values of cells may be enveloped with the Unicode Quotation Mark, Unicode U+0022 (the " character).
+All values of cells MAY be enveloped with the Unicode Quotation Mark, Unicode U+0022 (the " character).
 
 .. toctree::
    :maxdepth: 2

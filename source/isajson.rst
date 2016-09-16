@@ -4,25 +4,17 @@ ISA-JSON format
 
 :Status: ISA-JSON v1.0 specification document, September 2016.
 
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and
+"OPTIONAL" in this document are to be interpreted as described in RFC 2119.
+
 Introduction
-------------
-Investigation/Study/Assay (ISA) `ISAtools website`_ is a model for the description of experimental data. It was designed
-to be serialised in tabular format, given the familiarity of spreadsheets for biologists, who were the main target
-audience.
-
-Since the inception of the Tabular representation, an RDF serialisation was devised relying on the linkedISA converter
-tool [linkedISA_]. This RDF representation contains all the information in the Tabular format but additionally, it makes
-explicit the semantic of the different entities of the ISA model and its relationships.
-
-This document describes another serialization of the ISA model relying on the JSON format [RFC7159_]. The JavaScript
-Object Notation (JSON) [RFC7159_]is a text format for serializing structured data. Objects are rendered as an unordered
+============
+This document describes the ISA model reference implementation in the JSON format [RFC7159_]. The JavaScript
+Object Notation (JSON) [RFC7159_] is a text format for serializing structured data. Objects are rendered as an unordered
 collection of name-value pairs. The JSON Schema (see [`JSON Schema`_], [`JSON Schema Core`_], and [`JSON Schema Validation`_])
 defines a JSON format for describing JSON formats. Its latest specification is Draft 4.
 
-After describing the ISA model itself, the JSON-schemas [JS-Core] and corresponding JSON representation for the ISA
-model RC 1.0 [`ISA-Tab Spec RC 1.0`_] is presented.
-
-The schemas will be made available through the ISA-API Github repository: https://github.com/ISA-tools/isa-api
+The schemas are published in the ISA-API Github repository: https://github.com/ISA-tools/isa-api
 
 .. _`ISAtools website`: http://isa-tools.org
 .. _linkedISA: http://dx.doi.org/10.1186%2F1471-2105-15-S14-S4
@@ -32,8 +24,10 @@ The schemas will be made available through the ISA-API Github repository: https:
 .. _JSON Schema Validation: http://tools.ietf.org/html/draft-fge-json-schema-validation-00
 .. _ISA-Tab Spec RC 1.0: http://isatab.sourceforge.net/docs/ISA-TAB_release-candidate-1_v1.0_24nov08.pdf
 
+
 ISA RC v1.0 JSON-Schemas
-------------------------
+========================
+The ISA-JSON schemas define the structure of the ISA-JSON objects that implement the ISA Abstract Model.
 
 .. literalinclude:: ./schemas/investigation_schema.json
     :language: json
@@ -71,66 +65,38 @@ ISA RC v1.0 JSON-Schemas
     :language: json
     :caption: factor_value_schema.json
 
-ISA-JSON files
-==============
-Files should be encoded using UTF-8.
+ISA-JSON content
+================
+The rules described here define the content and relationship rules that the ISA-JSON objects must adhere to to
+implement ISA Abstract Model.
 
-ISA-JSON content must be well-formed JSON.
-
-ISA-JSON content must validate against the ISA-JSON schemas.
-
-ISA-JSON files should be suffixed with a .json extension.
-
-Dates should be supplied in the ISO8601 format "YYYY-MM-DD".
-
-DOIs should conform to the standard format "10.NN/xxxNNNNNN".
-
-PubMed IDs should be a string of eight numbers (e.g. 12345678), optionally prefixed with PMC (e.g. PMC12345678).
-
-Characteristic Categories declared should be referenced by at least one Characteristic.
-
-Characteristics must reference a Characteristic Category declaration.
-
-Unit Categories declared should be referenced by at least one Unit.
-
-Units must reference a Unit Category declaration.
-
-All Sources and Samples must be declared in the Study-level materials section.
-
-All other materials (Extracts etc.) and DataFiles must be declared in the Assay-level material and data sections
-respectively.
-
-Each Process in a Process Sequence must link with other Processes forwards or backwards, unless it is a starting or
-terminating Process (i.e. Beginning or end of the experimental graph).
-
-Protocols declared should be referenced by at least one Protocol REF.
-
-Protocol REFs must reference a Protocol declaration.
-
-Study Factors declared should be referenced by at least one Factor Value.
-
-Factor Values must reference a Study Factor declared in the Study-level factors section.
-
-Protocols should have a name (in order to be referenced in ISA-Tab).
-
-Protocol Parameters should have a name (in order to be referenced in ISA-Tab).
-
-Study Factors should have a name (in order to be referenced in ISA-Tab).
-
-Sources and Samples declared should be referenced by at least one Process at the Study-level.
-
-Samples, other materials, and DataFiles declared should be used in at least one Process at the Assay-level.
-
-Study and Assay filenames should be present (in order to be referenced in ISA-Tab).
-
-Ontology Source References declared should be referenced by at least one Ontology Annotation.
-
-Ontology Annotations must reference a Ontology Source Reference declaration.
-
-Ontology Source References must contain a Term Source Name.
-
-Ontology Annotations with a term and/or accession must provide a Term Source REF pointing to a declared Ontology Source Reference.
-
-Publication metadata should match that of publication record in PubMed corresponding to the provided PubMed ID.
-
-Comments must have a name.
+#. Files SHOULD be encoded using UTF-8.
+#. ISA-JSON content MUST be well-formed JSON.
+#. ISA-JSON content MUST validate against the ISA-JSON schemas.
+#. ISA-JSON files SHOULD be suffixed with a .json extension.
+#. Dates SHOULD be supplied in the ISO8601 format "YYYY-MM-DD".
+#. DOIs SHOULD conform to the standard format "10.NN/xxxNNNNNN".
+#. PubMed IDs SHOULD be a string of eight numbers (e.g. 12345678), optionally prefixed with PMC (e.g. PMC12345678).
+#. Characteristic Categories declared SHOULD be referenced by at least one Characteristic.
+#. Characteristics MUST reference a Characteristic Category declaration.
+#. Unit Categories declared SHOULD be referenced by at least one Unit.
+#. Units MUST reference a Unit Category declaration.
+#. All Sources and Samples MUST be declared in the Study-level materials section.
+#. All other materials (Extracts etc.) and DataFiles MUST be declared in the Assay-level material and data sections respectively.
+#. Each Process in a Process Sequence MUST link with other Processes forwards or backwards, unless it is a starting or terminating Process (i.e. Beginning or end of the experimental graph).
+#. Protocols declared SHOULD be referenced by at least one Protocol REF.
+#. Protocol REFs MUST reference a Protocol declaration.
+#. Study Factors declared SHOULD be referenced by at least one Factor Value.
+#. Factor Values MUST reference a Study Factor declared in the Study-level factors section.
+#. Protocols SHOULD have a name (in order to be referenced in ISA-Tab).
+#. Protocol Parameters SHOULD have a name (in order to be referenced in ISA-Tab).
+#. Study Factors SHOULD have a name (in order to be referenced in ISA-Tab).
+#. Sources and Samples declared SHOULD be referenced by at least one Process at the Study-level.
+#. Samples, other materials, and DataFiles declared SHOULD be used in at least one Process at the Assay-level.
+#. Study and Assay filenames SHOULD be present (in order to be referenced in ISA-Tab).
+#. Ontology Source References declared SHOULD be referenced by at least one Ontology Annotation.
+#. Ontology Annotations MUST reference a Ontology Source Reference declaration.
+#. Ontology Source References MUST contain a Term Source Name.
+#. Ontology Annotations with a term and/or accession MUST provide a Term Source REF pointing to a declared Ontology Source Reference.
+#. Publication metadata SHOULD match that of publication record in PubMed corresponding to the provided PubMed ID.
+#. Comments MUST have a name.

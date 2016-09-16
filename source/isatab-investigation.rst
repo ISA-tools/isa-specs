@@ -9,7 +9,7 @@ The Investigation file fulfils four needs:
 #. to relate each Study file to an Investigation (this only becomes necessary when two or more Study files need to be grouped).
 
 An Investigation file is structured as a table with vertical headings along the first column, and corresponding values
-in the subsequent columns. The following section headings appear in the Investigation file (in order).
+in the subsequent columns. The following section headings MUST appear in the Investigation file (in order).
 
  - ONTOLOGY SOURCE REFERENCE
  - INVESTIGATION
@@ -29,10 +29,10 @@ The Ontology Source section of the Investigation file is used to declare Ontolog
 files within the context of an Investigation.
 
 Where a row labelled with Term Source REF suffixed in the Investigation
-file, the value of the cell should match one of the Term Source Name value declared in this section.
+file, the value of the cell SHOULD match one of the Term Source Name value declared in this section.
 
 Where a column labelled with Term Source REF in a Study file or Assay file associated with the Investigation, the value
-of the cell should match one of the Term Source Name value declared in this section.
+of the cell SHOULD match one of the Term Source Name value declared in this section.
 
 **ONTOLOGY SOURCE REFERENCE**
 
@@ -45,15 +45,15 @@ Investigation section
 =====================
 This section is organized in several subsections, described in detail below. The Investigation section provides a
 flexible mechanism for grouping two or more Study files where required. When only one Study is created, the values in
-this section should be left empty and the relevant metadata values recorded in the Study section only.
+this section SHOULD be left empty and the relevant metadata values recorded in the Study section only.
 
 **INVESTIGATION**
 
-:Investigation Identifier: A locally unique identifier or an accession number provided by a repository.
-:Investigation Title: A concise name given to the investigation
-:Investigation Description: A textual description of the investigation
-:Investigation Submission: Date The date on which the investigation was reported to the repository.
-:Investigation Public Release Date: The date on which the investigation should be released publicly.
+:Investigation Identifier: AN identifier or an accession number provided by a repository. This SHOULD be locally unique.
+:Investigation Title: A concise name given to the investigation.
+:Investigation Description: A textual description of the investigation.
+:Investigation Submission Date: The date on which the investigation was reported to the repository.
+:Investigation Public Release Date: The date on which the investigation was released publicly.
 
 **INVESTIGATION PUBLICATIONS**
 
@@ -84,8 +84,8 @@ Study section
 This section is organized in several subsections, described in detail below. This section also represents a
 **repeatable block**, which is replicated according to the number of Studies to report (i.e. two Studies, two Study
 blocks are represented in the Investigation file). The subsections in the block are arranged vertically; the intent
-being to enhance readability and presentation, and possibly to help with parsing. These subsections must remain within
-this repeatable block, although their order may vary; the fields must remain within their subsection.
+being to enhance readability and presentation, and possibly to help with parsing. These subsections MUST remain within
+this repeatable block, although their order MAY vary; the fields MUST remain within their subsection.
 
 **STUDY**
 
@@ -93,7 +93,7 @@ this repeatable block, although their order may vary; the fields must remain wit
 :Study Title: A concise phrase used to encapsulate the purpose and goal of the study.
 :Study Description: A textual description of the study, with components such as objective or goals.
 :Study Submission Date: The date on which the study is submitted to an archive.
-:Study Public Release Date: The date on which the study should be released publicly.
+:Study Public Release Date: The date on which the study SHOULD be released publicly.
 :Study File Name: A field to specify the name of the Study Table file corresponding the definition of that Study. There can be only one file per cell.
 
 **STUDY DESIGN DESCRIPTORS**
