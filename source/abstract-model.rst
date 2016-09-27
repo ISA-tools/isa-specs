@@ -61,9 +61,16 @@ The following diagram represents the ISA objects and their relationships:
 More information about the semantic relationships presented in the ISA model is available in the ISA ontology
 [`ISA ontology`_] and the linkedISA publication [linkedISA_].
 
-ISA Infrastructure - Configurations
------------------------------------
-TODO
+Configurations
+--------------
+In the ISA framework, we define Configurations as a way to add constraints on the Abstract Model elements. For a given
+experimental descriptor we may want to declare what minimum information should be present. Configurations can specify
+what fields should be filled out and also what datatypes are valid values. In addition to this, we can also specify
+the experimental workflow patterns that the Assay object should allow according to the type of measurement defined for
+an assay, and the type of technology used for collecting the relevant data (e.g. sequencing or imaging technologies).
+
+Configurations are implemented slightly differently between the ISA-Tab and ISA-JSON formats, so please refer to those
+respective specifications for further information on how to use ISA configurations.
 
 .. _ISA ontology: http://purl.org/isaterms
 .. _linkedISA: http://dx.doi.org/10.1186%2F1471-2105-15-S14-S4
