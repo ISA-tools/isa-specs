@@ -144,8 +144,8 @@ producing qualitative or quantitative measurements.
 An Assay groups descriptions of provenance of sample processing for related tests. Each test typically
 follows the steps of one particular experimental workflow described by a particular protocol.
 
-Assay-related metadata includes descriptions of the measurement type and technology used, and a link to what study protocol is
-applied. Where an assay produces data files, links to the data are recorded here.
+Assay-related metadata includes descriptions of the measurement type and technology used, and a link to what study
+protocol is applied. Where an assay produces data files, links to the data are recorded here.
 
 An Study SHOULD record the following:
 
@@ -173,29 +173,26 @@ All nodes in Study and Assay graphs MUST be uniquely identifiable.
 
 Material nodes:
 
-Sources are considered as the starting biological material used in a study. Sources SHOULD record the following:
+Material nodes can also be used as a generic structure to describe materials consumed or produced during an experimental workflow. Materials SHOULD record the following:
 
 :Characteristics: A list of material characteristics that may be qualitative or quantitative in description. Qualitative values MAY be Ontology Annotations, while quantitative values MAY be qualified with a Unit definition.
 :Material Type: An Ontology Annotation describing the material.
 
-Samples represent major outputs resulting from a protocol application. Samples SHOULD record the following:
+Sources are a special kind of Material node and are considered as the starting biological material used in a study.
+Source nodes SHOULD be followed by a Process node describing a sample collection process, and SHOULD only appear in
+Study graphs.
 
-:Characteristics: A list of material characteristics that may be qualitative or quantitative in description. Qualitative values MAY be Ontology Annotations, while quantitative values MAY be qualified with a Unit definition.
-:Material Type: An Ontology Annotation describing the material.
-
-Extracts represent outputs resulting from a protocol application that corresponds to an extraction process, for example nucleic acid extraction. Extracts SHOULD record the following:
-
-:Characteristics: A list of material characteristics that may be qualitative or quantitative in description. Qualitative values MAY be Ontology Annotations, while quantitative values MAY be qualified with a Unit definition.
-:Material Type: An Ontology Annotation describing the material.
-
-Labeled Extracts represent outputs resulting from a protocol application that corresponds to a labeling process. Labeled Extracts SHOULD record the following:
-
-:Characteristics: A list of material characteristics that may be qualitative or quantitative in description. Qualitative values MAY be Ontology Annotations, while quantitative values MAY be qualified with a Unit definition.
-:Material Type: An Ontology Annotation describing the material.
+Samples are a special kind of Material node and represent major outputs resulting from a protocol application.
+Sample nodes in the Study graphs SHOULD be preceded by a Process node describing a sample collection process. Sample
+  nodes in the Assay graphs SHOULD be followed by a Process node and SHOULD NOT be preceded by any node.
 
 Data nodes:
 
-Image File, Raw Data File, Derived Data File
+Data nodes represent outputs resulting frmo a protocol application that corresponds to some process that produces data, typically in the form of data files. Data nodes SHOULD record the following:
+
+:File name: A file name or full path referencing a data file produced by the related process that MAY be packaged with, or is accessible via, the ISA reference implementation content.
+
+Data nodes SHOULD be preceded by a Process node describing a data-producing process, such as NMR scanning or DNA sequencing.
 
 Process nodes:
 
@@ -207,37 +204,41 @@ Processes SHOULD record the following:
 :Performer: Name of the operator who carried out the protocol. This allows account to be taken of operator effects and can be part of a quality control data tracking.
 :Date: The date on which a protocol is performed. This allows account to be taken of day effects and can be part of a quality control data tracking.
 
-The following diagram represents the ISA objects and their relationships:
+Process nodes SHOULD be preceded by zero or more material or data nodes, and followed by zero or more material or data nodes.
 
-(Put updated ISA diagram here)
-
-More information about the semantic relationships presented in the ISA model is available in the ISA ontology
-[`ISA ontology`_] and the linkedISA publication [linkedISA_].
 
 Configurations
 --------------
 In the ISA framework, we define Configurations as a way to add constraints on the Abstract Model elements. For a given
 experimental descriptor we may want to declare what minimum information should be present. Configurations can specify
-what fields should be filled out and also what datatypes are valid values. In addition to this, we can also specify
+what fields should be present and also what datatypes are valid values. In addition to this, we can also specify
 the experimental workflow patterns that the Assay object should allow according to the type of measurement defined for
 an assay, and the type of technology used for collecting the relevant data (e.g. sequencing or imaging technologies).
 
-Configurations are implemented slightly differently between the ISA-Tab and ISA-JSON formats, so please refer to those
-respective specifications for further information on how to use ISA configurations.
+For example, we may create a configuration that mandates that Investigation metadata MUST record the title, author list,
+and description. The Abstract Model specification only specifies that these SHOULD be present. Therefore the
+configuration specifies additional constraints on a reference implementation of ISA that can be provided by users
+beyond the reference implementation developers, e.g. Users, curators, publishers, etc.
 
-.. _ISA ontology: http://purl.org/isaterms
-.. _linkedISA: http://dx.doi.org/10.1186%2F1471-2105-15-S14-S4
+For example, we mandate that the Study graphs MUST follow the ``(source)->(sample collection->(sample)`` pattern. A
+reference implementation could specify this as a configuration if it is not hard-coded in the reference implementation.
 
-Investigation, Study and Assay are the three key entities around which the ISA-Tab framework is built. They assist
-in structuring and classifying information relevant to the subject under study and the different technologies employed.
-Note that 'subject' as used above could to refer inter alia to an organism, or tissue, or an environmental sample.
-Study is the central unit, containing information on the subject under study, its characteristics and any treatments
-applied.
+Where the power of configurations becomes more apparent is where we want to describe Assay graphs. A data publisher
+might provide a configuration specification that mandates that valid submissions to the data publisher from
+researchers must follow something like
 
-A Study has associated Assays; these are measurements performed either on the whole initial subject or on sample taken
-from the subject, which produce qualitative or quantitative data. Assays can be characterized as the smallest complete
-unit of experimentation producing data associated to a subject; i.e. one hybridization is treated as one assay; each
-technical replicate represents an additional assay; one LC-MS run equals one assay; a multiplexed microarray with n a
-layouts of the same design corresponds to n hybridizations; and a MALDI MS chip with n spots could perform up to n
-assays (i.e. all spots analyzed). Investigation is a higher-order object, whose primary role is to group related
-Studies.
+.. code-block:: none
+
+  (sample)->(nucleic acid extraction)->(extract)->(nucleic acid sequencing)->(raw data)
+
+for a technology/measurement type combination of genome sequencing/nucleotide sequencing. A configuration for a
+different technology/measurement type combination of SNP analysis/DNA microarray might specify
+
+.. code-block:: none
+
+  (sample)->(DNA extraction)->(extract)->(nucleic acid hybridization)->(data collection)->(raw data)
+
+How configurations are implemented is left open to reference implementation developers, but the idea is to allow users
+of reference implementations of the ISA Abstract Model to add constraints to ISA content in a flexible manner.
+Configurations are implemented differently between the ISA-Tab and ISA-JSON formats, so please refer to those
+respective specifications for further information on how to use them, or to see examples of how they are implemented.
