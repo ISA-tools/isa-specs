@@ -2,27 +2,17 @@
 ISA-Tab format
 ==============
 
-:Status: ISA-Tab v2.0 specification document, September 2016.
+:Status: ISA-Tab specification v2.0 (September 2016)
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and
 "OPTIONAL" in this document are to be interpreted as described in RFC 2119.
 
-Authors
-=======
-Initially drafted by Philippe Rocca-Serra [1]_, Susanna-Assunta Sansone [1]_ and Marco Brandizi [1]_ (1) this
-document and the work described herein incorporates input from David Hancock [2]_, Stephen Harris [3]_, Allyson
-Lister [4]_, Michael Miller [5]_, Kieran O'Neill [6]_, Chris Taylor [1]_, Weida Tong [3]_ and other collaborators,
-listed at the ISA-Tab project page (2) under 'Contributors'.
-
-.. [1] EMBL-EBI The European Bioinformatics Institute, Wellcome Trust Genome Campus, Hinxton, Cambridge, UK.
-.. [2] NERC Bioinformatics Center (NEBC), Centre for Ecology and Hydrology, Oxford, UK, and the University ofManchester, School of Computer Science, Manchester, UK.
-.. [3] FDA's National Center for Toxicological Research (NCTR), Center for Toxicoinformatics, Jefferson, Arkansas.
-.. [4] CISBAN & School of Computing Science, Newcastle University, Newcastle upon Tyne, UK.
-.. [5] Rosetta Biosoftware, Seattle, Washington.
-.. [6] BC Cancer Research Centre (BCCRC), Vancouver, Canada.
-
 As a pre-requisite, please make sure you have read and understood the ISA Abstract Model that the ISA-Tab format is
 based on.
+
+Definitions
+===========
+For detail on ISA framework terminology, please read the ISA Abstract Model specification documentation.
 
 ---------------------
 ISA-Tab v2.0 overview

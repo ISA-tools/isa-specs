@@ -49,7 +49,7 @@ this section SHOULD be left empty and the relevant metadata values recorded in t
 
 **INVESTIGATION**
 
-:Investigation Identifier: AN identifier or an accession number provided by a repository. This SHOULD be locally unique.
+:Investigation Identifier: A identifier or an accession number provided by a repository. This SHOULD be locally unique.
 :Investigation Title: A concise name given to the investigation.
 :Investigation Description: A textual description of the investigation.
 :Investigation Submission Date: The date on which the investigation was reported to the repository.
@@ -170,3 +170,9 @@ example, where only one Study has been created, the Investigation section is lef
 that each section is independent of any other, therefore the values in a column are related only within each
 section (i.e., between headings), never between sections. For example, the values in column B in the STUDY FACTORS
 section are not necessarily connected to the values in the same column in the STUDY ASSAYS section.
+
+.. csv-table::
+   :header: "A", "B", "C"
+   :widths: 30, 30, 30
+   :delim: U+0009
+   :file: _static/i_investigation.txt

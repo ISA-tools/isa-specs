@@ -2,7 +2,57 @@
 ISA abstract model
 ==================
 
-:Status: ISA Abstract Model v1.0 specification document, September 2016.
+:Status: ISA Abstract Model specification  v1.0 (September 2016)
+
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and
+"OPTIONAL" in this document are to be interpreted as described in RFC 2119.
+
+-----------
+Definitions
+-----------
+
+Ontology Annotation
+===================
+For a given value, an Ontology Annotation SHOULD qualify this value with an accession number taken from an Ontology
+Source.
+
+An Ontology Annotation SHOULD record the following:
+
+:Term Accession Number: The accession number from the Ontology Source associated with the selected term.
+
+Ontology Source
+===============
+An Ontology Source describes the resource from which the value of an Ontology Annotation is derived from. Ontology
+Sources SHOULD be referenced by Ontology Annotations. An Ontology Source should contain enough information on which to
+be able to ascertain the Ontology Source's provenance.
+
+An Ontology Source SHOULD record the following:
+
+:Name: The name of the source of a term; i.e. the source controlled vocabulary or ontology. These names will be used in all corresponding Term Source REF fields that occur elsewhere.
+:File: A file name or a URI of an official resource.
+:Version: The version number of the Term Source to support terms tracking.
+:Description: Use for disambiguating resources when homologous prefixes have been used.
+
+Publication
+===========
+A Publication SHOULD record the following:
+
+:PubMed ID: The PubMed IDs of the described publication(s) associated with this investigation.
+:DOI: A Digital Object Identifier (DOI) for that publication (where available).
+:Author List: The list of authors associated with that publication.
+:Title: The title of publication associated with the investigation.
+:Status: An Ontology Annotation describing the status of that publication (i.e. submitted, in preparation, published).
+
+Contact
+=======
+A Contact SHOULD record the following:
+
+:Name: The name of a person.
+:Email: The email address of a person.
+:Phone: The telephone number of a person.
+:Address: The address of a person.
+:Affiliation: The organization affiliation for a person.
+:Roles: Ontology Annotations to classify the roles performed by this person in the context of an Investigation or Study.
 
 ---------------------------
 Investigation, Study, Assay
@@ -20,39 +70,142 @@ Investigation there may be one or more Studies associated with it; for each Stud
 Investigation
 =============
 
-The Investigation object is intended to:
+An Investigation is intended to:
 
 #. to record metadata relating to a given investigation
 #. to link related Study objects under an Investigation (this only becomes necessary when two or more Study objects need to be grouped)
 
-Investigation objects record metadata relating to the description of the investigation context, such as the title and
-description of the investigation as well as about related people and scholarly publications. Study and Assay objects
-are grouped within Investigation objects to record other metadata within the relevant contexts.
+Investigations record metadata relating to the description of the investigation context, such as the title and
+description of the investigation as well as about related people and scholarly publications. Studies and Assays
+are grouped within Investigations to record other metadata within the relevant contexts.
+
+An Investigation SHOULD record the following:
+
+:Identifier: A identifier or an accession number provided by a repository. This SHOULD be locally unique.
+:Title: A concise name given to the investigation.
+:Description: A textual description of the investigation.
+:Submission Date: The date on which the investigation was reported to the repository.
+:Public Release Date: The date on which the investigation was released publicly.
+:Publications: A list of Publications relating to the investigation.
+:Contacts: A list of Contacts relating to the investigation.
 
 Study
 =====
 A Study is a central concept containing information on the subject under study, it's characteristics and any
 treatments applied.
 
-A Study object contains contextualizing information for one or more Assays. Metadata about the study design, study
+A Study contains contextualizing information for one or more Assays. Metadata about the study design, study
 factors used, and study protocols are recorded in Study objects, as well as information similarly to the
 Investigation including title and description of the study, and related people and scholarly publications.
 
-In a Study object we record the provenance of biological samples, from source to sample materials, represented with
-a directed graph.
+A Study SHOULD record the following:
+
+:Identifier: A identifier or an accession number provided by a repository. This SHOULD be locally unique.
+:Title: A concise name given to the investigation.
+:Description: A textual description of the investigation.
+:Submission Date: The date on which the study was reported to the repository.
+:Public Release Date: The date on which the study was released publicly.
+:Publications: A list of Publications relating to the study.
+:Contacts: A list of Contacts relating to the study.
+:Design Type: An Ontology Annotation classifying the study based on the overall experimental design, e.g cross-over design or parallel group design.
+:Factor Name: The name of one factor used in the Study and/or Assay files. A factor corresponds to an independent variable manipulated by the experimentalist with the intention to affect biological systems in a way that can be measured by an assay. The value of a factor is given in the Study or Assay file, accordingly.
+:Factor Type: An Ontology Annotation allowing the classification of this factor into categories.
+
+In a Study object we record the provenance of biological samples, from source material through a collection process to sample material, represented with directed acyclic graphs (direct graphs with no loops/cycles). The pattern of nodes is usually formed of a source material node, followed by a sample collection process node, followed by a sample material node.
+
+For example:
+
+.. code-block:: none
+
+  (source material)->(sample collection)->(sample material)
+
+These study graphs can split and pool depending on how the samples are collected.
+
+In a splitting example, multiple samples might be derived from the same source:
+
+.. code-block:: none
+
+  (source material 1)->(sample collection)->(sample material 1)
+  (source material 1)->(sample collection)->(sample material 2)
+
+In a pooling example, multiple sources may be used to create a single sample:
+
+.. code-block:: none
+
+  (source material 1)->(sample collection)->(sample material 1)
+  (source material 2)->(sample collection)->(sample material 1)
+
 
 Assay
 =====
 An Assay represents a test performed either on material taken from a subject or on a whole initial subject,
 producing qualitative or quantitative measurements.
 
-The Assay object groups descriptions of provenance of sample processing for related tests. Each test typically
-follows the steps of one particular experimental workflow described by a particular protocol. Assay-related
-metadata includes descriptions of the measurement type and technology used, and a link to what study protocol is
+An Assay groups descriptions of provenance of sample processing for related tests. Each test typically
+follows the steps of one particular experimental workflow described by a particular protocol.
+
+Assay-related metadata includes descriptions of the measurement type and technology used, and a link to what study protocol is
 applied. Where an assay produces data files, links to the data are recorded here.
 
-In an Assay object we record the provenance of biological samples, from sample through an experimental workflow,
-represented with a directed graph.
+An Study SHOULD record the following:
+
+:Measurement Type: An Ontology Annotation to qualify the endpoint, or what is being measured (e.g. gene expression profiling or protein identification). The term can be free text or from, for example, a controlled vocabulary or an ontology. If the latter source is used the Term Accession Number and Term Source REF fields below are required.
+:Technology Type: An Ontology Annotation to identify the technology used to perform the measurement, e.g. DNA microarray, mass spectrometry. The term can be free text or from, for example, a controlled vocabulary or an ontology. If the latter source is used the Term Accession Number and Term Source REF fields below are required.
+:Technology Platform: The manufacturer and platform name, e.g. Bruker AVANCE, of the technology used.
+
+In an Assay we record the provenance of biological samples, from sample material through an experimental workflow, represented with directed acyclic graphs. Assay graphs usually follow the pattern of a sample material, followed by a series of process and material/data nodes.
+
+For example, to show a sample that goes through some extraction process (e.g. nucleic acid extraction) through to producing some sequenced data, we might produce something like:
+
+.. code-block:: none
+
+  (sample material)->(extraction process)->(extract)->(sequencing process)->(raw data file)
+
+Like with the study graphs, splitting and pooling can occur where appropriate in assay graphs.
+
+Study and Assay graphs
+======================
+Experimental graphs described in Studies and Assays are made up of specific types of nodes.
+
+Experimental graphs MUST be directed and acyclic (i.e. MUST NOT contain loops/cycles).
+
+All nodes in Study and Assay graphs MUST be uniquely identifiable.
+
+Material nodes:
+
+Sources are considered as the starting biological material used in a study. Sources SHOULD record the following:
+
+:Characteristics: A list of material characteristics that may be qualitative or quantitative in description. Qualitative values MAY be Ontology Annotations, while quantitative values MAY be qualified with a Unit definition.
+:Material Type: An Ontology Annotation describing the material.
+
+Samples represent major outputs resulting from a protocol application. Samples SHOULD record the following:
+
+:Characteristics: A list of material characteristics that may be qualitative or quantitative in description. Qualitative values MAY be Ontology Annotations, while quantitative values MAY be qualified with a Unit definition.
+:Material Type: An Ontology Annotation describing the material.
+
+Extracts represent outputs resulting from a protocol application that corresponds to an extraction process, for example nucleic acid extraction. Extracts SHOULD record the following:
+
+:Characteristics: A list of material characteristics that may be qualitative or quantitative in description. Qualitative values MAY be Ontology Annotations, while quantitative values MAY be qualified with a Unit definition.
+:Material Type: An Ontology Annotation describing the material.
+
+Labeled Extracts represent outputs resulting from a protocol application that corresponds to a labeling process. Labeled Extracts SHOULD record the following:
+
+:Characteristics: A list of material characteristics that may be qualitative or quantitative in description. Qualitative values MAY be Ontology Annotations, while quantitative values MAY be qualified with a Unit definition.
+:Material Type: An Ontology Annotation describing the material.
+
+Data nodes:
+
+Image File, Raw Data File, Derived Data File
+
+Process nodes:
+
+Processes represent the application of a protocol to some input material (e.g. a Source) to produce some output (e.g.a Sample).
+
+Processes SHOULD record the following:
+
+:Parameter Values: Reporting on the values taken by parameters when applying a protocol. A protocol description in the Study SHOULD declare the required parameters, where here the values applied are recorded.
+:Performer: Name of the operator who carried out the protocol. This allows account to be taken of operator effects and can be part of a quality control data tracking.
+:Date: The date on which a protocol is performed. This allows account to be taken of day effects and can be part of a quality control data tracking.
 
 The following diagram represents the ISA objects and their relationships:
 
