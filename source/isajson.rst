@@ -2,20 +2,40 @@
 ISA-JSON format
 ===============
 
-:Status: ISA-JSON specification v1.0 (September 2016)
+:Status: ISA-JSON specification v1.0 (3 October 2016)
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and
 "OPTIONAL" in this document are to be interpreted as described in RFC 2119.
 
+The ISA specifications are licensed under XXXXXXXXX.
+
+------------
+Introduction
+------------
+ISA is a metadata framework for describing experiments in biology and medicine. For a full introduction to the ISA
+framework, see www.isa-tools.org
+
+The ISA specifications define an Abstract Model of the metadata framework. The ISA Abstract Model has been implemented
+in two format specifications, ISA-Tab and ISA-JSON, both of which have supporting tools and services associated with
+them. The format specifications are also available for additional tooling to take advantage of ISA-formatted content.
+
+----------------
+Revision History
+----------------
++---------+------------+-----------------------------------------+
+| Version | Date       | Description                             |
++=========+============+=========================================+
+| 1.0     | 2016-10-03 | First release of ISA JSON specification |
++---------+------------+-----------------------------------------+
 
 Definitions
 ===========
 For detail on ISA framework terminology, please read the ISA Abstract Model specification documentation.
 
-----------------------
-ISA-JSON v1.0 overview
-----------------------
-This document describes the ISA model reference implementation in the JSON format [RFC7159_]. The JavaScript
+-------------
+Specification
+-------------
+This document describes the ISA Abstract Model reference implementation specified in the JSON format [RFC7159_]. The JavaScript
 Object Notation (JSON) [RFC7159_] is a text format for serializing structured data. Objects are rendered as an unordered
 collection of name-value pairs. The JSON Schema (see [`JSON Schema`_], [`JSON Schema Core`_], and [`JSON Schema Validation`_])
 defines a JSON format for describing JSON formats. Its latest specification is Draft 4.

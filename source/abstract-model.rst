@@ -1,15 +1,36 @@
-==================
-ISA abstract model
-==================
+================================
+ISA Abstract Model Specification
+================================
 
-:Status: ISA Abstract Model specification  v1.0 (September 2016)
+:Status: ISA Abstract Model specification  v1.0 (3 October 2016)
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and
 "OPTIONAL" in this document are to be interpreted as described in RFC 2119.
 
------------
-Definitions
------------
+The ISA specifications are licensed under XXXXXXXXX.
+
+------------
+Introduction
+------------
+ISA is a metadata framework for describing experiments in biology and medicine. For a full introduction to the ISA
+framework, see www.isa-tools.org
+
+The ISA specifications define an Abstract Model of the metadata framework. The ISA Abstract Model has been implemented
+in two format specifications, ISA-Tab and ISA-JSON, both of which have supporting tools and services associated with
+them. The format specifications are also available for additional tooling to take advantage of ISA-formatted content.
+
+----------------
+Revision History
+----------------
++---------+------------+---------------------------------------------------+
+| Version | Date       | Description                                       |
++=========+============+===================================================+
+| 1.0     | 2016-10-03 | First release of ISA Abstract Model specification |
++---------+------------+---------------------------------------------------+
+
+-------------
+Specification
+-------------
 
 Ontology Annotation
 ===================
@@ -18,7 +39,7 @@ Source.
 
 An Ontology Annotation SHOULD record the following:
 
-:Term Accession Number: The accession number from the Ontology Source associated with the selected term.
+:Accession Number: The accession number from the Ontology Source associated with the selected term.
 
 Ontology Source
 ===============
@@ -28,10 +49,14 @@ be able to ascertain the Ontology Source's provenance.
 
 An Ontology Source SHOULD record the following:
 
-:Name: The name of the source of a term; i.e. the source controlled vocabulary or ontology. These names will be used in all corresponding Term Source REF fields that occur elsewhere.
+:Name: The name of the source of a term; i.e. the source controlled vocabulary or ontology. These names will be used to reference the Ontology Source from an Ontology Annotation.
 :File: A file name or a URI of an official resource.
 :Version: The version number of the Term Source to support terms tracking.
 :Description: Use for disambiguating resources when homologous prefixes have been used.
+
+Unit
+====
+Units are used to classify dimensional data, and used accordingly with relevant values. A Unit SHOULD be implemented as an Ontology Annotation.
 
 Publication
 ===========
@@ -58,14 +83,15 @@ A Contact SHOULD record the following:
 Investigation, Study, Assay
 ---------------------------
 
-The ISA model consists of three core object types to capture experimental metadata:
+The ISA model consists of three core entities to capture experimental metadata:
  - Investigation
  - Study
  - Assay
 
 An Investigation contains all the information needed to understand the overall goals and means used in an
-experiment; experimental steps (or sequences of events) are described in Study and Assay objects. For each
-Investigation there may be one or more Studies associated with it; for each Study there may be one or more Assays.
+experiment; experimental steps (or sequences of events) are described in a Study and Assay . For each
+Investigation there may be one or more Study associated with it; for each Study there may be one or more
+Assays.
 
 Investigation
 =============
@@ -76,7 +102,7 @@ An Investigation is intended to:
 #. to link related Study objects under an Investigation (this only becomes necessary when two or more Study objects need to be grouped)
 
 Investigations record metadata relating to the description of the investigation context, such as the title and
-description of the investigation as well as about related people and scholarly publications. Studies and Assays
+description of the investigation as well as about related people and scholarly publications. Studys and Assays
 are grouped within Investigations to record other metadata within the relevant contexts.
 
 An Investigation SHOULD record the following:
@@ -147,7 +173,7 @@ follows the steps of one particular experimental workflow described by a particu
 Assay-related metadata includes descriptions of the measurement type and technology used, and a link to what study
 protocol is applied. Where an assay produces data files, links to the data are recorded here.
 
-An Study SHOULD record the following:
+An Assay SHOULD record the following:
 
 :Measurement Type: An Ontology Annotation to qualify the endpoint, or what is being measured (e.g. gene expression profiling or protein identification). The term can be free text or from, for example, a controlled vocabulary or an ontology. If the latter source is used the Term Accession Number and Term Source REF fields below are required.
 :Technology Type: An Ontology Annotation to identify the technology used to perform the measurement, e.g. DNA microarray, mass spectrometry. The term can be free text or from, for example, a controlled vocabulary or an ontology. If the latter source is used the Term Accession Number and Term Source REF fields below are required.
@@ -183,12 +209,11 @@ Source nodes SHOULD be followed by a Process node describing a sample collection
 Study graphs.
 
 Samples are a special kind of Material node and represent major outputs resulting from a protocol application.
-Sample nodes in the Study graphs SHOULD be preceded by a Process node describing a sample collection process. Sample
-  nodes in the Assay graphs SHOULD be followed by a Process node and SHOULD NOT be preceded by any node.
+Sample nodes in the Study graphs SHOULD be preceded by a Process node describing a sample collection process. Sample nodes in the Assay graphs SHOULD be followed by a Process node and SHOULD NOT be preceded by any node.
 
 Data nodes:
 
-Data nodes represent outputs resulting frmo a protocol application that corresponds to some process that produces data, typically in the form of data files. Data nodes SHOULD record the following:
+Data nodes represent outputs resulting from a protocol application that corresponds to some process that produces data, typically in the form of data files. Data nodes SHOULD record the following:
 
 :File name: A file name or full path referencing a data file produced by the related process that MAY be packaged with, or is accessible via, the ISA reference implementation content.
 
@@ -220,7 +245,7 @@ and description. The Abstract Model specification only specifies that these SHOU
 configuration specifies additional constraints on a reference implementation of ISA that can be provided by users
 beyond the reference implementation developers, e.g. Users, curators, publishers, etc.
 
-For example, we mandate that the Study graphs MUST follow the ``(source)->(sample collection->(sample)`` pattern. A
+For example, we mandate that the Study graphs MUST follow the (source)->(sample collection->(sample) pattern. A
 reference implementation could specify this as a configuration if it is not hard-coded in the reference implementation.
 
 Where the power of configurations becomes more apparent is where we want to describe Assay graphs. A data publisher
@@ -238,7 +263,9 @@ different technology/measurement type combination of SNP analysis/DNA microarray
 
   (sample)->(DNA extraction)->(extract)->(nucleic acid hybridization)->(data collection)->(raw data)
 
-How configurations are implemented is left open to reference implementation developers, but the idea is to allow users
+Configurations MUST add constraints to the reference implementation of the Abstract Model.
+
+How configurations are implemented is left open to reference implementation developers, but the point is to allow users
 of reference implementations of the ISA Abstract Model to add constraints to ISA content in a flexible manner.
 Configurations are implemented differently between the ISA-Tab and ISA-JSON formats, so please refer to those
 respective specifications for further information on how to use them, or to see examples of how they are implemented.
