@@ -35,8 +35,9 @@ Revision History
 | 1.0RC1  | 2008-11-26 | First release candidate of ISA-Tab specification  |
 +---------+------------+---------------------------------------------------+
 
+-----------
 Definitions
-===========
+-----------
 For detail on ISA framework terminology, please read the ISA Abstract Model specification.
 
 -------------
@@ -430,8 +431,8 @@ The Study Assay section declares and describes each of the Assay files associate
 
 This section implements the metadata for a Study from the ISA Abstract Model and a list of Assays (i.e. Study and Assay without graphs; graphs are implemented in ISA-Tab as table files).
 
-Study and Assay Table Files
-===========================
+Study and Assay Tables
+======================
 Study and Assay Table files are structure with fields organized on a per-row basis. The first row MUST be used
 for column headers. Generally, objects such as Materials and Processes are indicated with ``<entity> Name``, for example
 ``Sample Name`` to indicate a sample, or ``Assay Name`` to indicate a named instance of a process that has been applied. Object
@@ -582,3 +583,11 @@ repository.
 
 For submission or transfer, ISA-Tab files and associated data files MAY be packaged into an ISArchive, a zip file
 containing all the files together.
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+

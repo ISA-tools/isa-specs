@@ -1,5 +1,5 @@
-ISA Specification 2.0
-=====================
+ISA Specifications
+==================
 
 .. include:: abstract.rst
 

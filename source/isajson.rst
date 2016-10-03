@@ -28,8 +28,9 @@ Revision History
 | 1.0     | 2016-10-03 | First release of ISA JSON specification |
 +---------+------------+-----------------------------------------+
 
+-----------
 Definitions
-===========
+-----------
 For detail on ISA framework terminology, please read the ISA Abstract Model specification documentation.
 
 -------------
@@ -126,3 +127,11 @@ implement ISA Abstract Model.
 #. Ontology Annotations with a term and/or accession MUST provide a Term Source REF pointing to a declared Ontology Source Reference.
 #. Publication metadata SHOULD match that of publication record in PubMed corresponding to the provided PubMed ID.
 #. Comments MUST have a name.
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
