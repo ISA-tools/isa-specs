@@ -2,12 +2,12 @@
 ISA-JSON format
 ===============
 
-:Status: ISA-JSON specification v1.0 (3 October 2016)
+:Status: ISA Model and Serialization Specifications 1.0 (6 October 2016)
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and
 "OPTIONAL" in this document are to be interpreted as described in RFC 2119.
 
-The ISA specifications are licensed under XXXXXXXXX.
+The ISA Model and Serialization Specifications are licensed under CC BY-SA 4.0.
 
 ------------
 Introduction
@@ -18,15 +18,6 @@ framework, see www.isa-tools.org
 The ISA specifications define an Abstract Model of the metadata framework. The ISA Abstract Model has been implemented
 in two format specifications, ISA-Tab and ISA-JSON, both of which have supporting tools and services associated with
 them. The format specifications are also available for additional tooling to take advantage of ISA-formatted content.
-
-----------------
-Revision History
-----------------
-+---------+------------+-----------------------------------------+
-| Version | Date       | Description                             |
-+=========+============+=========================================+
-| 1.0     | 2016-10-03 | First release of ISA JSON specification |
-+---------+------------+-----------------------------------------+
 
 -----------
 Definitions

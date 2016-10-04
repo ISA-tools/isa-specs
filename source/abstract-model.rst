@@ -2,12 +2,12 @@
 ISA Abstract Model Specification
 ================================
 
-:Status: ISA Abstract Model specification  v1.0 (3 October 2016)
+:Status: ISA Model and Serialization Specifications 1.0 (6 October 2016)
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and
 "OPTIONAL" in this document are to be interpreted as described in RFC 2119.
 
-The ISA specifications are licensed under XXXXXXXXX.
+The ISA Model and Serialization Specifications are licensed under CC BY-SA 4.0.
 
 ------------
 Introduction
@@ -22,11 +22,15 @@ them. The format specifications are also available for additional tooling to tak
 ----------------
 Revision History
 ----------------
-+---------+------------+---------------------------------------------------+
-| Version | Date       | Description                                       |
-+=========+============+===================================================+
-| 1.0     | 2016-10-03 | First release of ISA Abstract Model specification |
-+---------+------------+---------------------------------------------------+
++---------+------------+-------------------------------------------------------------+
+| Version | Date       | Description                                                 |
++=========+============+=============================================================+
+| 1.0     | 2016-10-06 | First release of ISA Model and Serializations specification |
++---------+------------+-------------------------------------------------------------+
+| 1.0RC2  | 2009-01-01 | Second release candidate of ISA-Tab specification           |
++---------+------------+-------------------------------------------------------------+
+| 1.0RC1  | 2008-11-26 | First release candidate of ISA-Tab specification            |
++---------+------------+-------------------------------------------------------------+
 
 -------------
 Specification

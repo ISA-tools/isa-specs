@@ -1,5 +1,5 @@
-ISA Specifications
-==================
+ISA Model and Serialization Specifications
+==========================================
 
 .. include:: abstract.rst
 
