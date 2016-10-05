@@ -49,7 +49,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'ISA Model and Serialization Specifications 1.0'
+project = 'ISA Model and Serialization Specifications'
 author = '2016, ISA Community'
 
 # The version info for the project you're documenting, acts as replacement for

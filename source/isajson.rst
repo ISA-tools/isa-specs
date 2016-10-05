@@ -2,42 +2,10 @@
 ISA-JSON format
 ===============
 
-:Status: ISA Model and Serialization Specifications 1.0 (6 October 2016)
-
-The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and
-"OPTIONAL" in this document are to be interpreted as described by `RFC 2119 <http://www.ietf.org/rfc/rfc2119.txt>`_.
-
-The ISA Model and Serialization Specifications are licensed under `CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0/>`_.
-
-The ISA Model and Serialization Specifications are maintained by Susanna-Assunta Sansone [1]_, Philippe Rocca-Serra [1]_, Alejandra
-Gonzalez-Beltran [1]_ and David Johnson [1]_ on behalf of the `ISA Community <http://www.isacommons.org>`_.
-
-.. [1] Oxford e-Research Centre, University of Oxford, UK.
-
-If you wish to make comments regarding this specification, please report using the
-`ISA Specifications issue tracker <https://github.com/ISA-tools/isa-specifications/issues>`_ or send them to
-isatools@googlegroups.com. All comments are welcome.
-
-------------
-Introduction
-------------
-ISA is a metadata framework for describing experiments in biology and medicine. For a full introduction to the ISA
-framework, see http://www.isa-tools.org
-
-The ISA specifications define an Abstract Model of the metadata framework. The ISA Abstract Model has been implemented
-in two format specifications, ISA-Tab and ISA-JSON, both of which have supporting tools and services associated with
-them. The format specifications are also available for additional tooling to take advantage of ISA-formatted content.
-
 .. Important:: As a pre-requisite to reading this specification, please make sure you have read and understood the :doc:`ISA Abstract Model </isamodel>` that the ISA-Tab format is based on.
 
------------
-Definitions
------------
 For detail on ISA framework terminology, please read the :doc:`ISA Abstract Model specification </isamodel>`.
 
--------------
-Specification
--------------
 This document describes the ISA Abstract Model reference implementation specified in the JSON format [RFC7159_]. The JavaScript
 Object Notation (JSON) [RFC7159_] is a text format for serializing structured data. Objects are rendered as an unordered
 collection of name-value pairs. The JSON Schema (see [`JSON Schema`_], [`JSON Schema Core`_], and [`JSON Schema Validation`_])
@@ -48,9 +16,10 @@ defines a JSON format for describing JSON formats.
 .. _JSON Schema Core: http://tools.ietf.org/html/draft-zyp-json-schema-04
 .. _JSON Schema Validation: http://tools.ietf.org/html/draft-fge-json-schema-validation-00
 
-Below we provide the schemas and the content rules for valid ISA-JSON documents. Full examples of ISA content as
-ISA-JSON can be found in the sample data package of the ISA API, here https://git.io/vPZ2e We recommend that you study
-these to better understand the structure of ISA-JSON documents.
+Below we provide the `schemas`_ and the `content rules`_ for valid ISA-JSON documents. Full examples of ISA content as
+ISA-JSON can be found in the sample data package of the ISA API, here https://git.io/vPZ2e
+
+We recommend that you study these to better understand the structure of ISA-JSON documents.
 
 Schemas
 =======

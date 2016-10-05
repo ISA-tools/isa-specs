@@ -2,42 +2,9 @@
 ISA-Tab format
 ==============
 
-:Status: ISA Model and Serialization Specifications 1.0 (6 October 2016)
-
-The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and
-"OPTIONAL" in this document are to be interpreted as described by `RFC 2119 <http://www.ietf.org/rfc/rfc2119.txt>`_.
-
-The ISA Model and Serialization Specifications are licensed under `CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0/>`_.
-
-The ISA Model and Serialization Specifications are maintained by Susanna-Assunta Sansone [1]_, Philippe Rocca-Serra [1]_, Alejandra
-Gonzalez-Beltran [1]_ and David Johnson [1]_ on behalf of the `ISA Community <http://www.isacommons.org>`_.
-
-.. [1] Oxford e-Research Centre, University of Oxford, UK.
-
-If you wish to make comments regarding this specification, please report using the
-`ISA Specifications issue tracker <https://github.com/ISA-tools/isa-specifications/issues>`_ or send them to
-isatools@googlegroups.com. All comments are welcome.
-
-------------
-Introduction
-------------
-ISA is a metadata framework for describing experiments in biology and medicine. For a full introduction to the ISA
-framework, see http://www.isa-tools.org
-
-The ISA specifications define an Abstract Model of the metadata framework. The ISA Abstract Model has been implemented
-in two format specifications, ISA-Tab and ISA-JSON, both of which have supporting tools and services associated with
-them. The format specifications are also available for additional tooling to take advantage of ISA-formatted content.
-
 .. Important:: As a pre-requisite to reading this specification, please make sure you have read and understood the :doc:`ISA Abstract Model </isamodel>` that the ISA-Tab format is based on.
 
------------
-Definitions
------------
 For detail on ISA framework terminology, please read the :doc:`ISA Abstract Model specification </isamodel>`.
-
--------------
-Specification
--------------
 
 This document describes the ISA Abstract Model reference implementation specified in the ISA-Tab format. ISA-Tab files
 are `tab separated value <https://en.wikipedia.org/wiki/Tab-separated_values>`_ (tsv) files, with specific labeled
@@ -72,7 +39,7 @@ In order to facilitate identification of ISA-Tab component files, specific namin
 All labels are case-sensitive:
 
  - In the Investigation file, section headers MUST be completely written in upper case (e.g. STUDY), field headers MUST have the first letter of each word in upper case (e.g. Study Identifier); with the exception of the referencing label (REF).
- - In the Study or Assay files, column headers MUST also have the first letter of each word in upper case, with the exception of the referencing label (REF).
+ - In the Study and Assay files, column headers MUST also have the first letter of each word in upper case, with the exception of the referencing label (REF).
 
 Dates SHOULD be supplied in the `ISO8601 <http://www.iso.org/iso/home/standards/iso8601.htm>`_ format "YYYY-MM-DD".
 
@@ -127,7 +94,7 @@ This section implements a list of ``Ontology Source`` from the ISA Abstract Mode
 
 This section MUST contain zero or more values.
 
-Section: **ONTOLOGY SOURCE REFERENCE**
+**ONTOLOGY SOURCE REFERENCE**
 
 This section MUST contain the following labels, with the specified datatypes for values supported:
 
@@ -321,8 +288,8 @@ For example, the ``STUDY CONTACTS`` section of an ISA-Tab ``i_*.txt`` file may l
 .. literalinclude:: _static/isatab/i_gilbert.txt
     :lines: 90-100
 
-Study and Assay Tables
-======================
+Study and Assay files
+=====================
 ``Study`` and ``Assay`` Table files are structure with fields organized on a per-row basis. The first row MUST be used
 for column headers. Generally, objects such as Materials and Processes are indicated with ``<entity> Name``, for example
 ``Sample Name`` to indicate a sample, or ``Assay Name`` to indicate a named instance of a process that has been applied. Object
