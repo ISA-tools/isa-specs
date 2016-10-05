@@ -12,12 +12,14 @@ The ISA Model and Serialization Specifications are licensed under `CC BY-SA 4.0 
 The ISA Model and Serialization Specifications are maintained by Susanna-Assunta Sansone [1]_, Philippe Rocca-Serra [1]_, Alejandra
 Gonzalez-Beltran [1]_ and David Johnson [1]_ on behalf of the `ISA Community <http://www.isacommons.org>`_.
 
+.. [1] Oxford e-Research Centre, University of Oxford, UK.
+
 If you wish to make comments regarding this specification, please report using the
 `ISA Specifications issue tracker <https://github.com/ISA-tools/isa-specifications/issues>`_ or send them to
 isatools@googlegroups.com. All comments are welcome.
 
-The ISA Model and Serialization Specifications have several Reference Implementations as data formats (ISA-Tab and
-ISA JSON) with supporting software tools. Below is a brief list of tools and supported formats.
+The ISA Model and Serialization Specifications have several Reference Implementations as data formats (:doc:`ISA-Tab </isatab>` and
+:doc:`ISA-JSON </isajson>`) with supporting software tools. Below is a summary list of tools and supported formats.
 
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+----------------------+----------------------------+
 | Tool                          | Description                                                                                                                                                | Format            | Development Status   | Platform                   |
@@ -51,6 +53,5 @@ ISA JSON) with supporting software tools. Below is a brief list of tools and sup
 | Bio-Parser-ISATab             | PERL Parser for ISA-Tab                                                                                                                                    | ISA-Tab           | Unsupported          | PERL                       |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+----------------------+----------------------------+
 
-For further information on the software tools supporting ISA, please visit www.isa-tools.org and www.github.com/ISA-tools
+To find these tools please visit http://www.isa-tools.org and http://www.github.com/ISA-tools
 
-.. [1] Oxford e-Research Centre, University of Oxford, UK.
