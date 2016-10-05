@@ -12,6 +12,8 @@ The ISA Model and Serialization Specifications are licensed under `CC BY-SA 4.0 
 The ISA Model and Serialization Specifications are maintained by Susanna-Assunta Sansone [1]_, Philippe Rocca-Serra [1]_, Alejandra
 Gonzalez-Beltran [1]_ and David Johnson [1]_ on behalf of the `ISA Community <http://www.isacommons.org>`_.
 
+.. [1] Oxford e-Research Centre, University of Oxford, UK.
+
 If you wish to make comments regarding this specification, please report using the
 `ISA Specifications issue tracker <https://github.com/ISA-tools/isa-specifications/issues>`_ or send them to
 isatools@googlegroups.com. All comments are welcome.
@@ -20,16 +22,18 @@ isatools@googlegroups.com. All comments are welcome.
 Introduction
 ------------
 ISA is a metadata framework for describing experiments in biology and medicine. For a full introduction to the ISA
-framework, see www.isa-tools.org
+framework, see http://www.isa-tools.org
 
 The ISA specifications define an Abstract Model of the metadata framework. The ISA Abstract Model has been implemented
 in two format specifications, ISA-Tab and ISA-JSON, both of which have supporting tools and services associated with
 them. The format specifications are also available for additional tooling to take advantage of ISA-formatted content.
 
+.. Important:: As a pre-requisite to reading this specification, please make sure you have read and understood the :doc:`ISA Abstract Model </isamodel>` that the ISA-Tab format is based on.
+
 -----------
 Definitions
 -----------
-For detail on ISA framework terminology, please read the ISA Abstract Model specification documentation.
+For detail on ISA framework terminology, please read the :doc:`ISA Abstract Model specification </isamodel>`.
 
 -------------
 Specification
@@ -241,13 +245,13 @@ Content rules
 The rules described here define the content and relationship rules that the ISA-JSON objects must adhere to to
 implement ISA Abstract Model.
 
-#. Files SHOULD be encoded using UTF-8.
-#. ISA-JSON content MUST be well-formed JSON.
+#. Files SHOULD be encoded using `UTF-8 <http://www.fileformat.info/info/unicode/utf8.htm>`_.
+#. ISA-JSON content MUST be well-formed `JSON <http://tools.ietf.org/html/rfc7159>`_.
 #. ISA-JSON content MUST validate against the ISA-JSON schemas.
-#. ISA-JSON files SHOULD be suffixed with a .json extension.
-#. Dates SHOULD be supplied in the ISO8601 format "YYYY-MM-DD".
-#. DOIs SHOULD conform to the standard format "10.NN/xxxNNNNNN".
-#. PubMed IDs SHOULD be a string of eight numbers (e.g. 12345678), optionally prefixed with PMC (e.g. PMC12345678).
+#. ISA-JSON files SHOULD be suffixed with a ``.json`` extension.
+#. Dates SHOULD be supplied in the `ISO8601 <http://www.iso.org/iso/home/standards/iso8601.htm>`_ format "YYYY-MM-DD".
+#. DOIs SHOULD conform to the standard format `ISO 26324 <http://www.iso.org/iso/catalogue_detail?csnumber=43506>`_ DOI format "10.NN/xxxNNNNNN".
+#. `PubMed IDs <https://www.nlm.nih.gov/bsd/disted/pubmedtutorial/020_830.html>`_ SHOULD be a string of eight numbers (e.g. 12345678), optionally prefixed with PMC (e.g. PMC12345678).
 #. Characteristic Categories declared SHOULD be referenced by at least one Characteristic.
 #. Characteristics MUST reference a Characteristic Category declaration.
 #. Unit Categories declared SHOULD be referenced by at least one Unit.
@@ -271,5 +275,3 @@ implement ISA Abstract Model.
 #. Ontology Annotations with a term and/or accession MUST provide a Term Source REF pointing to a declared Ontology Source Reference.
 #. Publication metadata SHOULD match that of publication record in PubMed corresponding to the provided PubMed ID.
 #. Comments MUST have a name.
-
-.. [1] Oxford e-Research Centre, University of Oxford, UK.
