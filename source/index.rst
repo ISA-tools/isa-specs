@@ -11,6 +11,8 @@ The ISA Model and Serialization Specifications are licensed under `CC BY-SA 4.0 
 The ISA Model and Serialization Specifications are maintained by Susanna-Assunta Sansone [1]_, Philippe Rocca-Serra [1]_, Alejandra
 Gonzalez-Beltran [1]_ and David Johnson [1]_ on behalf of the `ISA Community <http://www.isacommons.org>`_.
 
+.. [1] Oxford e-Research Centre, University of Oxford, UK.
+
 If you wish to make comments regarding this specification, please report using the
 `ISA Specifications issue tracker <https://github.com/ISA-tools/isa-specifications/issues>`_ or send them to
 isatools@googlegroups.com. All comments are welcome.
@@ -55,6 +57,5 @@ Revision History
 | 1.0RC1  | 2008-11-26     | First release candidate of ISA-Tab specification [#]_            |
 +---------+----------------+------------------------------------------------------------------+
 
-.. [1] Oxford e-Research Centre, University of Oxford, UK.
 .. [#] http://isa-specifications.readthedocs.io
 .. [#] http://isatab.sourceforge.net/docs/ISA-TAB_release-candidate-1_v1.0_24nov08.pdf
