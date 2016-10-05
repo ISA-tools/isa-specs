@@ -5,15 +5,16 @@ ISA-Tab format
 :Status: ISA Model and Serialization Specifications 1.0 (6 October 2016)
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and
-"OPTIONAL" in this document are to be interpreted as described in RFC 2119.
+"OPTIONAL" in this document are to be interpreted as described by `RFC 2119 <http://www.ietf.org/rfc/rfc2119.txt>`_.
 
-The ISA Model and Serialization Specifications are licensed under CC BY-SA 4.0.
+The ISA Model and Serialization Specifications are licensed under `CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0/>`_.
 
-The ISA Model and Serialization Specifications are maintained by Susanna-Assunta Sansone, Philippe Rocca-Sera, Alejandra
-Gonzalez-Beltran and David Johnson on behalf of the ISA Community.
+The ISA Model and Serialization Specifications are maintained by Susanna-Assunta Sansone [1]_, Philippe Rocca-Serra [1]_, Alejandra
+Gonzalez-Beltran [1]_ and David Johnson [1]_ on behalf of the `ISA Community <http://www.isacommons.org>`_.
 
-If you wish to make comments regarding this specification, please report using the ISA Specifications issue tracker or
-send them to isatools@googlegroups.com. All comments are welcome.
+If you wish to make comments regarding this specification, please report using the
+`ISA Specifications issue tracker <https://github.com/ISA-tools/isa-specifications/issues>`_ or send them to
+isatools@googlegroups.com. All comments are welcome.
 
 ------------
 Introduction
@@ -481,10 +482,4 @@ repository.
 For submission or transfer, ISA-Tab files and associated data files MAY be packaged into an ISArchive, a zip file
 containing all the files together.
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
+.. [1] Oxford e-Research Centre, University of Oxford, UK.

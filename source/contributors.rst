@@ -5,15 +5,16 @@ Contributors
 :Status: ISA Model and Serialization Specifications 1.0 (6 October 2016)
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and
-"OPTIONAL" in this document are to be interpreted as described in RFC 2119.
+"OPTIONAL" in this document are to be interpreted as described by `RFC 2119 <http://www.ietf.org/rfc/rfc2119.txt>`_.
 
-The ISA Model and Serialization Specifications are licensed under CC BY-SA 4.0.
+The ISA Model and Serialization Specifications are licensed under `CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0/>`_.
 
 The ISA Model and Serialization Specifications are maintained by Susanna-Assunta Sansone [1]_, Philippe Rocca-Serra [1]_, Alejandra
-Gonzalez-Beltran [1]_ and David Johnson [1]_ on behalf of the ISA Community.
+Gonzalez-Beltran [1]_ and David Johnson [1]_ on behalf of the `ISA Community <http://www.isacommons.org>`_.
 
-If you wish to make comments regarding this specification, please report using the ISA Specifications issue tracker or
-send them to isatools@googlegroups.com. All comments are welcome.
+If you wish to make comments regarding this specification, please report using the
+`ISA Specifications issue tracker <https://github.com/ISA-tools/isa-specifications/issues>`_ or send them to
+isatools@googlegroups.com. All comments are welcome.
 
 The original ISA-Tab specification, on which the ISA Model and Serialization Specifications 1.0 is based on, was
 initially drafted by Philippe Rocca-Serra, Susanna-Assunta Sansone and Marco Brandizi [2]_ and subsequently incorporates

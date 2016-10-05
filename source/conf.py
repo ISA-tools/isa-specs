@@ -49,8 +49,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'ISA Model and Serialization Specifications'
-author = 'ISA Community'
+project = 'ISA Model and Serialization Specifications 1.0'
+author = '2016, ISA Community'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -317,7 +317,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     (master_doc, 'ISASpecifications', 'ISA Model and Serialization Specifications',
-     author, 'ISASpecifications', 'One line description of project.',
+     author, 'The ISA Community', 'One line description of project.',
      'Miscellaneous'),
 ]
 
