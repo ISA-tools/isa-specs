@@ -82,9 +82,8 @@ A ``Contact`` SHOULD record the following:
     :header-rows: 1
     :widths: 10, 10, 80
 
----------------------------
 Investigation, Study, Assay
----------------------------
+===========================
 
 The ISA model consists of three core entities to capture experimental metadata:
  - ``Investigation``
@@ -97,7 +96,7 @@ experiment; experimental steps (or sequences of events) are described in a ``Stu
 ``Assay``.
 
 Investigation
-=============
+-------------
 
 An ``Investigation`` is intended to:
 
@@ -116,7 +115,7 @@ An ``Investigation`` SHOULD record the following:
     :widths: 10, 10, 80
 
 Study
-=====
+-----
 A ``Study`` is a central concept containing information on the subject under study, it's characteristics and any
 treatments applied.
 
@@ -156,7 +155,7 @@ In a pooling example, multiple sources may be used to create a single sample:
   (source material 2)->(sample collection)->(sample material 1)
 
 Assay
-=====
+-----
 An ``Assay`` represents a test performed either on material taken from a subject or on a whole initial subject,
 producing qualitative or quantitative measurements.
 
@@ -184,7 +183,7 @@ For example, to show a sample that goes through some extraction process (e.g. nu
 Like with the study graphs, splitting and pooling can occur where appropriate in assay graphs.
 
 Study and Assay graphs
-======================
+----------------------
 Experimental graphs relating to ``Study`` and ``Assay`` objects are made up of specific types of nodes.
 
 Experimental graphs MUST be `directed and acyclic <https://en.wikipedia.org/wiki/Directed_acyclic_graph>`_ (i.e. MUST NOT contain loops/cycles).
