@@ -186,9 +186,11 @@ Experimental graphs described in Studies and Assays are made up of specific type
 
 Experimental graphs MUST be directed and acyclic (i.e. MUST NOT contain loops/cycles).
 
-All nodes in Study and Assay graphs MUST be uniquely identifiable.
+All nodes in Study and Assay graphs MUST be uniquely identifiable. User-defined identifiers MAY also be used.
 
-Material nodes:
+Experimental graphs MUST be composed of the following node types
+
+**Material nodes**
 
 Material nodes can also be used as a generic structure to describe materials consumed or produced during an experimental workflow. Materials SHOULD record the following:
 
@@ -204,7 +206,7 @@ Study graphs.
 Samples are a special kind of Material node and represent major outputs resulting from a protocol application.
 Sample nodes in the Study graphs SHOULD be preceded by a Process node describing a sample collection process. Sample nodes in the Assay graphs SHOULD be followed by a Process node and SHOULD NOT be preceded by any node.
 
-Data nodes:
+**Data nodes**
 
 Data nodes represent outputs resulting from a protocol application that corresponds to some process that produces data, typically in the form of data files. Data nodes SHOULD record the following:
 
@@ -215,7 +217,7 @@ Data nodes represent outputs resulting from a protocol application that correspo
 
 Data nodes SHOULD be preceded by a Process node describing a data-producing process, such as NMR scanning or DNA sequencing.
 
-Process nodes:
+**Process nodes**
 
 Processes represent the application of a protocol to some input material (e.g. a Source) to produce some output (e.g.a Sample).
 

@@ -36,80 +36,207 @@ Specification
 This document describes the ISA Abstract Model reference implementation specified in the JSON format [RFC7159_]. The JavaScript
 Object Notation (JSON) [RFC7159_] is a text format for serializing structured data. Objects are rendered as an unordered
 collection of name-value pairs. The JSON Schema (see [`JSON Schema`_], [`JSON Schema Core`_], and [`JSON Schema Validation`_])
-defines a JSON format for describing JSON formats. Its latest specification is Draft 4.
+defines a JSON format for describing JSON formats.
 
-The schemas are published in the ISA-API Github repository: https://github.com/ISA-tools/isa-api
-
-.. _`ISAtools website`: http://isa-tools.org
-.. _linkedISA: http://dx.doi.org/10.1186%2F1471-2105-15-S14-S4
 .. _RFC7159: http://tools.ietf.org/html/rfc7159
 .. _JSON Schema: http://json-schema.org/
 .. _JSON Schema Core: http://tools.ietf.org/html/draft-zyp-json-schema-04
 .. _JSON Schema Validation: http://tools.ietf.org/html/draft-fge-json-schema-validation-00
-.. _ISA-Tab Spec RC 1.0: http://isatab.sourceforge.net/docs/ISA-TAB_release-candidate-1_v1.0_24nov08.pdf
 
+Below we provide the schemas and the content rules for valid ISA-JSON documents. Full examples of ISA content as
+ISA-JSON can be found in the sample data package of the ISA API, here https://git.io/vPZ2e We recommend that you study
+these to better understand the structure of ISA-JSON documents.
 
-ISA RC v1.0 JSON-Schemas
-========================
+Schemas
+=======
 The ISA-JSON schemas define the structure of the ISA-JSON objects that implement the ISA Abstract Model. Here we
-list the JSON schemas with their corresponding model entity, and provide inks to the schemas themselves that are
-published in Github.
+list the JSON schemas with their corresponding model entity, and provide show the schema implemented.
 
-+----------------------------+-----------------------+----------------------+
-| Schema name                | Model entity          | Schema in Github     |
-+============================+=======================+======================+
-| assay_schema.json          | Assay                 | https://git.io/vPZUv |
-+----------------------------+-----------------------+----------------------+
-| comment_schema.json        | Comment               | https://git.io/vPZJc |
-+----------------------------+-----------------------+----------------------+
-| data_schema.json           | Data node             | https://git.io/vPZJ4 |
-+----------------------------+-----------------------+----------------------+
-| factor_schema.json         | Factor                | https://git.io/vPZJ2 |
-+----------------------------+-----------------------+----------------------+
-| factor_value_schema.json   | Factor Value          | https://git.io/vPZJP |
-+----------------------------+-----------------------+----------------------+
-| investigation_schema.json  | Investigation         | https://git.io/vPZJv |
-+----------------------------+-----------------------+----------------------+
+You can also find these schemas in Github at https://git.io/vPZgD
 
+assay_schema.json
+-----------------
+This schema implements Assay from the ISA Abstract Model.
 
-.. literalinclude:: ./schemas/investigation_schema.json
+Schema:
+
+.. literalinclude:: _static/isajson/assay_schema.json
     :language: json
-    :caption: investigation_schema.json
 
-.. literalinclude:: ./schemas/ontology_source_reference_schema.json
+comment_schema.json
+-------------------
+This schema implements Comment from the ISA Abstract Model.
+
+Schema:
+
+.. literalinclude:: _static/isajson/comment_schema.json
     :language: json
-    :caption: ontology_source_reference_schema.json
 
-.. literalinclude:: ./schemas/publication_schema.json
+data_schema.json
+----------------
+This schema implements Data from the ISA Abstract Model.
+
+Schema:
+
+.. literalinclude:: _static/isajson/data_schema.json
     :language: json
-    :caption: publication_schema.json
 
-.. literalinclude:: ./schemas/person_schema.json
+factor_schema.json
+------------------
+This schema implements Factor from the ISA Abstract Model.
+
+Schema:
+
+.. literalinclude:: _static/isajson/factor_schema.json
     :language: json
-    :caption: person_schema.json
 
-.. literalinclude:: ./schemas/source_schema.json
+factor_value_schema.json
+------------------------
+This schema implements Factor from the ISA Abstract Model.
+
+Schema:
+
+.. literalinclude:: _static/isajson/factor_value_schema.json
     :language: json
-    :caption: source_schema.json
 
-.. literalinclude:: ./schemas/sample_schema.json
+investigation_schema.json
+-------------------------
+This schema implements Investigation from the ISA Abstract Model.
+
+Schema:
+
+.. literalinclude:: _static/isajson/investigation_schema.json
     :language: json
-    :caption: sample_schema.json
 
-.. literalinclude:: ./schemas/material_attribute_schema.json
+material_attribute_schema.json
+------------------------------
+This schema implements Material from the ISA Abstract Model.
+
+Schema:
+
+.. literalinclude:: _static/isajson/material_attribute_schema.json
     :language: json
-    :caption: material_attribute_schema.json
 
-.. literalinclude:: ./schemas/factor_schema.json
+material_attribute_value_schema.json
+------------------------------------
+This schema implements Material from the ISA Abstract Model.
+
+Schema:
+
+.. literalinclude:: _static/isajson/material_attribute_value_schema.json
     :language: json
-    :caption: factor_schema.json
 
-.. literalinclude:: ./schemas/factor_value_schema.json
+material_schema.json
+--------------------
+This schema implements Material from the ISA Abstract Model.
+
+Schema:
+
+.. literalinclude:: _static/isajson/material_schema.json
     :language: json
-    :caption: factor_value_schema.json
 
-ISA-JSON content
-================
+ontology_annotation_schema.json
+-------------------------------
+This schema implements Ontology from the ISA Abstract Model.
+
+Schema:
+
+.. literalinclude:: _static/isajson/ontology_annotation_schema.json
+    :language: json
+
+ontology_source_reference_schema.json
+-------------------------------------
+This schema implements Ontology from the ISA Abstract Model.
+
+Schema:
+
+.. literalinclude:: _static/isajson/ontology_source_reference_schema.json
+    :language: json
+
+person_schema.json
+------------------
+This schema implements Person from the ISA Abstract Model.
+
+Schema:
+
+.. literalinclude:: _static/isajson/person_schema.json
+    :language: json
+
+process_parameter_value_schema.json
+-----------------------------------
+This schema implements Process from the ISA Abstract Model.
+
+Schema:
+
+.. literalinclude:: _static/isajson/process_parameter_value_schema.json
+    :language: json
+
+process_schema.json
+-------------------
+This schema implements Process from the ISA Abstract Model.
+
+Schema:
+
+.. literalinclude:: _static/isajson/process_schema.json
+    :language: json
+
+protocol_parameter_schema.json
+------------------------------
+This schema implements Protocol from the ISA Abstract Model.
+
+Schema:
+
+.. literalinclude:: _static/isajson/protocol_parameter_schema.json
+    :language: json
+
+protocol_schema.json
+--------------------
+This schema implements Protocol from the ISA Abstract Model.
+
+Schema:
+
+.. literalinclude:: _static/isajson/protocol_schema.json
+    :language: json
+
+publication_schema.json
+-----------------------
+This schema implements Publication from the ISA Abstract Model.
+
+Schema:
+
+.. literalinclude:: _static/isajson/publication_schema.json
+    :language: json
+
+sample_schema.json
+------------------
+This schema implements Sample from the ISA Abstract Model.
+
+Schema:
+
+.. literalinclude:: _static/isajson/sample_schema.json
+    :language: json
+
+source_schema.json
+------------------
+This schema implements Source from the ISA Abstract Model.
+
+Schema:
+
+.. literalinclude:: _static/isajson/source_schema.json
+    :language: json
+
+study_schema.json
+-----------------
+This schema implements Study from the ISA Abstract Model.
+
+Schema:
+
+.. literalinclude:: _static/isajson/study_schema.json
+    :language: json
+
+
+Content rules
+=============
 The rules described here define the content and relationship rules that the ISA-JSON objects must adhere to to
 implement ISA Abstract Model.
 

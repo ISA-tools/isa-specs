@@ -36,15 +36,15 @@ them. The format specifications are also available for additional tooling to tak
 ----------------
 Revision History
 ----------------
-+---------+------------+-------------------------------------------------------------+
-| Version | Date       | Description                                                 |
-+=========+============+=============================================================+
-| 1.0     | 2016-10-06 | Final release of ISA Model and Serializations specification |
-+---------+------------+-------------------------------------------------------------+
-| 1.0RC2  | 2009-01-01 | Second release candidate of ISA-Tab specification           |
-+---------+------------+-------------------------------------------------------------+
-| 1.0RC1  | 2008-11-26 | First release candidate of ISA-Tab specification            |
-+---------+------------+-------------------------------------------------------------+
++---------+----------------+-------------------------------------------------------------+
+| Version | Date           | Description                                                 |
++=========+================+=============================================================+
+| 1.0     | 2016-10-06     | Final release of ISA Model and Serializations specification |
++---------+----------------+-------------------------------------------------------------+
+| 1.0RC2  | 2009-01-01     | Second release candidate of ISA-Tab specification           |
++---------+----------------+-------------------------------------------------------------+
+| 1.0RC1  | 2008-11-26     | First release candidate of ISA-Tab specification            |
++---------+----------------+-------------------------------------------------------------+
 
 .. toctree::
    :maxdepth: 2
@@ -53,7 +53,8 @@ Revision History
    ISA Abstract Model <isamodel>
    ISA JSON format <isajson>
    ISA-Tab format <isatab>
-   ISA Reference Implementations <implementations>
+   Reference Implementations <implementations>
+   Contributors <contributors>
 
 Indices and tables
 ==================
