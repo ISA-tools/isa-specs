@@ -1,0 +1,6 @@
+Label,Datatype,Description
+Investigation Identifier,String,A identifier or an accession number provided by a repository. This SHOULD be locally unique.
+Investigation Title,String,A concise name given to the investigation.
+Investigation Description,String,A textual description of the investigation.
+Investigation Submission Date,String formatted as ISO8601 date YYYY-MM-DD,The date on which the investigation was reported to the repository.
+Investigation Public Release Date,String formatted as ISO8601 date YYYY-MM-DD,The date on which the investigation was released publicly.

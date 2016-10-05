@@ -1,0 +1,7 @@
+Property,Datatype,Description
+Name,String,The name of a person.
+Email,Representation of an email,The email address of a person.
+Phone,Representation of a phone number,The telephone number of a person.
+Address,Multi-line string,The address of a person.
+Affiliation,String,The organization affiliation for a person.
+Roles,A list of Ontology Annotations,Ontology Annotations to classify the roles performed by this person in the context of an Investigation or Study.

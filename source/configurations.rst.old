@@ -1,0 +1,46 @@
+Configurations
+--------------
+In the ISA framework, we define Configurations as a way to add constraints on the Abstract Model elements. For a given
+experimental descriptor we may want to declare what minimum information should be present. Configurations can specify
+what fields should be present and also what datatypes are valid values. In addition to this, we can also specify
+the experimental workflow patterns that the Assay object should allow according to the type of measurement defined for
+an assay, and the type of technology used for collecting the relevant data (e.g. sequencing or imaging technologies).
+
+For example, we may create a configuration that mandates that Investigation metadata MUST record the title, author list,
+and description. The Abstract Model specification only specifies that these SHOULD be present. Therefore the
+configuration specifies additional constraints on a reference implementation of ISA that can be provided by users
+beyond the reference implementation developers, e.g. Users, curators, publishers, etc.
+
+For example, we mandate that the Study graphs MUST follow the (source)->(sample collection->(sample) pattern. A
+reference implementation could specify this as a configuration if it is not hard-coded in the reference implementation.
+
+Where the power of configurations becomes more apparent is where we want to describe Assay graphs. A data publisher
+might provide a configuration specification that mandates that valid submissions to the data publisher from
+researchers must follow something like
+
+.. code-block:: none
+
+  (sample)->(nucleic acid extraction)->(extract)->(nucleic acid sequencing)->(raw data)
+
+for a technology/measurement type combination of genome sequencing/nucleotide sequencing. A configuration for a
+different technology/measurement type combination of SNP analysis/DNA microarray might specify
+
+.. code-block:: none
+
+  (sample)->(DNA extraction)->(extract)->(nucleic acid hybridization)->(data collection)->(raw data)
+
+Configurations MUST add constraints to the reference implementation of the Abstract Model.
+
+How configurations are implemented is left open to reference implementation developers, but the point is to allow users
+of reference implementations of the ISA Abstract Model to add constraints to ISA content in a flexible manner.
+Configurations are implemented differently between the ISA-Tab and ISA-JSON formats, so please refer to those
+respective specifications for further information on how to use them, or to see examples of how they are implemented.
+
+ISA-Tab configurations
+----------------------
+Configurations for ISA-Tab content are implemented in XML files.
+
+XML Configurations MUST declare the measurement and technology type of context, and MUST declare the valid column
+names and ordering that are required. An XML schema describing the configuration format is available from
+https://github.com/ISA-tools/isa-api/blob/master/isatools/schemas/isatab_configurator.xsd To view example configurations,
+please see here: https://github.com/ISA-tools/isa-api/tree/master/isatools/config/xml

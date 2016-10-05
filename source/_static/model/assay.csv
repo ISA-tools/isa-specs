@@ -1,0 +1,4 @@
+Property,Datatype,Description
+Measurement Type,Ontology Annotation,"An Ontology Annotation to qualify the endpoint, or what is being measured (e.g. gene expression profiling or protein identification)."
+Technology Type,Ontology Annotation,"An Ontology Annotation to identify the technology used to perform the measurement, e.g. DNA microarray, mass spectrometry."
+Technology Platform,String,"The manufacturer and platform name, e.g. Bruker AVANCE, of the technology used."

@@ -9,6 +9,12 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 The ISA Model and Serialization Specifications are licensed under CC BY-SA 4.0.
 
+The ISA Model and Serialization Specifications are maintained by Susanna-Assunta Sansone, Philippe Rocca-Sera, Alejandra
+Gonzalez-Beltran and David Johnson on behalf of the ISA Community.
+
+If you wish to make comments regarding this specification, please report using the ISA Specifications issue tracker or
+send them to isatools@googlegroups.com. All comments are welcome.
+
 ------------
 Introduction
 ------------
@@ -45,7 +51,26 @@ The schemas are published in the ISA-API Github repository: https://github.com/I
 
 ISA RC v1.0 JSON-Schemas
 ========================
-The ISA-JSON schemas define the structure of the ISA-JSON objects that implement the ISA Abstract Model.
+The ISA-JSON schemas define the structure of the ISA-JSON objects that implement the ISA Abstract Model. Here we
+list the JSON schemas with their corresponding model entity, and provide inks to the schemas themselves that are
+published in Github.
+
++----------------------------+-----------------------+----------------------+
+| Schema name                | Model entity          | Schema in Github     |
++============================+=======================+======================+
+| assay_schema.json          | Assay                 | https://git.io/vPZUv |
++----------------------------+-----------------------+----------------------+
+| comment_schema.json        | Comment               | https://git.io/vPZJc |
++----------------------------+-----------------------+----------------------+
+| data_schema.json           | Data node             | https://git.io/vPZJ4 |
++----------------------------+-----------------------+----------------------+
+| factor_schema.json         | Factor                | https://git.io/vPZJ2 |
++----------------------------+-----------------------+----------------------+
+| factor_value_schema.json   | Factor Value          | https://git.io/vPZJP |
++----------------------------+-----------------------+----------------------+
+| investigation_schema.json  | Investigation         | https://git.io/vPZJv |
++----------------------------+-----------------------+----------------------+
+
 
 .. literalinclude:: ./schemas/investigation_schema.json
     :language: json

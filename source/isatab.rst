@@ -9,6 +9,12 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 The ISA Model and Serialization Specifications are licensed under CC BY-SA 4.0.
 
+The ISA Model and Serialization Specifications are maintained by Susanna-Assunta Sansone, Philippe Rocca-Sera, Alejandra
+Gonzalez-Beltran and David Johnson on behalf of the ISA Community.
+
+If you wish to make comments regarding this specification, please report using the ISA Specifications issue tracker or
+send them to isatools@googlegroups.com. All comments are welcome.
+
 ------------
 Introduction
 ------------
@@ -106,29 +112,21 @@ of the cell SHOULD match one of the Term Source Name value declared in this sect
 
 This section implements a list of Ontology Source from the ISA Abstract Model.
 
-**ONTOLOGY SOURCE REFERENCE**
+This section MUST contain zero or more values.
 
-+-------------------------+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Label                   | Datatype                  | Description                                                                                                                                                                     |
-+=========================+===========================+=================================================================================================================================================================================+
-| Term Source Name        | String                    | The name of the source of a term; i.e. the source controlled vocabulary or ontology. These names will be used in all corresponding Term Source REF fields that occur elsewhere. |
-+-------------------------+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Term Source File        | String (file name or URI) | A file name or a URI of an official resource.                                                                                                                                   |
-+-------------------------+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Term Source Version     | String                    | The version number of the Term Source to support terms tracking.                                                                                                                |
-+-------------------------+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Term Source Description | String                    | Use for disambiguating resources when homologous prefixes have been used.                                                                                                       |
-+-------------------------+---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+Section: **ONTOLOGY SOURCE REFERENCE**
 
-Ontology Source Reference block example:
+This section MUST contain the following labels, with the specified datatypes for values supported:
 
-.. code-block:: none
+.. csv-table::
+    :file: _static/isatab/ontology_source_reference.csv
+    :header-rows: 1
+    :widths: 20, 20, 60
 
-    ONTOLOGY SOURCE REFERENCE
-    Term Source Name
-    Term Source File
-    Term Source Version
-    Term Source Description
+For example, the ONTOLOGY SOURCE REFERENCE section of an ISA-Tab i_*.txt file may look as follows:
+
+.. literalinclude:: _static/isatab/i_gilbert.txt
+    :lines: 1-5
 
 Investigation section
 ---------------------
@@ -136,112 +134,55 @@ This section is organized in several subsections, described in detail below. The
 flexible mechanism for grouping two or more Study files where required. When only one Study is created, the values in
 this section SHOULD be left empty and the relevant metadata values recorded in the Study section only.
 
+These sections implement an Investigation from the ISA Abstract Model.
+
 **INVESTIGATION**
 
-+-----------------------------------+---------------------------------------------+----------------------------------------------------------------------------------------------+
-| Label                             | Datatype                                    | Description                                                                                  |
-+===================================+=============================================+==============================================================================================+
-| Investigation Identifier          | String                                      | A identifier or an accession number provided by a repository. This SHOULD be locally unique. |
-+-----------------------------------+---------------------------------------------+----------------------------------------------------------------------------------------------+
-| Investigation Title               | String                                      | A concise name given to the investigation.                                                   |
-+-----------------------------------+---------------------------------------------+----------------------------------------------------------------------------------------------+
-| Investigation Description         | String                                      | A textual description of the investigation.                                                  |
-+-----------------------------------+---------------------------------------------+----------------------------------------------------------------------------------------------+
-| Investigation Submission Date     | String formatted as ISO8601 date YYYY-MM-DD | The date on which the investigation was reported to the repository.                          |
-+-----------------------------------+---------------------------------------------+----------------------------------------------------------------------------------------------+
-| Investigation Public Release Date | String formatted as ISO8601 date YYYY-MM-DD | The date on which the investigation was released publicly.                                   |
-+-----------------------------------+---------------------------------------------+----------------------------------------------------------------------------------------------+
+This section MUST contain zero or one values.
 
-Investigation block example:
+This section MUST contain the following labels, with the specified datatypes for values supported:
 
-.. code-block:: none
+.. csv-table::
+    :file: _static/isatab/investigation.csv
+    :header-rows: 1
+    :widths: 20, 20, 60
 
-    INVESTIGATION
-    Investigation Identifier
-    Investigation Title
-    Investigation Description
-    Investigation Submission Date	2016-02-25
-    Investigation Public Release Date	2016-02-25
+For example, the INVESTIGATION section of an ISA-Tab i_*.txt file may look as follows:
+
+.. literalinclude:: _static/isatab/i_investigation.txt
+    :lines: 6-11
 
 **INVESTIGATION PUBLICATIONS**
 
-+--------------------------------------------------------+----------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Label                                                  | Datatype                                                                                           | Description                                                                                                                                                                                |
-+========================================================+====================================================================================================+============================================================================================================================================================================================+
-| Investigation PubMed ID                                | String formatted as valid PubMed ID                                                                | The PubMed IDs of the described publication(s) associated with this investigation.                                                                                                         |
-+--------------------------------------------------------+----------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Investigation Publication DOI                          | String formatted as valid DOI                                                                      | A Digital Object Identifier (DOI) for that publication (where available).                                                                                                                  |
-+--------------------------------------------------------+----------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Investigation Publication Author List                  | String                                                                                             | The list of authors associated with that publication.                                                                                                                                      |
-+--------------------------------------------------------+----------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Investigation Publication Title                        | String                                                                                             | The title of publication associated with the investigation.                                                                                                                                |
-+--------------------------------------------------------+----------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Investigation Publication Status                       | String, or Ontology Annotation by providing accompanying Term Accession Number and Term Source REF | A term describing the status of that publication (i.e. submitted, in preparation, published).                                                                                              |
-+--------------------------------------------------------+----------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Investigation Publication Status Term Accession Number | String or URI                                                                                      | The accession number from the Term Source associated with the selected term.                                                                                                               |
-+--------------------------------------------------------+----------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Investigation Publication Status Term Source REF       | String                                                                                             | Identifies the controlled vocabulary or ontology that this term comes from. The Source REF has to match one the Term Source Name declared in the in the Ontology Source Reference section. |
-+--------------------------------------------------------+----------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+This section MUST contain zero or more values.
 
-Investigation Publications block example:
+This section MUST contain the following labels, with the specified datatypes for values supported:
 
-.. code-block:: none
+.. csv-table::
+    :file: _static/isatab/investigation_publications.csv
+    :header-rows: 1
+    :widths: 20, 20, 60
 
-    INVESTIGATION PUBLICATIONS
-    Investigation PubMed ID
-    Investigation Publication DOI
-    Investigation Publication Author List
-    Investigation Publication Title
-    Investigation Publication Status
-    Investigation Publication Status Term Accession Number
-    Investigation Publication Status Term Source REF
+For example, the INVESTIGATION PUBLICATIONS section of an ISA-Tab i_*.txt file may look as follows:
+
+.. literalinclude:: _static/isatab/i_investigation.txt
+    :lines: 14-21
 
 **INVESTIGATION CONTACTS**
 
-+--------------------------------------------------+----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Label                                            | Datatype                                                                                     | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-+==================================================+==============================================================================================+================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================+
-| Investigation Person Last Name                   | String                                                                                       | The last name of a person associated with the investigation.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-+--------------------------------------------------+----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Investigation Person First Name                  | String                                                                                       | Investigation Person Name                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-+--------------------------------------------------+----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Investigation Person Mid Initials                | String                                                                                       | The middle initials of a person associated with the investigation.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-+--------------------------------------------------+----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Investigation Person Email                       | String formatted as email                                                                    | The email address of a person associated with the investigation.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-+--------------------------------------------------+----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Investigation Person Phone                       | String                                                                                       | The telephone number of a person associated with the investigation.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-+--------------------------------------------------+----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| IInvestigation Person Fax                        | String                                                                                       | The fax number of a person associated with the investigation.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-+--------------------------------------------------+----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Investigation Person Address                     | String                                                                                       | The address of a person associated with the investigation.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-+--------------------------------------------------+----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Investigation Person Affiliation                 | String                                                                                       | The organization affiliation for a person associated with the investigation.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-+--------------------------------------------------+----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Investigation Person Roles                       | String or Ontology Annotation if accompanied by Term Accession Numbers and Term Source REFs  | Term to classify the role(s) performed by this person in the context of the investigation, which means that the roles reported here need not correspond to roles held withing their affiliated organization. Multiple annotations or values attached to one person can be provided by using a semicolon (";") Unicode (U0003+B) as a separator (e.g.: submitter;funder;sponsor) .The term can be free text or from, for example, a controlled vocabulary or an ontology. If the latter source is used the Term Accession Number and Term Source REF fields below are required. |
-+--------------------------------------------------+----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Investigation Person Roles Term Accession Number | String                                                                                       | The accession number from the Term Source associated with the selected term.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-+--------------------------------------------------+----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Investigation Person Roles Term Source REF       | String                                                                                       | Identifies the controlled vocabulary or ontology that this term comes from. The Source REF has to match one of the Term Source Names declared in the Ontology Source Reference section.                                                                                                                                                                                                                                                                                                                                                                                        |
-+--------------------------------------------------+----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+This section MUST contain zero or more values.
 
-Investigation Contacts block example:
+This section MUST contain the following labels, with the specified datatypes for values supported:
 
-.. code-block:: none
+.. csv-table::
+    :file: _static/isatab/investigation_contacts.csv
+    :header-rows: 1
+    :widths: 20, 20, 60
 
-    INVESTIGATION CONTACTS
-    Investigation Person Last Name
-    Investigation Person First Name
-    Investigation Person Mid Initials
-    Investigation Person Email
-    Investigation Person Phone
-    Investigation Person Fax
-    Investigation Person Address
-    Investigation Person Affiliation
-    Investigation Person Roles
-    Investigation Person Roles Term Accession Number
-    Investigation Person Roles Term Source REF
+For example, the INVESTIGATION CONTACTS section of an ISA-Tab i_*.txt file may look as follows:
 
-This section implements an Investigation from the ISA Abstract Model.
+.. literalinclude:: _static/isatab/i_investigation.txt
+    :lines: 22-33
 
 Study section
 -------------
@@ -251,172 +192,121 @@ blocks are represented in the Investigation file). The subsections in the block 
 being to enhance readability and presentation, and possibly to help with parsing. These subsections MUST remain within
 this repeatable block, although their order MAY vary; the fields MUST remain within their subsection.
 
+These sections implement the metadata for a Study from the ISA Abstract Model and a list of Assays (i.e. Study and
+Assay without graphs; graphs are implemented in ISA-Tab as table files).
+
 **STUDY**
 
-:Study Identifier: A unique identifier, either a temporary identifier supplied by users or one generated by a repository or other database. For example, it could be an identifier complying with the LSID specification.
-:Study Title: A concise phrase used to encapsulate the purpose and goal of the study.
-:Study Description: A textual description of the study, with components such as objective or goals.
-:Study Submission Date: The date on which the study is submitted to an archive.
-:Study Public Release Date: The date on which the study SHOULD be released publicly.
-:Study File Name: A field to specify the name of the Study Table file corresponding the definition of that Study. There can be only one file per cell.
+This section MUST contain zero or one values.
 
-Study block example:
+This section MUST contain the following labels, with the specified datatypes for values supported:
 
-.. code-block:: none
+.. csv-table::
+    :file: _static/isatab/study.csv
+    :header-rows: 1
+    :widths: 20, 20, 60
 
-    STUDY
-    Study Identifier
-    Study Title
-    Study Description
-    Study Submission Date	2016-02-25
-    Study Public Release Date	2016-02-25
-    Study File Name
+For example, the STUDY section of an ISA-Tab i_*.txt file may look as follows:
+
+.. literalinclude:: _static/isatab/i_gilbert.txt
+    :lines: 35-40
 
 **STUDY DESIGN DESCRIPTORS**
 
-:Study Design Type: A term allowing the classification of the study based on the overall experimental design, e.g cross-over design or parallel group design. The term can be free text or from, for example, a controlled vocabulary or an ontology. If the latter source is used the Term Accession Number and Term Source REF fields below are required.
-:Study Design Type Term Accession Number: The accession number from the Term Source associated with the selected term.
-:Study Design Type Term Source REF: Identifies the controlled vocabulary or ontology that this term comes from. The Study Design Term Source REF has to match one the Term Source Name declared in the Ontology Source Reference section.
+This section MUST contain zero or more values.
 
-Study Design Descriptors block example:
+This section MUST contain the following labels, with the specified datatypes for values supported:
 
-.. code-block:: none
+.. csv-table::
+    :file: _static/isatab/study_design_descriptors.csv
+    :header-rows: 1
+    :widths: 20, 20, 60
 
-   STUDY DESIGN DESCRIPTORS
-   Study Design Type	""
-   Study Design Type Term Accession Number	""
-   Study Design Type Term Source REF	""
+For example, the STUDY DESIGN DESCRIPTORS section of an ISA-Tab i_*.txt file may look as follows:
+
+.. literalinclude:: _static/isatab/i_gilbert.txt
+    :lines: 48-51
 
 **STUDY PUBLICATIONS**
 
-:Study PubMed ID: The PubMed IDs of the publication(s) associated with this study (where available).
-:Study Publication DOI: A Digital Object Identifier (DOI) for this publication (where available).
-:Study Publication Author List: The list of authors associated with this publication.
-:Study Publication Title: The title of this publication.
-:Study Publication Status: A term describing the status of this publication (i.e. submitted, in preparation, published). The term can be free text or from, for example, a controlled vocabulary or an ontology. If the latter source is used the Term Accession Number and Term Source REF fields below are required.
-:Study Publication Status Term Accession Number: The accession number from the Term Source associated with the selected term.
-:Study Publication Status Term Source REF: Identifies the controlled vocabulary or ontology that this term comes from. The Source REF has to match one the Term Source Name declared in the in the Ontology Source Reference section.
+This section MUST contain zero or more values.
 
-Study Publications block example:
+This section MUST contain the following labels, with the specified datatypes for values supported:
 
-.. code-block:: none
+.. csv-table::
+    :file: _static/isatab/study_publications.csv
+    :header-rows: 1
+    :widths: 20, 20, 60
 
-    STUDY PUBLICATIONS
-    Study PubMed ID
-    Study Publication DOI
-    Study Publication Author List
-    Study Publication Title
-    Study Publication Status
-    Study Publication Status Term Accession Number
-    Study Publication Status Term Source REF
+For example, the STUDY PUBLICATIONS section of an ISA-Tab i_*.txt file may look as follows:
+
+.. literalinclude:: _static/isatab/i_gilbert.txt
+    :lines: 52-59
 
 **STUDY FACTORS**
 
-:Study Factor Name: The name of one factor used in the Study and/or Assay files. A factor corresponds to an independent variable manipulated by the experimentalist with the intention to affect biological systems in a way that can be measured by an assay. The value of a factor is given in the Study or Assay file, accordingly. If both Study and Assay have a Factor Value (see section 4.2.5 and 4.3.1.5, respectively), these must be different.
-:Study Factor Type: A term allowing the classification of this factor into categories. The term can be free text or from, for example, a controlled vocabulary or an ontology. If the latter source is used the Term Accession Number and Term Source REF fields below are required.
-:Study Factor Type Term Accession Number: The accession number from the Term Source associated with the selected term.
-:Study Factor Type Term Source REF: Identifies the controlled vocabulary or ontology that this term comes from. The Source REF has to match one of the Term Source Name declared in the Ontology Source Reference section.
+This section MUST contain zero or more values.
 
-Study Factors block example:
+This section MUST contain the following labels, with the specified datatypes for values supported:
 
-.. code-block:: none
+.. csv-table::
+    :file: _static/isatab/study_factors.csv
+    :header-rows: 1
+    :widths: 20, 20, 60
 
-    STUDY FACTORS
-    Study Factor Name
-    Study Factor Type
-    Study Factor Type Term Accession Number
-    Study Factor Type Term Source REF
+For example, the STUDY FACTORS section of an ISA-Tab i_*.txt file may look as follows:
+
+.. literalinclude:: _static/isatab/i_gilbert.txt
+    :lines: 60-64
 
 **STUDY ASSAYS**
 
-The Study Assay section declares and describes each of the Assay files associated with the current Study.
+This section MUST contain zero or more values.
 
-:Study Assay Measurement Type: A term to qualify the endpoint, or what is being measured (e.g. gene expression profiling or protein identification). The term can be free text or from, for example, a controlled vocabulary or an ontology. If the latter source is used the Term Accession Number and Term Source REF fields below are required.
-:Study Assay Measurement Type Term Accession Number: The accession number from the Term Source associated with the selected term.
-:Study Assay Measurement Type Term Source REF: The Source REF has to match one of the Term Source Name declared in the Ontology Source Reference section.
-:Study Assay Technology Type: Term to identify the technology used to perform the measurement, e.g. DNA microarray, mass spectrometry. The term can be free text or from, for example, a controlled vocabulary or an ontology. If the latter source is used the Term Accession Number and Term Source REF fields below are required.
-:Study Assay Technology Type Term Accession Number: The accession number from the Term Source associated with the selected term.
-:Study Assay Technology Type Term Source REF: Identifies the controlled vocabulary or ontology that this term comes from. The Source REF has to match one of the Term Source Names declared in the Ontology Source Reference section.
-:Study Assay Technology Platform: Manufacturer and platform name, e.g. Bruker AVANCE
-:Study Assay File Name: A field to specify the name of the Assay Table file corresponding the definition of that assay. There can be only one file per cell.
+This section MUST contain the following labels, with the specified datatypes for values supported:
 
-.. code-block:: none
+.. csv-table::
+    :file: _static/isatab/study_assays.csv
+    :header-rows: 1
+    :widths: 20, 20, 60
 
-   STUDY ASSAYS
-   Study Assay File Name	"a_OES2_metabolite_profiling_mass_spectrometry.txt"
-   Study Assay Measurement Type	"metabolite profiling"
-   Study Assay Measurement Type Term Accession Number	"http://purl.obolibrary.org/obo/OBI_0000366"
-   Study Assay Measurement Type Term Source REF	"OBI"
-   Study Assay Technology Type	"mass spectrometry"
-   Study Assay Technology Type Term Accession Number	"http://purl.obolibrary.org/obo/OBI_0000470"
-   Study Assay Technology Type Term Source REF	"OBI"
-   Study Assay Technology Platform	""
+For example, the STUDY ASSAYS section of an ISA-Tab i_*.txt file may look as follows:
+
+.. literalinclude:: _static/isatab/i_gilbert.txt
+    :lines: 65-73
+
 
 **STUDY PROTOCOLS**
 
-:Study Protocol Name: The name of the protocols used within the ISA-Tab document. The names are used as identifiers within the ISA-Tab document and will be referenced in the Study and Assay files in the Protocol REF columns. Names can be either local identifiers, unique within the ISA Archive which contains them, or fully qualified external accession numbers.
-:Study Protocol Type: Term to classify the protocol. The term can be free text or from, for example, a controlled vocabulary or an ontology. If the latter source is used the Term Accession Number and Term Source REF fields below are required.
-:Study Protocol Type Term Accession Number: The accession number from the Term Source associated with the selected term.
-:Study Protocol Type Term Source REF: Identifies the controlled vocabulary or ontology that this term comes from. The Source REF has to match one of the Term Source Name declared in the Ontology Source Reference section.
-:Study Protocol Description: A free-text description of the protocol.
-:Study Protocol URI: Pointer to protocol resources external to the ISA-Tab that can be accessed by their Uniform Resource Identifier (URI).
-:Study Protocol Version: An identifier for the version to ensure protocol tracking.
-:Study Protocol Parameters Name: A semicolon-delimited (";") list of parameter names, used as an identifier within the ISA-Tab document. These names are used in the Study and Assay files (in the "Parameter Value [<parameter name>]" column heading) to list the values used for each protocol parameter. Refer to section Multiple values fields in the Investigation File on how to encode multiple values in one field and match term sources
-:Study Protocol Parameters Term Accession Number: The accession number from the Term Source associated with the selected term.
-:Study Protocol Parameters Term Source REF: Identifies the controlled vocabulary or ontology that this term comes from. The Source REF has to match one of the Term Source Name declared in the Ontology Source Reference section.
-:Study Protocol Components Name: A semicolon-delimited (";") list of a protocol’s components; e.g. instrument names, software names, and reagents names. Refer to section Multiple values fields in the Investigation File on how to encode multiple components in one field and match term sources.
-:Study Protocol Components Type: Term to classify the protocol components listed for example, instrument, software, detector or reagent. The term can be free text or from, for example, a controlled vocabulary or an ontology. If the latter source is used the Term Accession Number and Term Source REF fields below are required.
-:Study Protocol Components Type Term Accession Number: The accession number from the Source associated to the selected terms.
-:Study Protocol Components Type Term Source REF: Identifies the controlled vocabulary or ontology that this term comes from. The Source REF has to match a Term Source Name previously declared in the ontology section
+This section MUST contain zero or more values.
 
-.. code-block:: none
+This section MUST contain the following labels, with the specified datatypes for values supported:
 
-   STUDY PROTOCOLS
-   Study Protocol Name	"Sample collection"	"Preparation"	"Mass spectrometry"	"Histology"	"Data transformation"	"Metabolite identification"
-   Study Protocol Type	"Sample collection"	"Preparation"	"Mass spectrometry"	"Histology"	"Data transformation"	"Metabolite identification"
-   Study Protocol Type Term Accession Number	"http://purl.bioontology.org/ontology/CSP/4009-0034"	"http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25625"	"http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17156"	"http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16681"	"http://purl.obolibrary.org/obo/OBI_0200000"	"http://purl.obolibrary.org/obo/MI_2131"
-   Study Protocol Type Term Source REF	"CSP"	"NCIT"	"NCIT"	"NCIT"	"OBI"	"MI"
-   Study Protocol Description	"" "	"" "	"" "	""	""	""
-   Study Protocol URI	""	""	""	""	""	""
-   Study Protocol Version	""	""	""	""	""	""
-   Study Protocol Parameters Name	""	"Sample mounting;Sample preservation;Sectioning instrument;Section thickness"	"Scan polarity;Mass analyzer;Ion source;Instrument;Scan m/z range;Spatial resolution;Solvent"	"Stain;High-res image;Low-res image"	"Data transformation software;Data transformation software version"	""
-   Study Protocol Parameters Name Term Accession Number	""	";;;"	";;;;;;"	";;"	";"	""
-   Study Protocol Parameters Name Term Source REF	""	";;;"	";;;;;;"	";;"	";"	""
-   Study Protocol Components Name	""	""	""	""	""	""
-   Study Protocol Components Type	""	""	""	""	""	""
-   Study Protocol Components Type Term Accession Number	""	""	""	""	""	""
-   Study Protocol Components Type Term Source REF	""	""	""	""	""	""
+.. csv-table::
+    :file: _static/isatab/study_protocols.csv
+    :header-rows: 1
+    :widths: 20, 20, 60
+
+For example, the STUDY PROTOCOLS section of an ISA-Tab i_*.txt file may look as follows:
+
+.. literalinclude:: _static/isatab/i_gilbert.txt
+    :lines: 74-88
 
 **STUDY CONTACTS**
 
-:Study Person Last Name: The last name of a person associated with the study.
-:Study Person First Name: The first name of a person associated with the study.
-:Study Person Mid Initials: The middle initials of a person associated with the study.
-:Study Person Email: The email address of a person associated with the study
-:Study Person Phone: The telephone number of a person associated with the study.
-:Study Person Fax: The fax number of a person associated with the study.
-:Study Person Address: The address of a person associated with the study.
-:Study Person Affiliation: The organization affiliation for a person associated with the study.
-:Study Person Roles: Term to classify the role(s) performed by this person in the context of the study, which means that the roles reported here need not correspond to roles held withing their affiliated organization. Multiple annotations or values attached to one person may be provided by using a semicolon (";") as a separator, for example: "submitter;funder;sponsor” .The term can be free text or from, for example, a controlled vocabulary or an ontology. If the latter source is used the Term Accession Number and Term Source REF fields below are required.
-:Study Person Roles Term Accession Number: The accession number from the Term Source associated with the selected term.
-:Study Person Roles Term Source REF: Identifies the controlled vocabulary or ontology that this term comes from. The Source REF has to match one of the Term Source Name declared in the Ontology Source Reference section.
+This section MUST contain zero or more values.
 
-.. code-block:: none
+This section MUST contain the following labels, with the specified datatypes for values supported:
 
-   STUDY CONTACTS
-   Study Person Last Name
-   Study Person First Name
-   Study Person Mid Initials
-   Study Person Email
-   Study Person Phone
-   Study Person Fax
-   Study Person Address
-   Study Person Affiliation
-   Study Person Roles
-   Study Person Roles Term Accession Number
-   Study Person Roles Term Source REF
+.. csv-table::
+    :file: _static/isatab/study_contacts.csv
+    :header-rows: 1
+    :widths: 20, 20, 60
 
-This section implements the metadata for a Study from the ISA Abstract Model and a list of Assays (i.e. Study and Assay without graphs; graphs are implemented in ISA-Tab as table files).
+For example, the STUDY CONTACTS section of an ISA-Tab i_*.txt file may look as follows:
+
+.. literalinclude:: _static/isatab/i_gilbert.txt
+    :lines: 90-100
 
 Study and Assay Tables
 ======================
@@ -435,10 +325,11 @@ Where a value is an Ontology Annotation in a table file, Term Accession Number a
 follow the column cell in which the value is entered. For example, a characteristic type Organism with a value of Homo sapiens
 can be qualified with an Ontology Annotation of a term from NCBI Taxonomy as follows:
 
-.. code-block:: none
-
-   Characteristics[Organism]  Term Source REF   Term Accession Number
-   Homo sapiens   NCBITaxon   http://purl.bioontology.org/ontology/NCBITAXON/9606
++---------------------------+-----------------+---------------------------+
+| Characteristics[Organism] | Term Source REF |  Term Accession Number    |
++===========================+=================+===========================+
+| Homo sapiens              | NCBITaxon       | http://.../NCBITAXON/9606 |
++---------------------------+-----------------+---------------------------+
 
 Ontology Annotations MAY be applied to any appropriate Characteristic or Parameter Value.
 
@@ -451,10 +342,11 @@ is used, a Unit heading MUST be present, and MAY be further annotated as an Onto
 
 For example, to qualify the value 300 with a Unit as an Ontology Annotation:
 
-.. code-block:: none
-
-   Parameter Value[Temperature]  Unit  Term Source REF   Term Accession Number
-   300   Kelvin   UO http://purl.obolibrary.org/obo/UO_0000012
++------------------------------+--------+-----------------+----------------------------+
+| Parameter Value[Temperature] | Unit   | Term Source REF | Term Accession Number      |
++==============================+========+=================+============================+
+| 300                          | Kelvin | UO              | http://.../obo/UO_0000012  |
++------------------------------+--------+-----------------+----------------------------+
 
 Processes
 ---------
@@ -472,10 +364,11 @@ value MUST be free text, numeric, or an Ontology Annotation.
 For example, a characteristic type Organism with a value of Homo sapiens
 can be qualified with an Ontology Annotation of a term from NCBI Taxonomy as follows:
 
-.. code-block:: none
-
-   Characteristics[Organism]  Term Source REF   Term Accession Number
-   Homo sapiens   NCBITaxon   http://purl.bioontology.org/ontology/NCBITAXON/9606
++---------------------------+-----------------+---------------------------+
+| Characteristics[Organism] | Term Source REF |  Term Accession Number    |
++===========================+=================+===========================+
+| Homo sapiens              | NCBITaxon       | http://.../NCBITAXON/9606 |
++---------------------------+-----------------+---------------------------+
 
 Factor Value
 ------------
@@ -484,10 +377,11 @@ in a way that can be measured by an assay. This field holds the actual data for 
 square brackets (as declared in the Investigation file) so MUST match; for example, Factor Value [compound]. The
 value MUST be free text, numeric, or an Ontology Annotation.
 
-.. code-block:: none
-
-   "Factor Value[Gender]"  "Term Source REF"	"Term Accession Number"
-   "Male"   "" ""
++----------------------+-----------------+-----------------------+
+| Factor Value[Gender] | Term Source REF | Term Accession Number |
++======================+=================+=======================+
+| Male                 | MeSH            | D008297               |
++----------------------+-----------------+-----------------------+
 
 
 Study Table file
@@ -506,12 +400,42 @@ The protocol referenced MUST be of protocol type ``sample collection``.
 
 A Sample MUST be indicated with the column heading Sample Name.
 
-.. code-block:: none
+For example, a simple source to sample may be represented as:
 
-   "Source Name"	"Characteristics[Organism]"	"Term Source REF"	"Term Accession Number"	"Characteristics[Organism part]"	"Term Source REF"	"Term Accession Number"	"Protocol REF"	"Sample Name"	"Factor Value[Gender]"	"Term Source REF"	"Term Accession Number"	"Factor Value[Metabolic syndrome]"	"Term Source REF"	"Term Accession Number"
-   "ADG10003u"	"Homo sapiens"	"NCBITAXON"	"http://purl.bioontology.org/ontology/NCBITAXON/9606"	"urine"	"BTO"	"http://purl.obolibrary.org/obo/BTO_0001419"	"Sample collection"	"ADG10003u_007"	"Male"	""	""	"diabetes mellitus"	""	""
-   "ADG10003u"	"Homo sapiens"	"NCBITAXON"	"http://purl.bioontology.org/ontology/NCBITAXON/9606"	"urine"	"BTO"	"http://purl.obolibrary.org/obo/BTO_0001419"	"Sample collection"	"ADG10003u_008"	"Male"	""	""	"diabetes mellitus"	""	""
++-------------+-------------------+-------------+
+| Source Name | Protocol REF      | Sample Name |
++=============+===================+=============+
+| source1     | sample collection | sample1     |
++-------------+-------------------+-------------+
 
+Where a graph splits or pools, we use the Name column to represent the same nodes.
+
+For example, if we split a source into two samples, we  might represent this as:
+
++-------------+-------------------+-------------+
+| Source Name | Protocol REF      | Sample Name |
++=============+===================+=============+
+| source1     | sample collection | sample1     |
++-------------+-------------------+-------------+
+| source1     | sample collection | sample2     |
++-------------+-------------------+-------------+
+
+If we pool two sources into a single sample, we might represent this as:
+
++-------------+-------------------+-------------+
+| Source Name | Protocol REF      | Sample Name |
++=============+===================+=============+
+| source1     | sample collection | sample1     |
++-------------+-------------------+-------------+
+| source2     | sample collection | sample1     |
++-------------+-------------------+-------------+
+
+Node properties, such as Characteristics (for Material nodes), Parameter Values (for Process nodes) and additional
+Name columns for special cases of Process node to disambiguate Protocol REFs of MUST follow the named node of context.
+
+For example,
+
+.. literalinclude:: _static/isatab/s_BII-S-2.txt
 
 The Study Table file implements the Study graphs from the ISA Abstract Model.
 
@@ -541,25 +465,11 @@ Data Transformation Name MUST be used as an identifier for a user-defined name f
 
 Normalization Name MUST be used as an identifier for a user-defined name for each normalization Process applied.
 
-Assay Table files SHOULD be validated against a Configuration (see below).
+Splitting and pooling is allowed as per the examples given in Study Table File.
 
-.. code-block:: none
-
-   "Sample Name"	"Protocol REF"	"Parameter Value[Extraction Method]"	"Extract Name"	"Protocol REF"	"Parameter Value[NMR tube type]"	"Term Source REF"	"Term Accession Number"	"Parameter Value[Solvent]"	"Term Source REF"	"Term Accession Number"	"Parameter Value[Sample pH]"	"Parameter Value[Temperature]"	"Unit"	"Term Source REF"	"Term Accession Number"	"Labeled Extract Name"	"Label"	"Term Source REF"	"Term Accession Number"	"Protocol REF"	"Parameter Value[Instrument]"	"Term Source REF"	"Term Accession Number"	"Parameter Value[NMR Probe]"	"Term Source REF"	"Term Accession Number"	"Parameter Value[Number of transients]"	"Parameter Value[Pulse sequence name]"	"Parameter Value[Magnetic field strength]"	"Unit"	"Term Source REF"	"Term Accession Number"	"Acquisition Parameter Data File"	"Protocol REF"	"NMR Assay Name"	"Free Induction Decay Data File"	"Protocol REF"	"Normalization Name"	"Derived Spectral Data File"	"Protocol REF"	"Data Transformation Name"	"Metabolite Assignment File"
-   "ADG10003u_007"	"Extraction"	"N/A"	"N/A"	"NMR sample"	"5 mm standard"	""	""	"0.2 M phosphate buffered D2O"	""	""	"7.4"	"300"	"kelvin"	"UO"	"http://purl.obolibrary.org/obo/UO_0000012"	"N/A"	"hydrogen molecular entity"	"CHEBI"	"http://purl.obolibrary.org/obo/CHEBI_33608"	"NMR spectroscopy"	"Bruker AVANCE DRX 700 MHz spectrometer"	""	""	"5 mm TXI ATMA"	""	""	"128"	"1D NOESY with presaturation (noesypr1d)"	"16.4"	"tesla"	"UO"	"http://purl.obolibrary.org/obo/UO_0000228"	"ADG_acquisition_data.xlsx"	"NMR assay"	"ADG10003u_007"	"ADG10003u_007.zip"	"Data transformation"	"ADG_normalized_data.xlsx"	""	"Metabolite identification"	"ADG_transformed_data.xlsx"	"m_mtbls1_metabolite_profiling_NMR_spectroscopy_v2_maf.tsv"
-   "ADG10003u_008"	"Extraction"	"N/A"	"N/A"	"NMR sample"	"5 mm standard"	""	""	"0.2 M phosphate buffered D2O"	""	""	"7.4"	"300"	"kelvin"	"UO"	"http://purl.obolibrary.org/obo/UO_0000012"	"N/A"	"hydrogen molecular entity"	"CHEBI"	"http://purl.obolibrary.org/obo/CHEBI_33608"	"NMR spectroscopy"	"Bruker AVANCE DRX 700 MHz spectrometer"	""	""	"5 mm TXI ATMA"	""	""	"128"	"1D NOESY with presaturation (noesypr1d)"	"16.4"	"tesla"	"UO"	"http://purl.obolibrary.org/obo/UO_0000228"	"ADG_acquisition_data.xlsx"	"NMR assay"	"ADG10003u_008"	"ADG10003u_008.zip"	"Data transformation"	"ADG_normalized_data.xlsx"	""	"Metabolite identification"	"ADG_transformed_data.xlsx"	"m_mtbls1_metabolite_profiling_NMR_spectroscopy_v2_maf.tsv"
-
+.. literalinclude:: _static/isatab/a_gilbert-assay-Gx.txt
 
 The Assay Table file implements the Assay graphs from the ISA Abstract Model.
-
-Configurations
---------------
-Configurations for ISA-Tab content are implemented in XML files.
-
-XML Configurations MUST declare the measurement and technology type of context, and MUST declare the valid column
-names and ordering that are required. An XML schema describing the configuration format is available from
-https://github.com/ISA-tools/isa-api/blob/master/isatools/schemas/isatab_configurator.xsd To view example configurations,
-please see here: https://github.com/ISA-tools/isa-api/tree/master/isatools/config/xml
 
 Data Files
 ----------

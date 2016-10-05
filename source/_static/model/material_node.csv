@@ -1,0 +1,3 @@
+Property,Datatype,Description
+Characteristics,A list of Characteristic,"A list of material characteristics that may be qualitative or quantitative in description. Qualitative values MAY be Ontology Annotations, while quantitative values MAY be qualified with a Unit definition."
+Material Type,Ontology Annotation,An Ontology Annotation describing the material.

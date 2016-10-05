@@ -1,0 +1,2 @@
+Property,Datatype,Description
+File name,String,"A file name or full path referencing a data file produced by the related process that MAY be packaged with, or is accessible via, the ISA reference implementation content."

@@ -1,0 +1,11 @@
+Property,Datatype,Description
+Identifier,String,A identifier or an accession number provided by a repository. This SHOULD be locally unique.
+Title,String,A concise name given to the investigation.
+Description,String,A textual description of the investigation.
+Submission Date,Representation of a ISO8601 date,The date on which the investigation was reported to the repository.
+Public Release Date,Representation of a ISO8601 date,The date on which the investigation was released publicly.
+Publications,A list of Publication,A list of Publications relating to the study.
+Contacts,A list of Contact,A list of Contacts relating to the study.
+Design Type,Ontology Annotation,"A classifier of the study based on the overall experimental design, e.g cross-over design or parallel group design."
+Factor Name,String,"The name of one factor used in the Study and/or Assay files. A factor corresponds to an independent variable manipulated by the experimentalist with the intention to affect biological systems in a way that can be measured by an assay. The value of a factor is given in the Study or Assay file, accordingly."
+Factor Type,Ontology Annotation,An classification of this factor into categories.
