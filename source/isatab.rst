@@ -41,14 +41,16 @@ All labels are case-sensitive:
  - In the Investigation file, section headers MUST be completely written in upper case (e.g. STUDY), field headers MUST have the first letter of each word in upper case (e.g. Study Identifier); with the exception of the referencing label (REF).
  - In the Study and Assay files, column headers MUST also have the first letter of each word in upper case, with the exception of the referencing label (REF).
 
-Dates SHOULD be supplied in the `ISO8601 <http://www.iso.org/iso/home/standards/iso8601.htm>`_ format "YYYY-MM-DD".
-
-Rows in which the first character in the first column is Unicode
-`U+0023 <http://www.fileformat.info/info/unicode/char/0023/index.htm>`_  (the # character) MUST be interpreted as
-comments. Reference implementation parsers SHOULD ignore those lines entirely.
+Dates SHOULD be supplied in the `ISO8601 <http://www.iso.org/iso/home/standards/iso8601.htm>`_ format ``YYYY-MM-DD``.
 
 All values of cells MAY be enveloped with the Unicode Quotation Mark, Unicode
 `U+0022 <http://www.fileformat.info/info/unicode/char/0022/index.htm>`_  (the " character).
+
+For maximal portability file names should only contain only ASCII characters not excluded
+already (that is ``A-Za-z0-9._!#$%&+,;=@^(){}'[]`` - we exclude space as many utilities
+do not accept spaces in file paths): non-English alphabetic characters cannot be guaranteed
+to be supported in all locales. It would be good practice to avoid the shell metacharacters
+``(){}'[]$."``.
 
 Investigation File
 ==================
@@ -78,6 +80,16 @@ in the subsequent columns. The following section headings MUST appear in the Inv
 In the following sections, examples of each section block are given beside the specification of each section.
 
 For a full example of a complete Investigation File, please see https://git.io/vPZbG.
+
+.. attention::
+    Rows in which the first character in the first column is Unicode
+    `U+0023 <http://www.fileformat.info/info/unicode/char/0023/index.htm>`_  (the # character) MUST be interpreted as
+    comments, where reference implementation parsers SHOULD ignore those lines entirely.
+
+    Rows where the label ``Comment[<comment name>]`` appear can also appear within any of the section blocks. Where
+    these appear, the comment name must be unique within the context of a single block (e.g. you cannot have multiple
+    occurences of ``Comment[external DB REF]`` within ``STUDY ASSAYS``. Also, the value cells MUST match the number of
+    values indicated by the rest of the section in context.
 
 Ontology Source Reference section
 ---------------------------------
@@ -297,6 +309,12 @@ properties MUST follow this column, where materials MAY have Characteristics and
 ``Characteristics`` and ``Parameter Values`` MUST be of type string, numeric, or an ``Ontology Annotation``. ``<entity> File`` MAY be used to indicate
 a data file node.
 
+.. attention::
+    Comments are also allowed in Study and Assay files, in a similar fashion to how they are used in the Investigation
+    file. Columns headed with ``Comment[<comment name>]`` MAY appear after any named node in the Study and Assay files
+    (e.g. if ``Comment[ORCID ID]`` appears **after** the ``Source Name`` column, we know that the comment regarding
+    ``ORCID ID`` applies to the relevant Source node based on the row.
+
 Specific types of nodes are specified in the Assay Table file section below.
 
 Ontology Annotations
@@ -428,7 +446,7 @@ Assay Table file
 ----------------
 The ``Assay`` file represents a portion of the experimental graph (i.e., one part of the overall
 structure of the workflow); each ``Assay`` file must contain assays of the same type, defined by the type of
-measurement (i.e. gene expression) and the technology employed (i.e. DNA microarray). Assay-related information
+measurement (e.g. gene expression) and the technology employed (e.g. DNA microarray). Assay-related information
 includes protocols, additional information relating to the execution of those protocols and references to data
 files (whether raw or derived).
 

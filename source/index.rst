@@ -1,7 +1,7 @@
 ISA Model and Serialization Specifications
 ==========================================
 
-:Status: ISA Model and Serialization Specifications 1.0 (6 October 2016)
+**Status**: ISA Model and Serialization Specifications 1.0 (6 October 2016)
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and
 "OPTIONAL" in this document are to be interpreted as described by `RFC 2119 <http://www.ietf.org/rfc/rfc2119.txt>`_.
@@ -32,6 +32,9 @@ The ISA Model and Serialization Specifications define an Abstract Model of the m
 has been implemented in two format specifications, ISA-Tab and ISA-JSON, both of which have supporting tools and
 services associated with them. The format specifications are also available for additional tooling to take advantage
 of ISA-formatted content.
+
+These specifications are primarily aimed at software engineers to facilitate the development of automated export from
+databases, or import into analytical or other tools.
 
 .. toctree::
    :maxdepth: 2

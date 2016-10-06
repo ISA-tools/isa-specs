@@ -21,6 +21,21 @@ ISA-JSON can be found in the sample data package of the ISA API, here https://gi
 
 We recommend that you study these to better understand the structure of ISA-JSON documents.
 
+Format
+======
+Files SHOULD be encoded using `UTF-8 <http://www.fileformat.info/info/unicode/utf8.htm>`_.
+
+All ISA-JSON content regarding multiple ``Study`` and ``Assay`` should fall under one ``Investigation`` JSON structure,
+therefore should be recorded in a single JSON file. The JSON file SHOULD have a ``.json`` extension.
+
+Dates SHOULD be supplied in the `ISO8601 <http://www.iso.org/iso/home/standards/iso8601.htm>`_ format ``YYYY-MM-DD``.
+
+For maximal portability file names should only contain only ASCII characters not excluded
+already (that is ``A-Za-z0-9._!#$%&+,;=@^(){}'[]`` - we exclude space as many utilities
+do not accept spaces in file paths): non-English alphabetic characters cannot be guaranteed
+to be supported in all locales. It would be good practice to avoid the shell metacharacters
+``(){}'[]$."``.
+
 Schemas
 =======
 The ISA-JSON schemas define the structure of the ISA-JSON objects that implement the ISA Abstract Model. Here we
@@ -57,7 +72,7 @@ Schema:
 
 comment_schema.json
 -------------------
-This schema implements Comment from the ISA Abstract Model.
+This schema implements the ability to annotate objects with user-defined comments.
 
 Schema:
 
@@ -75,7 +90,7 @@ Schema:
 
 factor_schema.json
 ------------------
-This schema implements Factor from the ISA Abstract Model.
+This schema implements Study factor from the ISA Abstract Model.
 
 Schema:
 
@@ -84,7 +99,7 @@ Schema:
 
 factor_value_schema.json
 ------------------------
-This schema implements Factor from the ISA Abstract Model.
+This schema implements Factor value given to a node corresponding to a declared Factor.
 
 Schema:
 
@@ -93,7 +108,7 @@ Schema:
 
 material_attribute_schema.json
 ------------------------------
-This schema implements Material from the ISA Abstract Model.
+This schema is used in a Material node to declare an attribute (Characteristic).
 
 Schema:
 
@@ -102,7 +117,7 @@ Schema:
 
 material_attribute_value_schema.json
 ------------------------------------
-This schema implements Material from the ISA Abstract Model.
+This schema is used in a Material node to hold an attribute value (value of a Characteristic).
 
 Schema:
 
@@ -111,7 +126,7 @@ Schema:
 
 material_schema.json
 --------------------
-This schema implements Material from the ISA Abstract Model.
+This schema implements Material nodes from the ISA Abstract Model.
 
 Schema:
 
@@ -138,7 +153,7 @@ Schema:
 
 person_schema.json
 ------------------
-This schema implements Person from the ISA Abstract Model.
+This schema implements Contact from the ISA Abstract Model.
 
 Schema:
 
@@ -147,7 +162,7 @@ Schema:
 
 process_parameter_value_schema.json
 -----------------------------------
-This schema implements Process from the ISA Abstract Model.
+This schema is used in a Process node to hold a parameter value (value of a Protocol parameter).
 
 Schema:
 
@@ -156,7 +171,7 @@ Schema:
 
 process_schema.json
 -------------------
-This schema implements Process from the ISA Abstract Model.
+This schema implements Process nodes from the ISA Abstract Model.
 
 Schema:
 
@@ -165,7 +180,7 @@ Schema:
 
 protocol_parameter_schema.json
 ------------------------------
-This schema implements Protocol from the ISA Abstract Model.
+This schema is used in a Protocol to describe a protocol parameter.
 
 Schema:
 
