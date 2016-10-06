@@ -9,9 +9,9 @@ isatools@googlegroups.com. All comments are welcome.
 License
 -------
 .. attention::
-    The ISA Model and Serialization Specifications are licensed under `CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0/>`_,
+    The ISA Model and Serialization Specifications are licensed under `CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0/>`_.
 
-    Please feel free to **share** and **adapt** the ISA Model and Serialization Specifications. Please remember to **give appropriate
+    Please feel free to **share** and **adapt** the ISA Model and Serialization Specifications but you **must give appropriate
     attribution**, and you **must apply the same license in any redistribution** of the specifications, even if it incorporates
     your own contributions.
 
