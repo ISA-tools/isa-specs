@@ -59,5 +59,5 @@ Revision History
 | 1.0RC1  | 2008-11-26     | First release candidate of ISA-Tab specification [#]_            |
 +---------+----------------+------------------------------------------------------------------+
 
-.. [#] http://isa-specifications.readthedocs.io
+.. [#] http://isa-specs.readthedocs.io
 .. [#] http://isatab.sourceforge.net/docs/ISA-TAB_release-candidate-1_v1.0_24nov08.pdf

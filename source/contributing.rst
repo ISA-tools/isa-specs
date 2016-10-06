@@ -3,7 +3,7 @@ Contributing
 ============
 
 If you wish to make comments regarding these specifications, please report using the
-`ISA Specifications issue tracker <https://github.com/ISA-tools/isa-specifications/issues>`_ or send them to
+`ISA Model and Serialization Specifications issue tracker <https://github.com/ISA-tools/isa-specs/issues>`_ or send them to
 isatools@googlegroups.com. All comments are welcome.
 
 License
