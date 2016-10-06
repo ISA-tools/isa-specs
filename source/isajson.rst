@@ -2,7 +2,7 @@
 ISA-JSON format
 ===============
 
-.. Important:: As a pre-requisite to reading this specification, please make sure you have read and understood the :doc:`ISA Abstract Model </isamodel>` that the ISA-Tab format is based on.
+.. Important:: As a pre-requisite to reading this specification, please make sure you have read and understood the :doc:`ISA Abstract Model </isamodel>` that the ISA-Json format is based on.
 
 For detail on ISA framework terminology, please read the :doc:`ISA Abstract Model specification </isamodel>`.
 

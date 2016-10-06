@@ -18,10 +18,9 @@ If you wish to make comments regarding these specifications, please see the page
 ------------
 Introduction
 ------------
-ISA is a metadata framework to manage an
-increasingly diverse set of life science, environmental and biomedical experiments that employing one or a
+ISA is a metadata framework to manage an increasingly diverse set of life science, environmental and biomedical experiments that employ one or a
 combination of technologies. Built around the **Investigation** (the project context), **Study** (a unit of research)
-and **Assay** (analytical measurements) abstract data model, ISA helps you to provide rich
+and **Assay** (analytical measurements) concepts, ISA helps you to provide rich
 descriptions of experimental metadata (i.e. sample characteristics, technology and measurement types, sample-to-data
 relationships) so that the resulting data and discoveries are reproducible and reusable.
 
@@ -41,8 +40,8 @@ databases, or import into analytical or other tools.
    :numbered:
 
    isamodel
-   isajson
    isatab
+   isajson
    implementations
    contributing
 

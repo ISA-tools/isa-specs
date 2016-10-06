@@ -7,7 +7,7 @@ in two format specifications, :doc:`ISA-Tab </isatab>` and :doc:`ISA-JSON </isaj
 tools and services associated with them. The format specifications are also available for additional tooling to take
 advantage of ISA-formatted content.
 
-The below concept map shows the ISA objects/entities and their relation to one another:
+The concept map below shows the ISA objects/entities and their relation to one another:
 
 .. image:: _static/isa_model_1.png
    :align: center
@@ -97,10 +97,10 @@ An ``Investigation`` SHOULD record the following:
 
 Study
 -----
-A ``Study`` is a central concept containing information on the subject under study, it's characteristics and any
+A ``Study`` is a central concept containing information on the subject under study, its characteristics and any
 treatments applied.
 
-A ``Study`` contains contextualizing information for one or more ``Assay``. Metadata about the study design, study
+A ``Study`` contains contextualising information for one or more ``Assay``s. Metadata about the study design, study
 factors used, and study protocols are recorded in ``Study`` objects, as well as information similarly to the
 ``Investigation`` including title and description of the study, and related people and scholarly publications.
 
