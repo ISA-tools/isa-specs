@@ -395,7 +395,8 @@ Study Table files SHOULD have file names corresponding to the pattern ``s_*.txt`
 
 In Study files, there are two types of ``Material`` nodes implemented: ``Source`` and ``Sample``.
 
-These are linked with a Process node that MUST be of a Protocol that is of a type ``sample collection``.
+These are linked with a Process node, incidcated with a value under a column headed ``Protocol REF``
+that MUST be of a Protocol type that is of a type ``sample collection`` declared in the Investigation file.
 
 A ``Source`` MUST be indicated with the column heading ``Source Name``.
 
@@ -456,14 +457,17 @@ Assay Table files SHOULD have file names corresponding to the pattern ``a_*.txt`
 
 A ``Sample`` MUST be provided as the first node in the experimental graph, indicated with the column heading ``Sample Name``.
 
+``Protocol REF`` columns MUST be used to indicate ``Process`` nodes, with values referencing protocols declared in the
+Investigation file.
+
 ``Extract Name`` MUST be used as an identifier for a Extract Material node within an ``Assay`` file. This column contains user-defined names
 for each portion of extracted material. Extracts MAY be qualified with ``Characteristics``, ``Material Type`` and ``Description``.
 
 ``Labeled Extract`` Name MUST be used as an identifier for a Labeled Extract Material node within an ``Assay`` file. Labeled Extracts
 MAY be qualified with ``Label``, ``Characteristics``, ``Material Type``, ``Description``.
 
-``Assay Name`` MUST be used is used as an identifier for user-defined names for each assay. Assays MAY be qualified with an ``Assay
-Name``, ``Performer`` and ``Date``.
+``Assay Name`` MUST be used is used as an identifier for user-defined names for each assay. Assays MAY be qualified
+with an ``Assay Name``, ``Performer`` and ``Date``.
 
 ``Image File``, ``Raw Data File`` or ``Derived Data File`` column heading MUST correspond to a relevant ``Data`` node to provide names or URIs of
 file locations. For submission or transfer, files MAY be packed with ISA-Tab files.
@@ -479,6 +483,50 @@ For example,
 .. literalinclude:: _static/isatab/a_gilbert-assay-Gx.txt
 
 The Assay Table file implements the ``Assay`` graphs from the ISA Abstract Model.
+
+Special cases
+-------------
+
+**Assay with technology type: DNA microarray hybridization**
+
+If an Assay being described has a technology type of DNA microarray hybridization, the following additional nodes MAY apply.
+
+:Hybridization Assay Name (in place of Assay Name): Used as an identifier within the Assay file. This column contains an user-defined name for each hybridization. Qualifying headers for Hybridization Assay Name item include Array Design REF or Array Design File.
+:Scan Name: Used as an identifier within the Assay file. This column contains a user-defined name for each Scan event.
+:Array Data File (in place of Raw Data File): Column to provide name (or URI) of raw array data files.
+:Derived Array Data File (in place of Derived Data File): Column to provide name (or URI) of data files resulting from data transformation or processing.
+:Array Data Matrix File: Column to provide name (or URI) of raw data matrix files.
+:Derived Array Data Matrix File: Column to provide name (or URI) of processed data matrix files, resulting from data transformation or processing. Where data from multiple hybridizations is stored in a single file, the data should be mapped to the appropriate hybridization (or scan, or normalization) via the Data Matrix format itself
+:Array Design File: Column to provide name of file containing the array design, used for a particular hybridization. For submission or transfer, ADF files can be packaged with ISA-TAB files into an ISArchive, see section 2.4.
+:Array Design REF: This column is used to reference the identifier (or accession number) of an existing array design.
+
+**Assay file with technology type: Gel electrophoresis**
+
+If an Assay being described has a technology type of Gel electrophoresis, the following additional nodes MAY apply.
+
+:Gel Electrophoresis Assay Name (in place of Assay Name): Used as an identifier within the Assay file. This column contains user-defined names for each electrophoresis gel assay. For 2-dimensional gels, the following qualifying headers can be used instead:
+:First Dimension: The term can be free text or from, for example, a controlled vocabulary or an ontology. If the latter source is used the Term Accession Number and Term Source REF fields are required.
+:Second Dimension: The term can be free text or from, for example, a controlled vocabulary or an ontology. If the latter source is used the Term Accession Number and Term Source REF fields are required.
+:Scan Name: Used as an identifier within the Assay file. This column contains user-defined names for each Scan event.
+:Spot Picking File: Column to provide name (or URI) of files file holding protein spot coordinates and metadata for use by spot picking instruments.
+
+**Assay file with technology type: Mass Spectrometry (MS)**
+
+If an Assay being described has a technology type of Mass Spectrometry, the following additional nodes MAY apply.
+
+:MS Assay Name (in place of Assay Name): Used as an identifier within the Assay file. This column contains user-defined names for each MS Assay.
+:Raw Spectral Data File (in place of Raw Data File): Column to provide name (or URI) of ‘raw’ spectral data files.
+:Derived Spectral Data File (in place of Derived Data File): Column to provide name (or URI) of derived spectral data files, resulting from data transformation or processing.
+
+When Mass Spectrometry is used in proteomics the following data files are required, according to PSI specifications and Pride submission requirements (6, 10):
+
+:Peptide Assignment File: Column to provide name (or URI) of file(s) containing peptide assignments.
+:Protein Assignment File: Column to provide name (or URI) of file(s) containing protein assignments.
+:Post Translational Modification Assignment File: Column to provide name (or URI) of file(s) containing posited post-translational modifications.
+
+Capturing data resulting from the use of mass spectrometry in metabol/nomics requires a settled definition for a
+Metabolite Assignment File (inter alia); such a file is currently under development in collaboration with the
+Metabolomics Standards Initiative (MSI).
 
 Data Files
 ----------
