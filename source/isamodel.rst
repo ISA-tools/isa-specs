@@ -170,7 +170,8 @@ Experimental graphs MUST be composed of the following node types
 
 **Material nodes**
 
-``Material ``nodes can also be used as a generic structure to describe materials consumed or produced during an experimental workflow. ``Material`` nodes SHOULD record the following:
+``Material`` nodes can also be used as a generic structure to describe materials consumed or produced during an experimental workflow.
+``Material`` nodes SHOULD record the following:
 
 .. csv-table::
     :file: _static/model/material_node.csv

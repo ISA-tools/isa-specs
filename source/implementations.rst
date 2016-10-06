@@ -9,6 +9,8 @@ The ISA Model and Serialization Specifications have several Reference Implementa
 +===============================+============================================================================================================================================================+===================+======================+============================+
 | ISA API                       | Python API for ISA conversions, validation and content creation                                                                                            | ISA-Tab, ISA-JSON | Active (pre-release) | Python 3+                  |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+----------------------+----------------------------+
+| ISA Explorer                  | Visualization and search over collections of ISA-Tabs (browser)                                                                                            | ISA-Tab, ISA-JSON | Active (pre-release) | Python 3+                  |
++-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+----------------------+----------------------------+
 | linkedISA                     | Convert ISA-Tab to OWL                                                                                                                                     | ISA-Tab           | Active               | Java 1.6                   |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+----------------------+----------------------------+
 | OntoMaton                     | Annotation of ISA-Tab spreadsheets                                                                                                                         | ISA-Tab           | Active               | Google Spreadsheets Add-on |
@@ -35,6 +37,10 @@ The ISA Model and Serialization Specifications have several Reference Implementa
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+----------------------+----------------------------+
 | Bio-Parser-ISATab             | PERL Parser for ISA-Tab                                                                                                                                    | ISA-Tab           | Unsupported          | PERL                       |
 +-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+----------------------+----------------------------+
+
+- **Active**: In active development and fully supported.
+- **Maintenance mode**: No new features are being developed or planned, and only basic support and bug fixes will be supported.
+- **Unsupported**: Not in development and not support available.
 
 To find these tools please visit http://www.isa-tools.org and http://www.github.com/ISA-tools
 
