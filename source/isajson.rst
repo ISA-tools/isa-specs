@@ -28,6 +28,24 @@ list the JSON schemas with their corresponding model entity, and provide show th
 
 You can also find these schemas in Github at https://git.io/vPZgD
 
+investigation_schema.json
+-------------------------
+This schema implements Investigation from the ISA Abstract Model.
+
+Schema:
+
+.. literalinclude:: _static/isajson/investigation_schema.json
+    :language: json
+
+study_schema.json
+-----------------
+This schema implements Study from the ISA Abstract Model.
+
+Schema:
+
+.. literalinclude:: _static/isajson/study_schema.json
+    :language: json
+
 assay_schema.json
 -----------------
 This schema implements Assay from the ISA Abstract Model.
@@ -71,15 +89,6 @@ This schema implements Factor from the ISA Abstract Model.
 Schema:
 
 .. literalinclude:: _static/isajson/factor_value_schema.json
-    :language: json
-
-investigation_schema.json
--------------------------
-This schema implements Investigation from the ISA Abstract Model.
-
-Schema:
-
-.. literalinclude:: _static/isajson/investigation_schema.json
     :language: json
 
 material_attribute_schema.json
@@ -198,16 +207,6 @@ Schema:
 
 .. literalinclude:: _static/isajson/source_schema.json
     :language: json
-
-study_schema.json
------------------
-This schema implements Study from the ISA Abstract Model.
-
-Schema:
-
-.. literalinclude:: _static/isajson/study_schema.json
-    :language: json
-
 
 Content rules
 =============

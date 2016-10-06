@@ -11,6 +11,8 @@ The ISA Model and Serialization Specifications are licensed under `CC BY-SA 4.0 
 The ISA Model and Serialization Specifications are maintained by Susanna-Assunta Sansone [1]_, Philippe Rocca-Serra [1]_, Alejandra
 Gonzalez-Beltran [1]_ and David Johnson [1]_ on behalf of the `ISA Community <http://www.isacommons.org>`_.
 
+.. [1] Oxford e-Research Centre, University of Oxford, UK.
+
 If you wish to make comments regarding these specifications, please see the page on :doc:`how to contribute </contributing>`.
 
 ------------
@@ -23,7 +25,8 @@ and **Assay** (analytical measurements) abstract data model, ISA helps you to pr
 descriptions of experimental metadata (i.e. sample characteristics, technology and measurement types, sample-to-data
 relationships) so that the resulting data and discoveries are reproducible and reusable.
 
-For a full introduction to the ISA framework, see http://www.isa-tools.org
+.. note::
+    For an introduction to ISA, please read the paper, `Towards interoperable bioscience data <http://www.nature.com/ng/journal/v44/n2/full/ng.1054.html>`_ published in *Nature Genetics*. For more details on the ISA framework and supported tools, please see http://www.isa-tools.org
 
 The ISA Model and Serialization Specifications define an Abstract Model of the metadata framework. The ISA Abstract Model
 has been implemented in two format specifications, ISA-Tab and ISA-JSON, both of which have supporting tools and
@@ -53,6 +56,5 @@ Revision History
 | 1.0RC1  | 2008-11-26     | First release candidate of ISA-Tab specification [#]_            |
 +---------+----------------+------------------------------------------------------------------+
 
-.. [1] Oxford e-Research Centre, University of Oxford, UK.
 .. [#] http://isa-specifications.readthedocs.io
 .. [#] http://isatab.sourceforge.net/docs/ISA-TAB_release-candidate-1_v1.0_24nov08.pdf
