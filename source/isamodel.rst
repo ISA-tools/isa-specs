@@ -7,6 +7,11 @@ in two format specifications, :doc:`ISA-Tab </isatab>` and :doc:`ISA-JSON </isaj
 tools and services associated with them. The format specifications are also available for additional tooling to take
 advantage of ISA-formatted content.
 
+The below concept map shows the ISA objects/entities and their relation to one another:
+
+.. image:: _static/isa_model_1.png
+   :align: center
+   :alt: Concept map showing ISA objects/entities and their relation to one another.
 
 Ontology Annotation
 ===================

@@ -40,7 +40,7 @@ The ISA Model and Serialization Specifications have several Reference Implementa
 
 - **Active**: In active development and fully supported.
 - **Maintenance mode**: No new features are being developed or planned, and only basic support and bug fixes will be supported.
-- **Unsupported**: Not in development and not support available.
+- **Unsupported**: Not in development and no support available.
 
 To find these tools please visit http://www.isa-tools.org and http://www.github.com/ISA-tools
 
