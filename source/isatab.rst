@@ -12,7 +12,7 @@ column structures specified below.
 
 Below we provide the schemas and the content rules for valid ISA-Tab documents. Full examples of ISA content as
 ISA-Tab can be found in the test data package of the ISA API, here https://git.io/vPZdE We recommend that you study
-these to better understand the structure of ISA-Tab documents.
+these examples to better understand the structure of ISA-Tab documents.
 
 Format
 ======
@@ -58,7 +58,7 @@ Investigation File
 The Investigation file fulfils four needs:
 
 #. to declare key entities, such as factors, protocols, which may be referenced in the other files
-#. to track provevance of the terminologies (controlled vocabularies or ontologies) there are used, where applicable
+#. to track provenance of the terminologies (controlled vocabularies or ontologies) there are used, where applicable
 #. to relate Assay files to Studies
 #. to relate each Study file to an Investigation (this only becomes necessary when two or more Study files need to be grouped).
 
