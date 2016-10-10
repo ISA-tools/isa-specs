@@ -1,46 +1,27 @@
-Reference Implementations
-=========================
+Software tools
+==============
 
-The ISA Model and Serialization Specifications have several Reference Implementations as data formats (:doc:`ISA-Tab </isatab>` and
+The ISA Model Specification has two Reference Implementations as data formats (:doc:`ISA-Tab </isatab>` and
 :doc:`ISA-JSON </isajson>`) with supporting software tools. Below is a summary list of tools and supported formats.
-
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+----------------------+----------------------------+
-| Tool                          | Description                                                                                                                                                | Format            | Development Status   | Platform                   |
-+===============================+============================================================================================================================================================+===================+======================+============================+
-| ISA API                       | Python API for ISA conversions, validation and content creation                                                                                            | ISA-Tab, ISA-JSON | Active (pre-release) | Python 3+                  |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+----------------------+----------------------------+
-| ISA Explorer                  | Visualization and search over collections of ISA-Tabs (browser)                                                                                            | ISA-Tab, ISA-JSON | Active (pre-release) | Python 3+                  |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+----------------------+----------------------------+
-| linkedISA                     | Convert ISA-Tab to OWL                                                                                                                                     | ISA-Tab           | Active               | Java 1.6                   |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+----------------------+----------------------------+
-| OntoMaton                     | Annotation of ISA-Tab spreadsheets                                                                                                                         | ISA-Tab           | Active               | Google Spreadsheets Add-on |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+----------------------+----------------------------+
-| rISA                          | Parse ISA-Tab into R data structures                                                                                                                       | ISA-Tab           | Active               | R/Bioconductor             |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+----------------------+----------------------------+
-| biopy-isatab                  | Python Parser for ISA-Tab                                                                                                                                  | ISA-Tab           | Active               | Python 2.7+                |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+----------------------+----------------------------+
-| ISA creator                   | Used for creating ISA-Tab files                                                                                                                            | ISA-Tab           | Maintenance mode     | Java 1.6                   |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+----------------------+----------------------------+
-| ISA-Tab Viewer                | Visualizer for ISA-Tabs (browser)                                                                                                                          | ISA-Tab           | Maintenance mode     | JavaScript / HTML / CSS    |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+----------------------+----------------------------+
-| ISA configurator              | Used with ISAcreator to develop ISA-Tab XML Configurations that are used as ISA-Tab templates and used for validating against domain-specific requirements | ISA-Tab           | Maintenance mode     | Java 1.6                   |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+----------------------+----------------------------+
-| ISA validator                 | Used with ISA XML Configurations to validate ISA-Tab files against domain-specific requirements                                                            | ISA-Tab           | Maintenance mode     | Java 1.6                   |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+----------------------+----------------------------+
-| ISA converter                 | Convert ISA-Tab files into other formats                                                                                                                   | ISA-Tab           | Maintenance mode     | Java 1.6                   |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+----------------------+----------------------------+
-| ISA to RDF                    | Convert from ISA-Tab to RDF                                                                                                                                | ISA-Tab           | Maintenance mode     | Java 1.6                   |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+----------------------+----------------------------+
-| MAGE to ISA converter         | Converter which can pull from ArrayExpress (by an accession number) or read local files and convert them to ISAtab.                                        | ISA-Tab           | Maintenance mode     | Java 1.6                   |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+----------------------+----------------------------+
-| BII (Bio Investigation Index) | Web application and DB                                                                                                                                     | ISA-Tab           | Maintenance mode     | Java 1.6                   |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+----------------------+----------------------------+
-| Bio-Parser-ISATab             | PERL Parser for ISA-Tab                                                                                                                                    | ISA-Tab           | Unsupported          | PERL                       |
-+-------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+----------------------+----------------------------+
 
 - **Active**: In active development and fully supported.
 - **Maintenance mode**: No new features are being developed or planned, and only basic support and bug fixes will be supported.
 - **Unsupported**: Not in development and no support available.
 
+**Software tools supported by the ISA Team**
+
+.. csv-table::
+    :file: _static/software-isa.csv
+    :header-rows: 1
+
 To find these tools please visit http://www.isa-tools.org and http://www.github.com/ISA-tools
+
+**Other software tools**
+
+.. csv-table::
+    :file: _static/software-other.csv
+    :header-rows: 1
+
+If you are a developer, user, or are aware of other software tools that implement ISA formats that you think should be
+listed here, please contact the `ISA Team <http://www.isa-tools.org/team>`_.
 
