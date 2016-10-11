@@ -1,0 +1,5 @@
+Label,Datatype,Description
+Study Factor Name,String,"The name of one factor used in the Study and/or Assay files. A factor corresponds to an independent variable manipulated by the experimentalist with the intention to affect biological systems in a way that can be measured by an assay. The value of a factor is given in the Study or Assay file, accordingly. If both Study and Assay have a Factor Value, these must be different."
+Study Factor Type,String,"A term allowing the classification of this factor into categories. The term can be free text or from, for example, a controlled vocabulary or an ontology. If the latter source is used the Term Accession Number and Term Source REF fields below are required."
+Study Factor Type Term Accession Number,String,The accession number from the Term Source associated with the selected term.
+Study Factor Type Term Source REF,String,Identifies the controlled vocabulary or ontology that this term comes from. The Source REF has to match one of the Term Source Name declared in the Ontology Source Reference section.

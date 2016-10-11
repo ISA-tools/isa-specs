@@ -1,0 +1,14 @@
+Tool,Description,Format,Development Status,Platform
+`ISA API <https://github.com/ISA-tools/isa-api>`_,"Python API for ISA conversions, validation and content creation","ISA-Tab, ISA-JSON",Active (pre-release),Python 3+
+ISA Explorer,Visualization and search over collections of ISA-Tabs (browser),"ISA-Tab, ISA-JSON",Not released - `see preview <http://scientificdata.isa-explorer.org/>`_,Python 3+
+`linkedISA <https://github.com/ISA-tools/linkedISA>`_,Convert ISA-Tab to OWL,ISA-Tab,Active,Java 1.6
+`OntoMaton <https://chrome.google.com/webstore/detail/ontomaton/dkelbgmogiamnbbballckedaldbombni?hl=en-GB>`_,Annotation of ISA-Tab spreadsheets,ISA-Tab,Active,Google Spreadsheets Add-on
+`rISA <http://bioconductor.org/packages/release/bioc/html/Risa.html>`_,Parse ISA-Tab into R data structures,ISA-Tab,Active,R/Bioconductor
+`biopy-isatab <https://pypi.python.org/pypi/biopy-isatab>`_,Python Parser for ISA-Tab,ISA-Tab,Active,Python 2.7+
+`ISA creator <https://github.com/ISA-tools/ISAcreator/releases>`_,Used for creating ISA-Tab files,ISA-Tab,Maintenance mode,Java 1.6
+`ISA-Tab Viewer <https://github.com/ISA-tools/ISATab-Viewer>`_,Visualizer for ISA-Tabs (browser),ISA-Tab,Maintenance mode,JavaScript / HTML / CSS
+`ISA configurator <https://github.com/ISA-tools/ISAconfigurator/releases>`_,Used with ISAcreator to develop ISA-Tab XML Configurations that are used as ISA-Tab templates and used for validating against domain-specific requirements,ISA-Tab,Maintenance mode,Java 1.6
+`ISA validator <https://github.com/ISA-tools/ISAvalidator-ISAconverter-BIImanager/releases>`_,Used with ISA XML Configurations to validate ISA-Tab files against domain-specific requirements,ISA-Tab,Maintenance mode,Java 1.6
+`ISA converter <https://github.com/ISA-tools/ISAvalidator-ISAconverter-BIImanager/releases>`_,Convert ISA-Tab files into other formats,ISA-Tab,Maintenance mode,Java 1.6
+`BII (Bio Investigation Index) <https://github.com/ISA-tools/BioInvIndex>`_,Web application and DB,ISA-Tab,Maintenance mode,Java 1.6
+`MAGE to ISA converter <https://github.com/ISA-tools/MAGEtoISAconverter/>`_,Converter which can pull from ArrayExpress (by an accession number) or read local files and convert them to ISAtab.,ISA-Tab,Unsupported,Java 1.6

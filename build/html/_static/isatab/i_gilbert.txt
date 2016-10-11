@@ -1,0 +1,101 @@
+ONTOLOGY SOURCE REFERENCE
+Term Source Name	"CHEBI"	"EFO"	"OBI"	"NCBITAXON"
+Term Source File	"http://data.bioontology.org/ontologies/CHEBI"	"http...
+Term Source Version	"78"	"111"	"21"	"2"	"160"
+Term Source Description	"Chemical Entities of Biological Interest Ontology"	...
+INVESTIGATION
+Investigation Identifier	"BII-S-3"
+Investigation Title	""
+Investigation Description	""
+Investigation Submission Date	""
+Investigation Public Release Date	""
+Comment[Created With Configuration]	""
+Comment[Last Opened With Configuration]	"GSC MIxS human gut"
+INVESTIGATION PUBLICATIONS
+Investigation PubMed ID
+Investigation Publication DOI
+Investigation Publication Author List
+Investigation Publication Title
+Investigation Publication Status
+Investigation Publication Status Term Accession Number
+Investigation Publication Status Term Source REF
+INVESTIGATION CONTACTS
+Investigation Person Last Name
+Investigation Person First Name
+Investigation Person Mid Initials
+Investigation Person Email
+Investigation Person Phone
+Investigation Person Fax
+Investigation Person Address
+Investigation Person Affiliation
+Investigation Person Roles
+Investigation Person Roles Term Accession Number
+Investigation Person Roles Term Source REF
+STUDY
+Study Identifier	"BII-S-3"
+Study Title	"Metagenomes and Metatranscriptomes of phytoplankton blooms from ...
+Study Description	"Sequencing the metatranscriptome can provide information ...
+Study Submission Date	"2008-08-15"
+Study Public Release Date	"2008-08-15"
+Study File Name	"s_BII-S-3.txt"
+Comment[SRA Broker Name]	"OXFORD"
+Comment[SRA Center Name]	"OXFORD"
+Comment[SRA Center Project Name]	"OXFORD"
+Comment[SRA Lab Name]	"Oxford e-Research Centre"
+Comment[SRA Submission Action]	"ADD"
+Comment[Study Funding Agency]	""
+Comment[Study Grant Number]	""
+STUDY DESIGN DESCRIPTORS
+Study Design Type	"time series design"
+Study Design Type Term Accession Number	"http://purl.obolibrary.org/obo/OBI...
+Study Design Type Term Source REF	"OBI"
+STUDY PUBLICATIONS
+Study PubMed ID	"18725995"	"18783384"
+Study Publication DOI	"10.1371/journal.pone.0003042"	"10.1111/j....
+Study Publication Author List	"Gilbert JA, Field D, Huang Y, Edwards R, Li ...
+Study Publication Title	"Detection of large numbers of novel sequences...
+Study Publication Status	"indexed in PubMed"	"indexed in PubMed"
+Study Publication Status Term Accession Number	""	""
+Study Publication Status Term Source REF	""	""
+STUDY FACTORS
+Study Factor Name	"dose"	"compound"	"collection time"
+Study Factor Type	"dose"	"chemical substance"	"time"
+Study Factor Type Term Accession Number	"http://www.ebi.ac.uk/efo/EFO_0000428"
+Study Factor Type Term Source REF	"EFO"	"CHEBI"	"PATO"
+STUDY ASSAYS
+Study Assay File Name	"a_gilbert-assay-Gx.txt"	"a_gilbert-assay-Tx.txt"
+Study Assay Measurement Type	"metagenome sequencing"	"transcription ...
+Study Assay Measurement Type Term Accession Number	""	""
+Study Assay Measurement Type Term Source REF	"OBI"	"OBI"
+Study Assay Technology Type	"nucleotide sequencing"	"nucleotide sequ...
+Study Assay Technology Type Term Accession Number	""	""
+Study Assay Technology Type Term Source REF	"OBI"	"OBI"
+Study Assay Technology Platform	"454 GS FLX"	"454 GS FLX"
+STUDY PROTOCOLS
+Study Protocol Name	"environmental material collection - standard procedure 1"
+Study Protocol Type	"sample collection"	"nucleic acid extraction"	"nucleic acid extraction"
+Study Protocol Type Term Accession Number	""	""	""	""	""	""	""	""
+Study Protocol Type Term Source REF	""	""	""	""	""	""	""	""
+Study Protocol Description	"Waters samples were prefiltered through a 1.6 um...
+Study Protocol URI	""	""	""	""
+Study Protocol Version	""	""	""	""	""
+Study Protocol Parameters Name	"filter pore size"	""	""	""	...
+Study Protocol Parameters Name Term Accession Number	""	""	""	""	""	";;"	""	""
+Study Protocol Parameters Name Term Source REF	""	""	""	""	...
+Study Protocol Components Name	""	""	""	""	""	...
+Study Protocol Components Type	""	""	""	""	""	...
+Study Protocol Components Type Term Accession Number	""	""	""	...
+Study Protocol Components Type Term Source REF	""	""	""	...
+STUDY CONTACTS
+Study Person Last Name	"Gilbert"	"Field"	"Huang"	"Edwards"
+Study Person First Name	"Jack"	"Dawn"	"Ying"	"Rob" ...
+Study Person Mid Initials	"A"	""	""	""	""	""
+Study Person Email	"jagi@pml.ac.uk"	""	""	""	...
+Study Person Phone	""	""	""	""	""	""	""
+Study Person Fax	""	""	""	""	""	""	""
+Study Person Address	"Prospect Place, Plymouth, United Kingdom"	"CEH ...
+Study Person Affiliation	"Plymouth Marine Laboratory"	"NERC Centre for...
+Study Person Roles	"principal investigator role;SRA Inform On Status;SRA In...
+Study Person Roles Term Accession Number	";;"	""	""	""
+Study Person Roles Term Source REF	";;"	""	""	""	""
+Comment[Study Person REF]	""	""	""	""	""	""	""

@@ -1,0 +1,1348 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2. ISA-Tab format &mdash; ISA Model and Serialization Specifications 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="ISA Model and Serialization Specifications 1.0 documentation" href="index.html"/>
+        <link rel="next" title="3. ISA-JSON format" href="isajson.html"/>
+        <link rel="prev" title="1. ISA Abstract Model" href="isamodel.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> ISA Model and Serialization Specifications
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="isamodel.html">1. ISA Abstract Model</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. ISA-Tab format</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#format">2.1. Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#investigation-file">2.2. Investigation File</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ontology-source-reference-section">2.2.1. Ontology Source Reference section</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#investigation-section">2.2.2. Investigation section</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#study-section">2.2.3. Study section</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#study-and-assay-files">2.3. Study and Assay files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ontology-annotations">2.3.1. Ontology Annotations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unit">2.3.2. Unit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#processes">2.3.3. Processes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#characteristics">2.3.4. Characteristics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#factor-value">2.3.5. Factor Value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#study-table-file">2.3.6. Study Table file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#assay-table-file">2.3.7. Assay Table file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#special-cases">2.3.8. Special cases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-files">2.3.9. Data Files</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="isajson.html">3. ISA-JSON format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="implementations.html">4. Software tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">5. Contributing</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">ISA Model and Serialization Specifications</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>2. ISA-Tab format</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/isatab.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="isa-tab-format">
+<h1>2. ISA-Tab format<a class="headerlink" href="#isa-tab-format" title="Permalink to this headline">¶</a></h1>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">As a pre-requisite to reading this specification, please make sure you have read and understood the <a class="reference internal" href="isamodel.html"><span class="doc">ISA Abstract Model</span></a> that the ISA-Tab format is based on.</p>
+</div>
+<p>For detail on ISA framework terminology, please read the <a class="reference internal" href="isamodel.html"><span class="doc">ISA Abstract Model specification</span></a>.</p>
+<p>This document describes the ISA Abstract Model reference implementation specified in the ISA-Tab format. ISA-Tab files
+are <a class="reference external" href="https://en.wikipedia.org/wiki/Tab-separated_values">tab separated value</a> (tsv) files, with specific labeled
+column structures specified below.</p>
+<p>Below we provide the schemas and the content rules for valid ISA-Tab documents. Full examples of ISA content as
+ISA-Tab can be found in the test data package of the ISA API, here <a class="reference external" href="https://git.io/vPZdE">https://git.io/vPZdE</a> We recommend that you study
+these examples to better understand the structure of ISA-Tab documents.</p>
+<div class="section" id="format">
+<h2>2.1. Format<a class="headerlink" href="#format" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>ISA-Tab uses three types of file to capture the experimental metadata:</dt>
+<dd><ul class="first last simple">
+<li>Investigation file</li>
+<li>Study file</li>
+<li>Assay file (with associated data files)</li>
+</ul>
+</dd>
+</dl>
+<p>The Investigation file contains all the information needed to understand the overall goals and means used in an
+experiment; experimental steps (or sequences of events) are described in the Study and in the Assay file(s). For each
+Investigation file there may be one or more Studies defined with a corresponding Study file; for each Study there may
+be one or more Assays defined with corresponding Assay files.</p>
+<p>Files SHOULD be encoded using <a class="reference external" href="http://www.fileformat.info/info/unicode/utf8.htm">UTF-8</a>.</p>
+<p>Column delimiters SHOULD be the Unicode Horizontal Tab character (Unicode <a class="reference external" href="http://www.fileformat.info/info/unicode/char/0009/index.htm">U+0009</a>,).</p>
+<p>In order to facilitate identification of ISA-Tab component files, specific naming patterns SHOULD follow:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">i_*.txt</span></code> for identifying the Investigation file, e.g. <code class="docutils literal"><span class="pre">i_investigation.txt</span></code></li>
+<li><code class="docutils literal"><span class="pre">s_*.txt</span></code> for identifying Study file(s), e.g. <code class="docutils literal"><span class="pre">s_gene_survey.txt</span></code></li>
+<li><code class="docutils literal"><span class="pre">a_*.txt</span></code> for identifying Assay file(s), e.g. <code class="docutils literal"><span class="pre">a_transcription.txt</span></code></li>
+</ul>
+</div></blockquote>
+<p>All labels are case-sensitive:</p>
+<blockquote>
+<div><ul class="simple">
+<li>In the Investigation file, section headers MUST be completely written in upper case (e.g. STUDY), field headers MUST have the first letter of each word in upper case (e.g. Study Identifier); with the exception of the referencing label (REF).</li>
+<li>In the Study and Assay files, column headers MUST also have the first letter of each word in upper case, with the exception of the referencing label (REF).</li>
+</ul>
+</div></blockquote>
+<p>Dates SHOULD be supplied in the <a class="reference external" href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO8601</a> format <code class="docutils literal"><span class="pre">YYYY-MM-DD</span></code>.</p>
+<p>All values of cells MAY be enveloped with the Unicode Quotation Mark, Unicode
+<a class="reference external" href="http://www.fileformat.info/info/unicode/char/0022/index.htm">U+0022</a>  (the &#8221; character).</p>
+<p>For maximal portability file names should only contain only ASCII characters not excluded
+already (that is <code class="docutils literal"><span class="pre">A-Za-z0-9._!#$%&amp;+,;=&#64;^(){}'[]</span></code> - we exclude space as many utilities
+do not accept spaces in file paths): non-English alphabetic characters cannot be guaranteed
+to be supported in all locales. It would be good practice to avoid the shell metacharacters
+<code class="docutils literal"><span class="pre">(){}'[]$.&quot;</span></code>.</p>
+</div>
+<div class="section" id="investigation-file">
+<h2>2.2. Investigation File<a class="headerlink" href="#investigation-file" title="Permalink to this headline">¶</a></h2>
+<p>The Investigation file fulfils four needs:</p>
+<ol class="arabic simple">
+<li>to declare key entities, such as factors, protocols, which may be referenced in the other files</li>
+<li>to track provenance of the terminologies (controlled vocabularies or ontologies) there are used, where applicable</li>
+<li>to relate Assay files to Studies</li>
+<li>to relate each Study file to an Investigation (this only becomes necessary when two or more Study files need to be grouped).</li>
+</ol>
+<p>An Investigation file is structured as a table with vertical headings along the first column, and corresponding values
+in the subsequent columns. The following section headings MUST appear in the Investigation file (in order).</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">ONTOLOGY</span> <span class="pre">SOURCE</span> <span class="pre">REFERENCE</span></code></li>
+<li><code class="docutils literal"><span class="pre">INVESTIGATION</span></code></li>
+<li><code class="docutils literal"><span class="pre">INVESTIGATION</span> <span class="pre">PUBLICATIONS</span></code></li>
+<li><code class="docutils literal"><span class="pre">INVESTIGATION</span> <span class="pre">CONTACTS</span></code></li>
+<li><code class="docutils literal"><span class="pre">STUDY</span></code></li>
+<li><code class="docutils literal"><span class="pre">STUDY</span> <span class="pre">DESIGN</span> <span class="pre">DESCRIPTORS</span></code></li>
+<li><code class="docutils literal"><span class="pre">STUDY</span> <span class="pre">PUBLICATIONS</span></code></li>
+<li><code class="docutils literal"><span class="pre">STUDY</span> <span class="pre">FACTORS</span></code></li>
+<li><code class="docutils literal"><span class="pre">STUDY</span> <span class="pre">ASSAYS</span></code></li>
+<li><code class="docutils literal"><span class="pre">STUDY</span> <span class="pre">PROTOCOLS</span></code></li>
+<li><code class="docutils literal"><span class="pre">STUDY</span> <span class="pre">CONTACTS</span></code></li>
+</ul>
+</div></blockquote>
+<p>In the following sections, examples of each section block are given beside the specification of each section.</p>
+<p>For a full example of a complete Investigation File, please see <a class="reference external" href="https://git.io/vPZbG">https://git.io/vPZbG</a>.</p>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p>Rows in which the first character in the first column is Unicode
+<a class="reference external" href="http://www.fileformat.info/info/unicode/char/0023/index.htm">U+0023</a>  (the # character) MUST be interpreted as
+comments, where reference implementation parsers SHOULD ignore those lines entirely.</p>
+<p class="last">Rows where the label <code class="docutils literal"><span class="pre">Comment[&lt;comment</span> <span class="pre">name&gt;]</span></code> appear can also appear within any of the section blocks. Where
+these appear, the comment name must be unique within the context of a single block (e.g. you cannot have multiple
+occurences of <code class="docutils literal"><span class="pre">Comment[external</span> <span class="pre">DB</span> <span class="pre">REF]</span></code> within <code class="docutils literal"><span class="pre">STUDY</span> <span class="pre">ASSAYS</span></code>. Also, the value cells MUST match the number of
+values indicated by the rest of the section in context.</p>
+</div>
+<div class="section" id="ontology-source-reference-section">
+<h3>2.2.1. Ontology Source Reference section<a class="headerlink" href="#ontology-source-reference-section" title="Permalink to this headline">¶</a></h3>
+<p>The Ontology Source section of the Investigation file is used to declare Ontology Sources used elsewhere in the ISA-Tab
+files within the context of an Investigation.</p>
+<p>Where a row labelled with <code class="docutils literal"><span class="pre">Term</span> <span class="pre">Source</span> <span class="pre">REF</span></code> suffixed in the Investigation
+file, the value of the cell SHOULD match one of the <code class="docutils literal"><span class="pre">Term</span> <span class="pre">Source</span> <span class="pre">Name</span></code> value declared in this section.</p>
+<p>Where a column labelled with <code class="docutils literal"><span class="pre">Term</span> <span class="pre">Source</span> <span class="pre">REF</span></code> in a Study file or Assay file associated with the Investigation, the value
+of the cell SHOULD match one of the <code class="docutils literal"><span class="pre">Term</span> <span class="pre">Source</span> <span class="pre">Name</span></code> value declared in this section.</p>
+<p>This section implements a list of <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Source</span></code> from the ISA Abstract Model.</p>
+<p>This section MUST contain zero or more values.</p>
+<p><strong>ONTOLOGY SOURCE REFERENCE</strong></p>
+<p>This section MUST contain the following labels, with the specified datatypes for values supported:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Label</th>
+<th class="head">Datatype</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Term Source Name</td>
+<td>String</td>
+<td>The name of the source of a term; i.e. the source controlled vocabulary or ontology. These names will be used in all corresponding Term Source REF fields that occur elsewhere.</td>
+</tr>
+<tr class="row-odd"><td>Term Source File</td>
+<td>String (file name or URI)</td>
+<td>A file name or a URI of an official resource.</td>
+</tr>
+<tr class="row-even"><td>Term Source Version</td>
+<td>String</td>
+<td>The version number of the Term Source to support terms tracking.</td>
+</tr>
+<tr class="row-odd"><td>Term Source Description</td>
+<td>String</td>
+<td>Use for disambiguating resources when homologous prefixes have been used.</td>
+</tr>
+</tbody>
+</table>
+<p>For example, the <code class="docutils literal"><span class="pre">ONTOLOGY</span> <span class="pre">SOURCE</span> <span class="pre">REFERENCE</span></code> section of an ISA-Tab <code class="docutils literal"><span class="pre">i_*.txt</span></code> file may look as follows:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ONTOLOGY</span> <span class="n">SOURCE</span> <span class="n">REFERENCE</span>
+<span class="n">Term</span> <span class="n">Source</span> <span class="n">Name</span>	<span class="s2">&quot;CHEBI&quot;</span>	<span class="s2">&quot;EFO&quot;</span>	<span class="s2">&quot;OBI&quot;</span>	<span class="s2">&quot;NCBITAXON&quot;</span>
+<span class="n">Term</span> <span class="n">Source</span> <span class="n">File</span>	<span class="s2">&quot;http://data.bioontology.org/ontologies/CHEBI&quot;</span>	<span class="s2">&quot;http...</span>
+<span class="n">Term</span> <span class="n">Source</span> <span class="n">Version</span>	<span class="s2">&quot;78&quot;</span>	<span class="s2">&quot;111&quot;</span>	<span class="s2">&quot;21&quot;</span>	<span class="s2">&quot;2&quot;</span>	<span class="s2">&quot;160&quot;</span>
+<span class="n">Term</span> <span class="n">Source</span> <span class="n">Description</span>	<span class="s2">&quot;Chemical Entities of Biological Interest Ontology&quot;</span>	<span class="o">...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="investigation-section">
+<h3>2.2.2. Investigation section<a class="headerlink" href="#investigation-section" title="Permalink to this headline">¶</a></h3>
+<p>This section is organized in several subsections, described in detail below. The Investigation section provides a
+flexible mechanism for grouping two or more Study files where required. When only one Study is created, the values in
+this section SHOULD be left empty and the relevant metadata values recorded in the Study section only.</p>
+<p>These sections implement an <code class="docutils literal"><span class="pre">Investigation</span></code> from the ISA Abstract Model.</p>
+<p><strong>INVESTIGATION</strong></p>
+<p>This section MUST contain zero or one values.</p>
+<p>This section MUST contain the following labels, with the specified datatypes for values supported:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Label</th>
+<th class="head">Datatype</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Investigation Identifier</td>
+<td>String</td>
+<td>A identifier or an accession number provided by a repository. This SHOULD be locally unique.</td>
+</tr>
+<tr class="row-odd"><td>Investigation Title</td>
+<td>String</td>
+<td>A concise name given to the investigation.</td>
+</tr>
+<tr class="row-even"><td>Investigation Description</td>
+<td>String</td>
+<td>A textual description of the investigation.</td>
+</tr>
+<tr class="row-odd"><td>Investigation Submission Date</td>
+<td>String formatted as ISO8601 date YYYY-MM-DD</td>
+<td>The date on which the investigation was reported to the repository.</td>
+</tr>
+<tr class="row-even"><td>Investigation Public Release Date</td>
+<td>String formatted as ISO8601 date YYYY-MM-DD</td>
+<td>The date on which the investigation was released publicly.</td>
+</tr>
+</tbody>
+</table>
+<p>For example, the <code class="docutils literal"><span class="pre">INVESTIGATION</span></code> section of an ISA-Tab <code class="docutils literal"><span class="pre">i_*.txt</span></code> file may look as follows:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">INVESTIGATION</span>
+<span class="n">Investigation</span> <span class="n">Identifier</span>	<span class="s2">&quot;BII-I-1&quot;</span>
+<span class="n">Investigation</span> <span class="n">Title</span>	<span class="s2">&quot;Growth control of the eukaryote cell: a systems biology ...</span>
+<span class="n">Investigation</span> <span class="n">Description</span>	<span class="s2">&quot;Background Cell growth underlies many key cellular...</span>
+<span class="n">Investigation</span> <span class="n">Submission</span> <span class="n">Date</span>	<span class="s2">&quot;2007-04-30&quot;</span>
+<span class="n">Investigation</span> <span class="n">Public</span> <span class="n">Release</span> <span class="n">Date</span>	<span class="s2">&quot;2009-03-10&quot;</span>
+</pre></div>
+</div>
+<p><strong>INVESTIGATION PUBLICATIONS</strong></p>
+<p>This section MUST contain zero or more values.</p>
+<p>This section MUST contain the following labels, with the specified datatypes for values supported:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Label</th>
+<th class="head">Datatype</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Investigation PubMed ID</td>
+<td>String formatted as valid PubMed ID</td>
+<td>The PubMed IDs of the described publication(s) associated with this investigation.</td>
+</tr>
+<tr class="row-odd"><td>Investigation Publication DOI</td>
+<td>String formatted as valid DOI</td>
+<td>A Digital Object Identifier (DOI) for that publication (where available).</td>
+</tr>
+<tr class="row-even"><td>Investigation Publication Author List</td>
+<td>String</td>
+<td>The list of authors associated with that publication.</td>
+</tr>
+<tr class="row-odd"><td>Investigation Publication Title</td>
+<td>String</td>
+<td>The title of publication associated with the investigation.</td>
+</tr>
+<tr class="row-even"><td>Investigation Publication Status</td>
+<td>String, or Ontology Annotation by providing accompanying Term Accession Number and Term Source REF</td>
+<td>A term describing the status of that publication (i.e. submitted, in preparation, published).</td>
+</tr>
+<tr class="row-odd"><td>Investigation Publication Status Term Accession Number</td>
+<td>String or URI</td>
+<td>The accession number from the Term Source associated with the selected term.</td>
+</tr>
+<tr class="row-even"><td>Investigation Publication Status Term Source REF</td>
+<td>String</td>
+<td>Identifies the controlled vocabulary or ontology that this term comes from. The Source REF has to match one the Term Source Name declared in the in the Ontology Source Reference section.</td>
+</tr>
+</tbody>
+</table>
+<p>For example, the <code class="docutils literal"><span class="pre">INVESTIGATION</span> <span class="pre">PUBLICATIONS</span></code> section of an ISA-Tab <code class="docutils literal"><span class="pre">i_*.txt</span></code> file may look as follows:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">INVESTIGATION</span> <span class="n">PUBLICATIONS</span>
+<span class="n">Investigation</span> <span class="n">PubMed</span> <span class="n">ID</span>	<span class="s2">&quot;17439666&quot;</span>
+<span class="n">Investigation</span> <span class="n">Publication</span> <span class="n">DOI</span>	<span class="s2">&quot;doi:10.1186/jbiol54&quot;</span>
+<span class="n">Investigation</span> <span class="n">Publication</span> <span class="n">Author</span> <span class="n">List</span>	<span class="s2">&quot;Castrillo JI, Zeef LA, Hoyle DC, Zhang N,</span>
+<span class="n">Investigation</span> <span class="n">Publication</span> <span class="n">Title</span>	<span class="s2">&quot;Growth control of the eukaryote cell: a syst...</span>
+<span class="n">Investigation</span> <span class="n">Publication</span> <span class="n">Status</span>	<span class="s2">&quot;indexed in Pubmed&quot;</span>
+<span class="n">Investigation</span> <span class="n">Publication</span> <span class="n">Status</span> <span class="n">Term</span> <span class="n">Accession</span> <span class="n">Number</span>	<span class="s2">&quot;&quot;</span>
+<span class="n">Investigation</span> <span class="n">Publication</span> <span class="n">Status</span> <span class="n">Term</span> <span class="n">Source</span> <span class="n">REF</span>	<span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+<p><strong>INVESTIGATION CONTACTS</strong></p>
+<p>This section MUST contain zero or more values.</p>
+<p>This section MUST contain the following labels, with the specified datatypes for values supported:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Label</th>
+<th class="head">Datatype</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Investigation Person Last Name</td>
+<td>String</td>
+<td>The last name of a person associated with the investigation.</td>
+</tr>
+<tr class="row-odd"><td>Investigation Person First Name</td>
+<td>String</td>
+<td>Investigation Person Name</td>
+</tr>
+<tr class="row-even"><td>Investigation Person Mid Initials</td>
+<td>String</td>
+<td>The middle initials of a person associated with the investigation.</td>
+</tr>
+<tr class="row-odd"><td>Investigation Person Email</td>
+<td>String formatted as email</td>
+<td>The email address of a person associated with the investigation.</td>
+</tr>
+<tr class="row-even"><td>Investigation Person Phone</td>
+<td>String</td>
+<td>The telephone number of a person associated with the investigation.</td>
+</tr>
+<tr class="row-odd"><td>IInvestigation Person Fax</td>
+<td>String</td>
+<td>The fax number of a person associated with the investigation.</td>
+</tr>
+<tr class="row-even"><td>Investigation Person Address</td>
+<td>String</td>
+<td>The address of a person associated with the investigation.</td>
+</tr>
+<tr class="row-odd"><td>Investigation Person Affiliation</td>
+<td>String</td>
+<td>The organization affiliation for a person associated with the investigation.</td>
+</tr>
+<tr class="row-even"><td>Investigation Person Roles</td>
+<td>String or Ontology Annotation if accompanied by Term Accession Numbers and Term Source REFs</td>
+<td>Term to classify the role(s) performed by this person in the context of the investigation, which means that the roles reported here need not correspond to roles held withing their affiliated organization. Multiple annotations or values attached to one person can be provided by using a semicolon (&#8221;;&#8221;) Unicode (U0003+B) as a separator (e.g.: submitter;funder;sponsor) .The term can be free text or from, for example, a controlled vocabulary or an ontology. If the latter source is used the Term Accession Number and Term Source REF fields below are required.</td>
+</tr>
+<tr class="row-odd"><td>Investigation Person Roles Term Accession Number</td>
+<td>String</td>
+<td>The accession number from the Term Source associated with the selected term.</td>
+</tr>
+<tr class="row-even"><td>Investigation Person Roles Term Source REF</td>
+<td>String</td>
+<td>Identifies the controlled vocabulary or ontology that this term comes from. The Source REF has to match one of the Term Source Names declared in the Ontology Source Reference section.</td>
+</tr>
+</tbody>
+</table>
+<p>For example, the <code class="docutils literal"><span class="pre">INVESTIGATION</span> <span class="pre">CONTACTS</span></code> section of an ISA-Tab <code class="docutils literal"><span class="pre">i_*.txt</span></code> file may look as follows:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">INVESTIGATION</span> <span class="n">CONTACTS</span>
+<span class="n">Investigation</span> <span class="n">Person</span> <span class="n">Last</span> <span class="n">Name</span>	<span class="s2">&quot;Stephen&quot;</span>	<span class="s2">&quot;Castrillo&quot;</span>	<span class="s2">&quot;Zeef&quot;</span>
+<span class="n">Investigation</span> <span class="n">Person</span> <span class="n">First</span> <span class="n">Name</span>	<span class="s2">&quot;Oliver&quot;</span>	<span class="s2">&quot;Juan&quot;</span>	<span class="s2">&quot;Leo&quot;</span>
+<span class="n">Investigation</span> <span class="n">Person</span> <span class="n">Mid</span> <span class="n">Initials</span>	<span class="s2">&quot;G&quot;</span>	<span class="s2">&quot;I&quot;</span>	<span class="s2">&quot;A&quot;</span>
+<span class="n">Investigation</span> <span class="n">Person</span> <span class="n">Email</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>
+<span class="n">Investigation</span> <span class="n">Person</span> <span class="n">Phone</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>
+<span class="n">Investigation</span> <span class="n">Person</span> <span class="n">Fax</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>
+<span class="n">Investigation</span> <span class="n">Person</span> <span class="n">Address</span>	<span class="s2">&quot;Oxford Road, Manchester M13 9PT, UK&quot;</span>	<span class="s2">&quot;Oxford Road, Manchester M13 9PT, UK&quot;</span>	<span class="s2">&quot;Ox...</span>
+<span class="n">Investigation</span> <span class="n">Person</span> <span class="n">Affiliation</span>	<span class="s2">&quot;Faculty of Life Sciences, Michael Smith ...</span>
+<span class="n">Investigation</span> <span class="n">Person</span> <span class="n">Roles</span>	<span class="s2">&quot;corresponding author&quot;</span>	<span class="s2">&quot;author&quot;</span>	<span class="s2">&quot;au...</span>
+<span class="n">Investigation</span> <span class="n">Person</span> <span class="n">Roles</span> <span class="n">Term</span> <span class="n">Accession</span> <span class="n">Number</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>
+<span class="n">Investigation</span> <span class="n">Person</span> <span class="n">Roles</span> <span class="n">Term</span> <span class="n">Source</span> <span class="n">REF</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="study-section">
+<h3>2.2.3. Study section<a class="headerlink" href="#study-section" title="Permalink to this headline">¶</a></h3>
+<p>This section is organized in several subsections, described in detail below. This section also represents a
+<strong>repeatable block</strong>, which is replicated according to the number of Studies to report (i.e. two Studies, two Study
+blocks are represented in the Investigation file). The subsections in the block are arranged vertically; the intent
+being to enhance readability and presentation, and possibly to help with parsing. These subsections MUST remain within
+this repeatable block, although their order MAY vary; the fields MUST remain within their subsection.</p>
+<p>These sections implement the metadata for a <code class="docutils literal"><span class="pre">Study</span></code> from the ISA Abstract Model and a list of <code class="docutils literal"><span class="pre">Assay</span></code> (i.e. <code class="docutils literal"><span class="pre">Study</span></code> and
+<code class="docutils literal"><span class="pre">Assay</span></code> <strong>without</strong> graphs; graphs are implemented in ISA-Tab as table files).</p>
+<p><strong>STUDY</strong></p>
+<p>This section MUST contain zero or one values.</p>
+<p>This section MUST contain the following labels, with the specified datatypes for values supported:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Label</th>
+<th class="head">Datatype</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Study Identifier</td>
+<td>String</td>
+<td>A unique identifier, either a temporary identifier supplied by users or one generated by a repository or other database. For example, it could be an identifier complying with the LSID specification.</td>
+</tr>
+<tr class="row-odd"><td>Study Title</td>
+<td>String</td>
+<td>A concise phrase used to encapsulate the purpose and goal of the study.</td>
+</tr>
+<tr class="row-even"><td>Study Description</td>
+<td>String</td>
+<td>A textual description of the study, with components such as objective or goals.</td>
+</tr>
+<tr class="row-odd"><td>Study Submission Date</td>
+<td>String formatted as ISO8601 date</td>
+<td>The date on which the study is submitted to an archive.</td>
+</tr>
+<tr class="row-even"><td>Study Public Release Date</td>
+<td>String formatted as ISO8601 date</td>
+<td>The date on which the study SHOULD be released publicly.</td>
+</tr>
+<tr class="row-odd"><td>Study File Name</td>
+<td>String formatted as file name or URI</td>
+<td>A field to specify the name of the Study Table file corresponding the definition of that Study. There can be only one file per cell.</td>
+</tr>
+</tbody>
+</table>
+<p>For example, the <code class="docutils literal"><span class="pre">STUDY</span></code> section of an ISA-Tab <code class="docutils literal"><span class="pre">i_*.txt</span></code> file may look as follows:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Study</span> <span class="n">Identifier</span>	<span class="s2">&quot;BII-S-3&quot;</span>
+<span class="n">Study</span> <span class="n">Title</span>	<span class="s2">&quot;Metagenomes and Metatranscriptomes of phytoplankton blooms from ...</span>
+<span class="n">Study</span> <span class="n">Description</span>	<span class="s2">&quot;Sequencing the metatranscriptome can provide information ...</span>
+<span class="n">Study</span> <span class="n">Submission</span> <span class="n">Date</span>	<span class="s2">&quot;2008-08-15&quot;</span>
+<span class="n">Study</span> <span class="n">Public</span> <span class="n">Release</span> <span class="n">Date</span>	<span class="s2">&quot;2008-08-15&quot;</span>
+<span class="n">Study</span> <span class="n">File</span> <span class="n">Name</span>	<span class="s2">&quot;s_BII-S-3.txt&quot;</span>
+</pre></div>
+</div>
+<p><strong>STUDY DESIGN DESCRIPTORS</strong></p>
+<p>This section MUST contain zero or more values.</p>
+<p>This section MUST contain the following labels, with the specified datatypes for values supported:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Label</th>
+<th class="head">Datatype</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Study Design Type</td>
+<td>String</td>
+<td>A term allowing the classification of the study based on the overall experimental design, e.g cross-over design or parallel group design. The term can be free text or from, for example, a controlled vocabulary or an ontology. If the latter source is used the Term Accession Number and Term Source REF fields below are required.</td>
+</tr>
+<tr class="row-odd"><td>Study Design Type Term Accession Number</td>
+<td>String</td>
+<td>The accession number from the Term Source associated with the selected term.</td>
+</tr>
+<tr class="row-even"><td>Study Design Type Term Source REF</td>
+<td>String</td>
+<td>Identifies the controlled vocabulary or ontology that this term comes from. The Study Design Term Source REF has to match one the Term Source Name declared in the Ontology Source Reference section.</td>
+</tr>
+</tbody>
+</table>
+<p>For example, the <code class="docutils literal"><span class="pre">STUDY</span> <span class="pre">DESIGN</span> <span class="pre">DESCRIPTORS</span></code> section of an ISA-Tab <code class="docutils literal"><span class="pre">i_*.txt</span></code> file may look as follows:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">STUDY</span> <span class="n">DESIGN</span> <span class="n">DESCRIPTORS</span>
+<span class="n">Study</span> <span class="n">Design</span> <span class="n">Type</span>	<span class="s2">&quot;time series design&quot;</span>
+<span class="n">Study</span> <span class="n">Design</span> <span class="n">Type</span> <span class="n">Term</span> <span class="n">Accession</span> <span class="n">Number</span>	<span class="s2">&quot;http://purl.obolibrary.org/obo/OBI...</span>
+<span class="n">Study</span> <span class="n">Design</span> <span class="n">Type</span> <span class="n">Term</span> <span class="n">Source</span> <span class="n">REF</span>	<span class="s2">&quot;OBI&quot;</span>
+</pre></div>
+</div>
+<p><strong>STUDY PUBLICATIONS</strong></p>
+<p>This section MUST contain zero or more values.</p>
+<p>This section MUST contain the following labels, with the specified datatypes for values supported:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Label</th>
+<th class="head">Datatype</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Study PubMed ID</td>
+<td>String formatted as valid PubMed ID</td>
+<td>The PubMed IDs of the described publication(s) associated with this study.</td>
+</tr>
+<tr class="row-odd"><td>Study Publication DOI</td>
+<td>String formatted as valid DOI</td>
+<td>A Digital Object Identifier (DOI) for that publication (where available).</td>
+</tr>
+<tr class="row-even"><td>Study Publication Author List</td>
+<td>String</td>
+<td>The list of authors associated with that publication.</td>
+</tr>
+<tr class="row-odd"><td>Study Publication Title</td>
+<td>String</td>
+<td>The title of publication associated with the investigation.</td>
+</tr>
+<tr class="row-even"><td>Study Publication Status</td>
+<td>String, or Ontology Annotation by providing accompanying Term Accession Number and Term Source REF</td>
+<td>A term describing the status of that publication (i.e. submitted, in preparation, published).</td>
+</tr>
+<tr class="row-odd"><td>Study Publication Status Term Accession Number</td>
+<td>String or URI</td>
+<td>The accession number from the Term Source associated with the selected term.</td>
+</tr>
+<tr class="row-even"><td>Study Publication Status Term Source REF</td>
+<td>String</td>
+<td>Identifies the controlled vocabulary or ontology that this term comes from. The Source REF has to match one the Term Source Name declared in the in the Ontology Source Reference section.</td>
+</tr>
+</tbody>
+</table>
+<p>For example, the <code class="docutils literal"><span class="pre">STUDY</span> <span class="pre">PUBLICATIONS</span></code> section of an ISA-Tab <code class="docutils literal"><span class="pre">i_*.txt</span></code> file may look as follows:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">STUDY</span> <span class="n">PUBLICATIONS</span>
+<span class="n">Study</span> <span class="n">PubMed</span> <span class="n">ID</span>	<span class="s2">&quot;18725995&quot;</span>	<span class="s2">&quot;18783384&quot;</span>
+<span class="n">Study</span> <span class="n">Publication</span> <span class="n">DOI</span>	<span class="s2">&quot;10.1371/journal.pone.0003042&quot;</span>	<span class="s2">&quot;10.1111/j....</span>
+<span class="n">Study</span> <span class="n">Publication</span> <span class="n">Author</span> <span class="n">List</span>	<span class="s2">&quot;Gilbert JA, Field D, Huang Y, Edwards R, Li ...</span>
+<span class="n">Study</span> <span class="n">Publication</span> <span class="n">Title</span>	<span class="s2">&quot;Detection of large numbers of novel sequences...</span>
+<span class="n">Study</span> <span class="n">Publication</span> <span class="n">Status</span>	<span class="s2">&quot;indexed in PubMed&quot;</span>	<span class="s2">&quot;indexed in PubMed&quot;</span>
+<span class="n">Study</span> <span class="n">Publication</span> <span class="n">Status</span> <span class="n">Term</span> <span class="n">Accession</span> <span class="n">Number</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>
+<span class="n">Study</span> <span class="n">Publication</span> <span class="n">Status</span> <span class="n">Term</span> <span class="n">Source</span> <span class="n">REF</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+<p><strong>STUDY FACTORS</strong></p>
+<p>This section MUST contain zero or more values.</p>
+<p>This section MUST contain the following labels, with the specified datatypes for values supported:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Label</th>
+<th class="head">Datatype</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Study Factor Name</td>
+<td>String</td>
+<td>The name of one factor used in the Study and/or Assay files. A factor corresponds to an independent variable manipulated by the experimentalist with the intention to affect biological systems in a way that can be measured by an assay. The value of a factor is given in the Study or Assay file, accordingly. If both Study and Assay have a Factor Value, these must be different.</td>
+</tr>
+<tr class="row-odd"><td>Study Factor Type</td>
+<td>String</td>
+<td>A term allowing the classification of this factor into categories. The term can be free text or from, for example, a controlled vocabulary or an ontology. If the latter source is used the Term Accession Number and Term Source REF fields below are required.</td>
+</tr>
+<tr class="row-even"><td>Study Factor Type Term Accession Number</td>
+<td>String</td>
+<td>The accession number from the Term Source associated with the selected term.</td>
+</tr>
+<tr class="row-odd"><td>Study Factor Type Term Source REF</td>
+<td>String</td>
+<td>Identifies the controlled vocabulary or ontology that this term comes from. The Source REF has to match one of the Term Source Name declared in the Ontology Source Reference section.</td>
+</tr>
+</tbody>
+</table>
+<p>For example, the <code class="docutils literal"><span class="pre">STUDY</span> <span class="pre">FACTORS</span></code> section of an ISA-Tab <code class="docutils literal"><span class="pre">i_*.txt</span></code> file may look as follows:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">STUDY</span> <span class="n">FACTORS</span>
+<span class="n">Study</span> <span class="n">Factor</span> <span class="n">Name</span>	<span class="s2">&quot;dose&quot;</span>	<span class="s2">&quot;compound&quot;</span>	<span class="s2">&quot;collection time&quot;</span>
+<span class="n">Study</span> <span class="n">Factor</span> <span class="n">Type</span>	<span class="s2">&quot;dose&quot;</span>	<span class="s2">&quot;chemical substance&quot;</span>	<span class="s2">&quot;time&quot;</span>
+<span class="n">Study</span> <span class="n">Factor</span> <span class="n">Type</span> <span class="n">Term</span> <span class="n">Accession</span> <span class="n">Number</span>	<span class="s2">&quot;http://www.ebi.ac.uk/efo/EFO_0000428&quot;</span>
+<span class="n">Study</span> <span class="n">Factor</span> <span class="n">Type</span> <span class="n">Term</span> <span class="n">Source</span> <span class="n">REF</span>	<span class="s2">&quot;EFO&quot;</span>	<span class="s2">&quot;CHEBI&quot;</span>	<span class="s2">&quot;PATO&quot;</span>
+</pre></div>
+</div>
+<p><strong>STUDY ASSAYS</strong></p>
+<p>This section MUST contain zero or more values.</p>
+<p>This section MUST contain the following labels, with the specified datatypes for values supported:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Label</th>
+<th class="head">Datatype</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Study Assay Measurement Type</td>
+<td>String</td>
+<td>A term to qualify the endpoint, or what is being measured (e.g. gene expression profiling or protein identification). The term can be free text or from, for example, a controlled vocabulary or an ontology. If the latter source is used the Term Accession Number and Term Source REF fields below are required.</td>
+</tr>
+<tr class="row-odd"><td>Study Assay Measurement Type Term Accession Number</td>
+<td>String</td>
+<td>The accession number from the Term Source associated with the selected term.</td>
+</tr>
+<tr class="row-even"><td>Study Assay Measurement Type Term Source REF</td>
+<td>String</td>
+<td>The Source REF has to match one of the Term Source Name declared in the Ontology Source Reference section.</td>
+</tr>
+<tr class="row-odd"><td>Study Assay Technology Type</td>
+<td>String</td>
+<td>Term to identify the technology used to perform the measurement, e.g. DNA microarray, mass spectrometry. The term can be free text or from, for example, a controlled vocabulary or an ontology. If the latter source is used the Term Accession Number and Term Source REF fields below are required.</td>
+</tr>
+<tr class="row-even"><td>Study Assay Technology Type Term Accession Number</td>
+<td>String</td>
+<td>The accession number from the Term Source associated with the selected term.</td>
+</tr>
+<tr class="row-odd"><td>Study Assay Technology Type Term Source REF</td>
+<td>String</td>
+<td>Identifies the controlled vocabulary or ontology that this term comes from. The Source REF has to match one of the Term Source Names declared in the Ontology Source Reference section.</td>
+</tr>
+<tr class="row-even"><td>Study Assay Technology Platform</td>
+<td>String</td>
+<td>Manufacturer and platform name, e.g. Bruker AVANCE</td>
+</tr>
+<tr class="row-odd"><td>Study Assay File Name</td>
+<td>String</td>
+<td>A field to specify the name of the Assay Table file corresponding the definition of that assay. There can be only one file per cell.</td>
+</tr>
+</tbody>
+</table>
+<p>For example, the <code class="docutils literal"><span class="pre">STUDY</span> <span class="pre">ASSAYS</span></code> section of an ISA-Tab <code class="docutils literal"><span class="pre">i_*.txt</span></code> file may look as follows:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">STUDY</span> <span class="n">ASSAYS</span>
+<span class="n">Study</span> <span class="n">Assay</span> <span class="n">File</span> <span class="n">Name</span>	<span class="s2">&quot;a_gilbert-assay-Gx.txt&quot;</span>	<span class="s2">&quot;a_gilbert-assay-Tx.txt&quot;</span>
+<span class="n">Study</span> <span class="n">Assay</span> <span class="n">Measurement</span> <span class="n">Type</span>	<span class="s2">&quot;metagenome sequencing&quot;</span>	<span class="s2">&quot;transcription ...</span>
+<span class="n">Study</span> <span class="n">Assay</span> <span class="n">Measurement</span> <span class="n">Type</span> <span class="n">Term</span> <span class="n">Accession</span> <span class="n">Number</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>
+<span class="n">Study</span> <span class="n">Assay</span> <span class="n">Measurement</span> <span class="n">Type</span> <span class="n">Term</span> <span class="n">Source</span> <span class="n">REF</span>	<span class="s2">&quot;OBI&quot;</span>	<span class="s2">&quot;OBI&quot;</span>
+<span class="n">Study</span> <span class="n">Assay</span> <span class="n">Technology</span> <span class="n">Type</span>	<span class="s2">&quot;nucleotide sequencing&quot;</span>	<span class="s2">&quot;nucleotide sequ...</span>
+<span class="n">Study</span> <span class="n">Assay</span> <span class="n">Technology</span> <span class="n">Type</span> <span class="n">Term</span> <span class="n">Accession</span> <span class="n">Number</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>
+<span class="n">Study</span> <span class="n">Assay</span> <span class="n">Technology</span> <span class="n">Type</span> <span class="n">Term</span> <span class="n">Source</span> <span class="n">REF</span>	<span class="s2">&quot;OBI&quot;</span>	<span class="s2">&quot;OBI&quot;</span>
+<span class="n">Study</span> <span class="n">Assay</span> <span class="n">Technology</span> <span class="n">Platform</span>	<span class="s2">&quot;454 GS FLX&quot;</span>	<span class="s2">&quot;454 GS FLX&quot;</span>
+</pre></div>
+</div>
+<p><strong>STUDY PROTOCOLS</strong></p>
+<p>This section MUST contain zero or more values.</p>
+<p>This section MUST contain the following labels, with the specified datatypes for values supported:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Label</th>
+<th class="head">Datatype</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Study Protocol Name</td>
+<td>String</td>
+<td>The name of the protocols used within the ISA-Tab document. The names are used as identifiers within the ISA-Tab document and will be referenced in the Study and Assay files in the Protocol REF columns. Names can be either local identifiers, unique within the ISA Archive which contains them, or fully qualified external accession numbers.</td>
+</tr>
+<tr class="row-odd"><td>Study Protocol Type</td>
+<td>String</td>
+<td>Term to classify the protocol. The term can be free text or from, for example, a controlled vocabulary or an ontology. If the latter source is used the Term Accession Number and Term Source REF fields below are required.</td>
+</tr>
+<tr class="row-even"><td>Study Protocol Type Term Accession Number</td>
+<td>String</td>
+<td>The accession number from the Term Source associated with the selected term.</td>
+</tr>
+<tr class="row-odd"><td>Study Protocol Type Term Source REF</td>
+<td>String</td>
+<td>Identifies the controlled vocabulary or ontology that this term comes from. The Source REF has to match one of the Term Source Name declared in the Ontology Source Reference section.</td>
+</tr>
+<tr class="row-even"><td>Study Protocol Description</td>
+<td>String</td>
+<td>A free-text description of the protocol.</td>
+</tr>
+<tr class="row-odd"><td>Study Protocol URI</td>
+<td>String</td>
+<td>Pointer to protocol resources external to the ISA-Tab that can be accessed by their Uniform Resource Identifier (URI).</td>
+</tr>
+<tr class="row-even"><td>Study Protocol Version</td>
+<td>String</td>
+<td>An identifier for the version to ensure protocol tracking.</td>
+</tr>
+<tr class="row-odd"><td>Study Protocol Parameters Name</td>
+<td>String</td>
+<td>A semicolon-delimited (&#8221;;&#8221;) list of parameter names, used as an identifier within the ISA-Tab document. These names are used in the Study and Assay files (in the &#8220;Parameter Value []&#8221; column heading) to list the values used for each protocol parameter. Refer to section Multiple values fields in the Investigation File on how to encode multiple values in one field and match term sources</td>
+</tr>
+<tr class="row-even"><td>Study Protocol Parameters Term Accession Number</td>
+<td>String</td>
+<td>The accession number from the Term Source associated with the selected term.</td>
+</tr>
+<tr class="row-odd"><td>Study Protocol Parameters Term Source REF</td>
+<td>String</td>
+<td>Identifies the controlled vocabulary or ontology that this term comes from. The Source REF has to match one of the Term Source Name declared in the Ontology Source Reference section.</td>
+</tr>
+<tr class="row-even"><td>Study Protocol Components Name</td>
+<td>String</td>
+<td>A semicolon-delimited (&#8221;;&#8221;) list of a protocol&#8217;s components; e.g. instrument names, software names, and reagents names. Refer to section Multiple values fields in the Investigation File on how to encode multiple components in one field and match term sources.</td>
+</tr>
+<tr class="row-odd"><td>Study Protocol Components Type</td>
+<td>String</td>
+<td>Term to classify the protocol components listed for example, instrument, software, detector or reagent. The term can be free text or from, for example, a controlled vocabulary or an ontology. If the latter source is used the Term Accession Number and Term Source REF fields below are required.</td>
+</tr>
+<tr class="row-even"><td>Study Protocol Components Type Term Accession Number</td>
+<td>String</td>
+<td>The accession number from the Source associated to the selected terms.</td>
+</tr>
+<tr class="row-odd"><td>Study Protocol Components Type Term Source REF</td>
+<td>String</td>
+<td>Identifies the controlled vocabulary or ontology that this term comes from. The Source REF has to match a Term Source Name previously declared in the ontology section</td>
+</tr>
+</tbody>
+</table>
+<p>For example, the <code class="docutils literal"><span class="pre">STUDY</span> <span class="pre">PROTOCOLS</span></code> section of an ISA-Tab <code class="docutils literal"><span class="pre">i_*.txt</span></code> file may look as follows:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">STUDY</span> <span class="n">PROTOCOLS</span>
+<span class="n">Study</span> <span class="n">Protocol</span> <span class="n">Name</span>	<span class="s2">&quot;environmental material collection - standard procedure 1&quot;</span>
+<span class="n">Study</span> <span class="n">Protocol</span> <span class="n">Type</span>	<span class="s2">&quot;sample collection&quot;</span>	<span class="s2">&quot;nucleic acid extraction&quot;</span>	<span class="s2">&quot;nucleic acid extraction&quot;</span>
+<span class="n">Study</span> <span class="n">Protocol</span> <span class="n">Type</span> <span class="n">Term</span> <span class="n">Accession</span> <span class="n">Number</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>
+<span class="n">Study</span> <span class="n">Protocol</span> <span class="n">Type</span> <span class="n">Term</span> <span class="n">Source</span> <span class="n">REF</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>
+<span class="n">Study</span> <span class="n">Protocol</span> <span class="n">Description</span>	<span class="s2">&quot;Waters samples were prefiltered through a 1.6 um...</span>
+<span class="n">Study</span> <span class="n">Protocol</span> <span class="n">URI</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>
+<span class="n">Study</span> <span class="n">Protocol</span> <span class="n">Version</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>
+<span class="n">Study</span> <span class="n">Protocol</span> <span class="n">Parameters</span> <span class="n">Name</span>	<span class="s2">&quot;filter pore size&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="o">...</span>
+<span class="n">Study</span> <span class="n">Protocol</span> <span class="n">Parameters</span> <span class="n">Name</span> <span class="n">Term</span> <span class="n">Accession</span> <span class="n">Number</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;;;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>
+<span class="n">Study</span> <span class="n">Protocol</span> <span class="n">Parameters</span> <span class="n">Name</span> <span class="n">Term</span> <span class="n">Source</span> <span class="n">REF</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="o">...</span>
+<span class="n">Study</span> <span class="n">Protocol</span> <span class="n">Components</span> <span class="n">Name</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="o">...</span>
+<span class="n">Study</span> <span class="n">Protocol</span> <span class="n">Components</span> <span class="n">Type</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="o">...</span>
+<span class="n">Study</span> <span class="n">Protocol</span> <span class="n">Components</span> <span class="n">Type</span> <span class="n">Term</span> <span class="n">Accession</span> <span class="n">Number</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="o">...</span>
+<span class="n">Study</span> <span class="n">Protocol</span> <span class="n">Components</span> <span class="n">Type</span> <span class="n">Term</span> <span class="n">Source</span> <span class="n">REF</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="o">...</span>
+</pre></div>
+</div>
+<p><strong>STUDY CONTACTS</strong></p>
+<p>This section MUST contain zero or more values.</p>
+<p>This section MUST contain the following labels, with the specified datatypes for values supported:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="60%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">abel</th>
+<th class="head">Datatype</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Study Person Last Name</td>
+<td>String</td>
+<td>The last name of a person associated with the study.</td>
+</tr>
+<tr class="row-odd"><td>Study Person First Name</td>
+<td>String</td>
+<td>Study Person Name</td>
+</tr>
+<tr class="row-even"><td>Study Person Mid Initials</td>
+<td>String</td>
+<td>The middle initials of a person associated with the study.</td>
+</tr>
+<tr class="row-odd"><td>Study Person Email</td>
+<td>String formatted as email</td>
+<td>The email address of a person associated with the study.</td>
+</tr>
+<tr class="row-even"><td>Study Person Phone</td>
+<td>String</td>
+<td>The telephone number of a person associated with the study.</td>
+</tr>
+<tr class="row-odd"><td>IStudy Person Fax</td>
+<td>String</td>
+<td>The fax number of a person associated with the study.</td>
+</tr>
+<tr class="row-even"><td>Study Person Address</td>
+<td>String</td>
+<td>The address of a person associated with the study.</td>
+</tr>
+<tr class="row-odd"><td>Study Person Affiliation</td>
+<td>String</td>
+<td>The organization affiliation for a person associated with the study.</td>
+</tr>
+<tr class="row-even"><td>Study Person Roles</td>
+<td>String or Ontology Annotation if accompanied by Term Accession Numbers and Term Source REFs</td>
+<td>Term to classify the role(s) performed by this person in the context of the study, which means that the roles reported here need not correspond to roles held withing their affiliated organization. Multiple annotations or values attached to one person can be provided by using a semicolon (&#8221;;&#8221;) Unicode (U0003+B) as a separator (e.g.: submitter;funder;sponsor) .The term can be free text or from, for example, a controlled vocabulary or an ontology. If the latter source is used the Term Accession Number and Term Source REF fields below are required.</td>
+</tr>
+<tr class="row-odd"><td>Study Person Roles Term Accession Number</td>
+<td>String</td>
+<td>The accession number from the Term Source associated with the selected term.</td>
+</tr>
+<tr class="row-even"><td>Study Person Roles Term Source REF</td>
+<td>String</td>
+<td>Identifies the controlled vocabulary or ontology that this term comes from. The Source REF has to match one of the Term Source Names declared in the Ontology Source Reference section.</td>
+</tr>
+</tbody>
+</table>
+<p>For example, the <code class="docutils literal"><span class="pre">STUDY</span> <span class="pre">CONTACTS</span></code> section of an ISA-Tab <code class="docutils literal"><span class="pre">i_*.txt</span></code> file may look as follows:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Study</span> <span class="n">Person</span> <span class="n">Last</span> <span class="n">Name</span>	<span class="s2">&quot;Gilbert&quot;</span>	<span class="s2">&quot;Field&quot;</span>	<span class="s2">&quot;Huang&quot;</span>	<span class="s2">&quot;Edwards&quot;</span>
+<span class="n">Study</span> <span class="n">Person</span> <span class="n">First</span> <span class="n">Name</span>	<span class="s2">&quot;Jack&quot;</span>	<span class="s2">&quot;Dawn&quot;</span>	<span class="s2">&quot;Ying&quot;</span>	<span class="s2">&quot;Rob&quot;</span> <span class="o">...</span>
+<span class="n">Study</span> <span class="n">Person</span> <span class="n">Mid</span> <span class="n">Initials</span>	<span class="s2">&quot;A&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>
+<span class="n">Study</span> <span class="n">Person</span> <span class="n">Email</span>	<span class="s2">&quot;jagi@pml.ac.uk&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="o">...</span>
+<span class="n">Study</span> <span class="n">Person</span> <span class="n">Phone</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>
+<span class="n">Study</span> <span class="n">Person</span> <span class="n">Fax</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>
+<span class="n">Study</span> <span class="n">Person</span> <span class="n">Address</span>	<span class="s2">&quot;Prospect Place, Plymouth, United Kingdom&quot;</span>	<span class="s2">&quot;CEH ...</span>
+<span class="n">Study</span> <span class="n">Person</span> <span class="n">Affiliation</span>	<span class="s2">&quot;Plymouth Marine Laboratory&quot;</span>	<span class="s2">&quot;NERC Centre for...</span>
+<span class="n">Study</span> <span class="n">Person</span> <span class="n">Roles</span>	<span class="s2">&quot;principal investigator role;SRA Inform On Status;SRA In...</span>
+<span class="n">Study</span> <span class="n">Person</span> <span class="n">Roles</span> <span class="n">Term</span> <span class="n">Accession</span> <span class="n">Number</span>	<span class="s2">&quot;;;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>
+<span class="n">Study</span> <span class="n">Person</span> <span class="n">Roles</span> <span class="n">Term</span> <span class="n">Source</span> <span class="n">REF</span>	<span class="s2">&quot;;;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="study-and-assay-files">
+<h2>2.3. Study and Assay files<a class="headerlink" href="#study-and-assay-files" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">Study</span></code> and <code class="docutils literal"><span class="pre">Assay</span></code> Table files are structure with fields organized on a per-row basis. The first row MUST be used
+for column headers. Generally, objects such as Materials and Processes are indicated with <code class="docutils literal"><span class="pre">&lt;entity&gt;</span> <span class="pre">Name</span></code>, for example
+<code class="docutils literal"><span class="pre">Sample</span> <span class="pre">Name</span></code> to indicate a sample, or <code class="docutils literal"><span class="pre">Assay</span> <span class="pre">Name</span></code> to indicate a named instance of a process that has been applied. Object
+properties MUST follow this column, where materials MAY have Characteristics and Processes have MAY have Parameter Values. Both
+<code class="docutils literal"><span class="pre">Characteristics</span></code> and <code class="docutils literal"><span class="pre">Parameter</span> <span class="pre">Values</span></code> MUST be of type string, numeric, or an <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code>. <code class="docutils literal"><span class="pre">&lt;entity&gt;</span> <span class="pre">File</span></code> MAY be used to indicate
+a data file node.</p>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">Comments are also allowed in Study and Assay files, in a similar fashion to how they are used in the Investigation
+file. Columns headed with <code class="docutils literal"><span class="pre">Comment[&lt;comment</span> <span class="pre">name&gt;]</span></code> MAY appear after any named node in the Study and Assay files
+(e.g. if <code class="docutils literal"><span class="pre">Comment[ORCID</span> <span class="pre">ID]</span></code> appears <strong>after</strong> the <code class="docutils literal"><span class="pre">Source</span> <span class="pre">Name</span></code> column, we know that the comment regarding
+<code class="docutils literal"><span class="pre">ORCID</span> <span class="pre">ID</span></code> applies to the relevant Source node based on the row.</p>
+</div>
+<p>Specific types of nodes are specified in the Assay Table file section below.</p>
+<div class="section" id="ontology-annotations">
+<h3>2.3.1. Ontology Annotations<a class="headerlink" href="#ontology-annotations" title="Permalink to this headline">¶</a></h3>
+<p>Where a value is an <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code> in a table file, <code class="docutils literal"><span class="pre">Term</span> <span class="pre">Accession</span> <span class="pre">Number</span></code> and <code class="docutils literal"><span class="pre">Term</span> <span class="pre">Source</span> <span class="pre">REF</span></code> fields MUST
+follow the column cell in which the value is entered. For example, a characteristic type <code class="docutils literal"><span class="pre">Organism</span></code> with a value of <code class="docutils literal"><span class="pre">Homo</span> <span class="pre">sapiens</span></code>
+can be qualified with an <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code> of a term from NCBI Taxonomy as follows:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="24%" />
+<col width="38%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Characteristics[Organism]</th>
+<th class="head">Term Source REF</th>
+<th class="head">Term Accession Number</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Homo sapiens</td>
+<td>NCBITaxon</td>
+<td><a class="reference external" href="http://.../NCBITAXON/9606">http://.../NCBITAXON/9606</a></td>
+</tr>
+</tbody>
+</table>
+<p>An <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code> MAY be applied to any appropriate <code class="docutils literal"><span class="pre">Characteristics</span></code> or <code class="docutils literal"><span class="pre">Parameter</span> <span class="pre">Value</span></code>.</p>
+<p>This implements <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code> from the ISA Abstract Model.</p>
+</div>
+<div class="section" id="unit">
+<h3>2.3.2. Unit<a class="headerlink" href="#unit" title="Permalink to this headline">¶</a></h3>
+<p>Where a value is numeric, a <code class="docutils literal"><span class="pre">Unit</span></code> MAY be used to qualify the quantity. In this case, following the column in which a <code class="docutils literal"><span class="pre">Unit</span></code>
+is used, a <code class="docutils literal"><span class="pre">Unit</span></code> heading MUST be present, and MAY be further annotated as an <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code>.</p>
+<p>For example, to qualify the value <code class="docutils literal"><span class="pre">300</span></code> with a <code class="docutils literal"><span class="pre">Unit</span></code> <code class="docutils literal"><span class="pre">Kelvin</span></code> qualified as an <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code> from the Units Ontology declared
+in the Ontology Sources with <code class="docutils literal"><span class="pre">UO</span></code>:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="36%" />
+<col width="10%" />
+<col width="20%" />
+<col width="34%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter Value[Temperature]</th>
+<th class="head">Unit</th>
+<th class="head">Term Source REF</th>
+<th class="head">Term Accession Number</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>300</td>
+<td>Kelvin</td>
+<td>UO</td>
+<td><a class="reference external" href="http://.../obo/UO_0000012">http://.../obo/UO_0000012</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="processes">
+<h3>2.3.3. Processes<a class="headerlink" href="#processes" title="Permalink to this headline">¶</a></h3>
+<p>A <code class="docutils literal"><span class="pre">Process</span></code> MUST be indicated with the column heading <code class="docutils literal"><span class="pre">Protocol</span> <span class="pre">REF</span></code>. The value of <code class="docutils literal"><span class="pre">Protocol</span> <span class="pre">REF</span></code> cells MUST reference
+a <code class="docutils literal"><span class="pre">Protocol</span></code> declared in the investigation file.</p>
+</div>
+<div class="section" id="characteristics">
+<h3>2.3.4. Characteristics<a class="headerlink" href="#characteristics" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">Characteristics</span></code> are used as an attribute column following <code class="docutils literal"><span class="pre">Source</span> <span class="pre">Name</span></code>, <code class="docutils literal"><span class="pre">Sample</span> <span class="pre">Name</span></code>. This column contains terms describing each material
+according to the characteristics category indicated in the column header in the pattern <code class="docutils literal"><span class="pre">Characteristics</span> <span class="pre">[&lt;category</span> <span class="pre">term&gt;]</span></code>.
+For example, a column header <code class="docutils literal"><span class="pre">Characteristics</span> <span class="pre">[organ</span> <span class="pre">part]</span></code> would contain terms describing an organ part.
+<code class="docutils literal"><span class="pre">Characteristics</span></code> SHOULD be used as an attribute column following <code class="docutils literal"><span class="pre">Source</span> <span class="pre">Name</span></code>, or <code class="docutils literal"><span class="pre">Sample</span> <span class="pre">Name</span></code>. The
+value MUST be free text, numeric, or an <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code>.</p>
+<p>For example, a characteristic type Organism with a value of Homo sapiens
+can be qualified with an Ontology Annotation of a term from NCBI Taxonomy as follows:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="40%" />
+<col width="23%" />
+<col width="37%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Characteristics[organ part]</th>
+<th class="head">Term Source REF</th>
+<th class="head">Term Accession Number</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Liver</td>
+<td>MeSH</td>
+<td>D008099</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="factor-value">
+<h3>2.3.5. Factor Value<a class="headerlink" href="#factor-value" title="Permalink to this headline">¶</a></h3>
+<p>A factor is an independent variable manipulated by an experimentalist with the intention to affect biological systems
+in a way that can be measured by an assay. This field holds the actual data for the <code class="docutils literal"><span class="pre">Factor</span> <span class="pre">Value</span></code> named between the
+square brackets (as declared in the Investigation file) so MUST match; for example, <code class="docutils literal"><span class="pre">Factor</span> <span class="pre">Value</span> <span class="pre">[compound]</span></code>. The
+value MUST be free text, numeric, or an <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="27%" />
+<col width="37%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Factor Value[Gender]</th>
+<th class="head">Term Source REF</th>
+<th class="head">Term Accession Number</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Male</td>
+<td>MeSH</td>
+<td>D008297</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="study-table-file">
+<h3>2.3.6. Study Table file<a class="headerlink" href="#study-table-file" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal"><span class="pre">Study</span></code> file contains contextualizing information for one or more assays, for example; the subjects studied; their
+source(s); the sampling methodology; their characteristics; and any treatments or manipulations performed to
+prepare the specimens.</p>
+<p>For a full example of a complete Study Table file, please see <a class="reference external" href="https://git.io/vPZbF">https://git.io/vPZbF</a></p>
+<p>Study Table files SHOULD have file names corresponding to the pattern <code class="docutils literal"><span class="pre">s_*.txt</span></code>, e.g. <code class="docutils literal"><span class="pre">s_Study01.txt</span></code></p>
+<p>In Study files, there are two types of <code class="docutils literal"><span class="pre">Material</span></code> nodes implemented: <code class="docutils literal"><span class="pre">Source</span></code> and <code class="docutils literal"><span class="pre">Sample</span></code>.</p>
+<p>These are linked with a Process node, incidcated with a value under a column headed <code class="docutils literal"><span class="pre">Protocol</span> <span class="pre">REF</span></code>
+that MUST be of a Protocol type that is of a type <code class="docutils literal"><span class="pre">sample</span> <span class="pre">collection</span></code> declared in the Investigation file.</p>
+<p>A <code class="docutils literal"><span class="pre">Source</span></code> MUST be indicated with the column heading <code class="docutils literal"><span class="pre">Source</span> <span class="pre">Name</span></code>.</p>
+<p>The protocol referenced MUST be of protocol type <code class="docutils literal"><span class="pre">sample</span> <span class="pre">collection</span></code>.</p>
+<p>A <code class="docutils literal"><span class="pre">Sample</span></code> MUST be indicated with the column heading <code class="docutils literal"><span class="pre">Sample</span> <span class="pre">Name</span></code>.</p>
+<p>For example, a simple source to sample may be represented as:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="42%" />
+<col width="29%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Source Name</th>
+<th class="head">Protocol REF</th>
+<th class="head">Sample Name</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>source1</td>
+<td>sample collection</td>
+<td>sample1</td>
+</tr>
+</tbody>
+</table>
+<p>Where a graph splits or pools, we use the <code class="docutils literal"><span class="pre">Name</span></code> column to represent the same nodes.</p>
+<p>For example, if we split a source into two samples, we  might represent this as:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="42%" />
+<col width="29%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Source Name</th>
+<th class="head">Protocol REF</th>
+<th class="head">Sample Name</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>source1</td>
+<td>sample collection</td>
+<td>sample1</td>
+</tr>
+<tr class="row-odd"><td>source1</td>
+<td>sample collection</td>
+<td>sample2</td>
+</tr>
+</tbody>
+</table>
+<p>If we pool two sources into a single sample, we might represent this as:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="42%" />
+<col width="29%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Source Name</th>
+<th class="head">Protocol REF</th>
+<th class="head">Sample Name</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>source1</td>
+<td>sample collection</td>
+<td>sample1</td>
+</tr>
+<tr class="row-odd"><td>source2</td>
+<td>sample collection</td>
+<td>sample1</td>
+</tr>
+</tbody>
+</table>
+<p>Node properties, such as <code class="docutils literal"><span class="pre">Characteristics</span></code> (for <code class="docutils literal"><span class="pre">Material</span></code> nodes), <code class="docutils literal"><span class="pre">Parameter</span> <span class="pre">Value</span></code> (for <code class="docutils literal"><span class="pre">Process</span></code> nodes) and additional
+<code class="docutils literal"><span class="pre">Name</span></code> columns for special cases of <code class="docutils literal"><span class="pre">Process</span></code> node to disambiguate <code class="docutils literal"><span class="pre">Protocol</span> <span class="pre">REF</span></code> entries of MUST follow the named node of context.</p>
+<p>For example,</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;Source Name&quot;</span>	<span class="s2">&quot;Characteristics[organism]&quot;</span>	<span class="s2">&quot;Term Source REF&quot;</span>	<span class="s2">&quot;Term Accession Number&quot;</span>	<span class="s2">&quot;Characteristics[strain]&quot;</span>	<span class="s2">&quot;Term Source REF&quot;</span>	<span class="s2">&quot;Term Accession Number&quot;</span>	<span class="s2">&quot;Characteristics[genotype]&quot;</span>	<span class="s2">&quot;Term Source REF&quot;</span>	<span class="s2">&quot;Term Accession Number&quot;</span>	<span class="s2">&quot;Characteristics[mating type]&quot;</span>	<span class="s2">&quot;Term Source REF&quot;</span>	<span class="s2">&quot;Term Accession Number&quot;</span>	<span class="s2">&quot;Protocol REF&quot;</span>	<span class="s2">&quot;Sample Name&quot;</span>
+<span class="s2">&quot;Saccharomyces cerevisiae FY1679 &quot;</span>	<span class="s2">&quot;Saccharomyces cerevisiae (Baker&#39;s yeast)&quot;</span>	<span class="s2">&quot;NEWT&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;FY1679&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;KanMx4 MATa/MATalpha ura3-52/ura3-52 leu2-1/+trp1-63/+his3-D200/+ hoD KanMx4/hoD&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;mating_type_alpha&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;growth&quot;</span>	<span class="s2">&quot;NZ_0hrs_Grow_1&quot;</span>
+<span class="s2">&quot;Saccharomyces cerevisiae FY1679 &quot;</span>	<span class="s2">&quot;Saccharomyces cerevisiae (Baker&#39;s yeast)&quot;</span>	<span class="s2">&quot;NEWT&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;FY1679&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;KanMx4 MATa/MATalpha ura3-52/ura3-52 leu2-1/+trp1-63/+his3-D200/+ hoD KanMx4/hoD&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;mating_type_alpha&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;&quot;</span>	<span class="s2">&quot;growth&quot;</span>	<span class="s2">&quot;NZ_0hrs_Grow_2&quot;</span>
+</pre></div>
+</div>
+<p>The Study Table file implements the Study graphs from the ISA Abstract Model.</p>
+</div>
+<div class="section" id="assay-table-file">
+<h3>2.3.7. Assay Table file<a class="headerlink" href="#assay-table-file" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal"><span class="pre">Assay</span></code> file represents a portion of the experimental graph (i.e., one part of the overall
+structure of the workflow); each <code class="docutils literal"><span class="pre">Assay</span></code> file must contain assays of the same type, defined by the type of
+measurement (e.g. gene expression) and the technology employed (e.g. DNA microarray). Assay-related information
+includes protocols, additional information relating to the execution of those protocols and references to data
+files (whether raw or derived).</p>
+<p>For a full example of a complete Assay Table file, please see <a class="reference external" href="https://git.io/vPZbh">https://git.io/vPZbh</a></p>
+<p>Assay Table files SHOULD have file names corresponding to the pattern <code class="docutils literal"><span class="pre">a_*.txt</span></code>, e.g. <code class="docutils literal"><span class="pre">a_Assay01.txt</span></code></p>
+<p>A <code class="docutils literal"><span class="pre">Sample</span></code> MUST be provided as the first node in the experimental graph, indicated with the column heading <code class="docutils literal"><span class="pre">Sample</span> <span class="pre">Name</span></code>.</p>
+<p><code class="docutils literal"><span class="pre">Protocol</span> <span class="pre">REF</span></code> columns MUST be used to indicate <code class="docutils literal"><span class="pre">Process</span></code> nodes, with values referencing protocols declared in the
+Investigation file.</p>
+<p><code class="docutils literal"><span class="pre">Extract</span> <span class="pre">Name</span></code> MUST be used as an identifier for a Extract Material node within an <code class="docutils literal"><span class="pre">Assay</span></code> file. This column contains user-defined names
+for each portion of extracted material. Extracts MAY be qualified with <code class="docutils literal"><span class="pre">Characteristics</span></code>, <code class="docutils literal"><span class="pre">Material</span> <span class="pre">Type</span></code> and <code class="docutils literal"><span class="pre">Description</span></code>.</p>
+<p><code class="docutils literal"><span class="pre">Labeled</span> <span class="pre">Extract</span></code> Name MUST be used as an identifier for a Labeled Extract Material node within an <code class="docutils literal"><span class="pre">Assay</span></code> file. Labeled Extracts
+MAY be qualified with <code class="docutils literal"><span class="pre">Label</span></code>, <code class="docutils literal"><span class="pre">Characteristics</span></code>, <code class="docutils literal"><span class="pre">Material</span> <span class="pre">Type</span></code>, <code class="docutils literal"><span class="pre">Description</span></code>.</p>
+<p><code class="docutils literal"><span class="pre">Assay</span> <span class="pre">Name</span></code> MUST be used is used as an identifier for user-defined names for each assay. Assays MAY be qualified
+with an <code class="docutils literal"><span class="pre">Assay</span> <span class="pre">Name</span></code>, <code class="docutils literal"><span class="pre">Performer</span></code> and <code class="docutils literal"><span class="pre">Date</span></code>.</p>
+<p><code class="docutils literal"><span class="pre">Image</span> <span class="pre">File</span></code>, <code class="docutils literal"><span class="pre">Raw</span> <span class="pre">Data</span> <span class="pre">File</span></code> or <code class="docutils literal"><span class="pre">Derived</span> <span class="pre">Data</span> <span class="pre">File</span></code> column heading MUST correspond to a relevant <code class="docutils literal"><span class="pre">Data</span></code> node to provide names or URIs of
+file locations. For submission or transfer, files MAY be packed with ISA-Tab files.</p>
+<p><code class="docutils literal"><span class="pre">Data</span> <span class="pre">Transformation</span> <span class="pre">Name</span></code> MUST be used as an identifier for a user-defined name for each data transformation <code class="docutils literal"><span class="pre">Process</span></code> applied.</p>
+<p><code class="docutils literal"><span class="pre">Normalization</span> <span class="pre">Name</span></code> MUST be used as an identifier for a user-defined name for each normalization <code class="docutils literal"><span class="pre">Process</span></code> applied.</p>
+<p>Splitting and pooling is allowed as per the examples given in Study Table file.</p>
+<p>For example,</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="s2">&quot;Sample Name&quot;</span>	<span class="s2">&quot;Protocol REF&quot;</span>	<span class="s2">&quot;Protocol REF&quot;</span>	<span class="s2">&quot;Extract Name&quot;</span>	<span class="s2">&quot;Material Type&quot;</span>	<span class="s2">&quot;Term Source REF&quot;</span>	<span class="s2">&quot;Term Accession Number&quot;</span>	<span class="s2">&quot;Protocol REF&quot;</span>	<span class="s2">&quot;Parameter Value[library strategy]&quot;</span>	<span class="s2">&quot;Parameter Value[library selection]&quot;</span>	<span class="s2">&quot;Parameter Value[library layout]&quot;</span>	<span class="s2">&quot;Protocol REF&quot;</span>	<span class="s2">&quot;Parameter Value[sequencing instrument]&quot;</span>	<span class="s2">&quot;Assay Name&quot;</span>	<span class="s2">&quot;Raw Data File&quot;</span>	<span class="s2">&quot;Comment[TraceDB]&quot;</span>
+<span class="s2">&quot;GSM255770&quot;</span>	<span class="s2">&quot;nucleic acid extraction - standard procedure 2&quot;</span>	<span class="s2">&quot;genomic DNA extraction - standard procedure 4&quot;</span>	<span class="s2">&quot;GSM255770.e1&quot;</span>	<span class="s2">&quot;deoxyribonucleic acid&quot;</span>	<span class="s2">&quot;CHEBI&quot;</span>	<span class="s2">&quot;http://purl.obolibrary.org/obo/CHEBI_16991&quot;</span>	<span class="s2">&quot;library construction&quot;</span>	<span class="s2">&quot;WGS&quot;</span>	<span class="s2">&quot;RANDOM&quot;</span>	<span class="s2">&quot;SINGLE&quot;</span>	<span class="s2">&quot;pyrosequencing - standard procedure 6&quot;</span>	<span class="s2">&quot;454 GS FLX&quot;</span>	<span class="s2">&quot;assay1&quot;</span>	<span class="s2">&quot;EWOEPZA01.sff&quot;</span>	<span class="s2">&quot;ftp://ftp.ncbi.nih.gov/pub/TraceDB/ShortRead/SRA000266/EWOEPZA01.sff&quot;</span>
+<span class="s2">&quot;GSM255771&quot;</span>	<span class="s2">&quot;nucleic acid extraction - standard procedure 2&quot;</span>	<span class="s2">&quot;genomic DNA extraction - standard procedure 4&quot;</span>	<span class="s2">&quot;GSM255771.e1&quot;</span>	<span class="s2">&quot;deoxyribonucleic acid&quot;</span>	<span class="s2">&quot;CHEBI&quot;</span>	<span class="s2">&quot;http://purl.obolibrary.org/obo/CHEBI_16991&quot;</span>	<span class="s2">&quot;library construction&quot;</span>	<span class="s2">&quot;WGS&quot;</span>	<span class="s2">&quot;RANDOM&quot;</span>	<span class="s2">&quot;SINGLE&quot;</span>	<span class="s2">&quot;pyrosequencing - standard procedure 6&quot;</span>	<span class="s2">&quot;454 GS FLX&quot;</span>	<span class="s2">&quot;assay2&quot;</span>	<span class="s2">&quot;EWOEPZA02.sff&quot;</span>	<span class="s2">&quot;ftp://ftp.ncbi.nih.gov/pub/TraceDB/ShortRead/SRA000266/EWOEPZA02.sff&quot;</span>
+<span class="s2">&quot;GSM255772&quot;</span>	<span class="s2">&quot;nucleic acid extraction - standard procedure 2&quot;</span>	<span class="s2">&quot;genomic DNA extraction - standard procedure 4&quot;</span>	<span class="s2">&quot;GSM255772.e1&quot;</span>	<span class="s2">&quot;deoxyribonucleic acid&quot;</span>	<span class="s2">&quot;CHEBI&quot;</span>	<span class="s2">&quot;http://purl.obolibrary.org/obo/CHEBI_16991&quot;</span>	<span class="s2">&quot;library construction&quot;</span>	<span class="s2">&quot;WGS&quot;</span>	<span class="s2">&quot;RANDOM&quot;</span>	<span class="s2">&quot;SINGLE&quot;</span>	<span class="s2">&quot;pyrosequencing - standard procedure 6&quot;</span>	<span class="s2">&quot;454 GS FLX&quot;</span>	<span class="s2">&quot;assay3.1&quot;</span>	<span class="s2">&quot;EXHS9OF01.sff&quot;</span>	<span class="s2">&quot;ftp://ftp.ncbi.nih.gov/pub/TraceDB/ShortRead/SRA000266/EXHS9OF01.sff&quot;</span>
+<span class="s2">&quot;GSM255772&quot;</span>	<span class="s2">&quot;nucleic acid extraction - standard procedure 2&quot;</span>	<span class="s2">&quot;genomic DNA extraction - standard procedure 4&quot;</span>	<span class="s2">&quot;GSM255772.e1&quot;</span>	<span class="s2">&quot;deoxyribonucleic acid&quot;</span>	<span class="s2">&quot;CHEBI&quot;</span>	<span class="s2">&quot;http://purl.obolibrary.org/obo/CHEBI_16991&quot;</span>	<span class="s2">&quot;library construction&quot;</span>	<span class="s2">&quot;WGS&quot;</span>	<span class="s2">&quot;RANDOM&quot;</span>	<span class="s2">&quot;SINGLE&quot;</span>	<span class="s2">&quot;pyrosequencing - standard procedure 6&quot;</span>	<span class="s2">&quot;454 GS FLX&quot;</span>	<span class="s2">&quot;assay3.2&quot;</span>	<span class="s2">&quot;EX398L102.sff&quot;</span>	<span class="s2">&quot;ftp://ftp.ncbi.nih.gov/pub/TraceDB/ShortRead/SRA000266/EX398L102.sff&quot;</span>
+<span class="s2">&quot;GSM255773&quot;</span>	<span class="s2">&quot;nucleic acid extraction - standard procedure 2&quot;</span>	<span class="s2">&quot;genomic DNA extraction - standard procedure 4&quot;</span>	<span class="s2">&quot;GSM255773.e1&quot;</span>	<span class="s2">&quot;deoxyribonucleic acid&quot;</span>	<span class="s2">&quot;CHEBI&quot;</span>	<span class="s2">&quot;http://purl.obolibrary.org/obo/CHEBI_16991&quot;</span>	<span class="s2">&quot;library construction&quot;</span>	<span class="s2">&quot;WGS&quot;</span>	<span class="s2">&quot;RANDOM&quot;</span>	<span class="s2">&quot;SINGLE&quot;</span>	<span class="s2">&quot;pyrosequencing - standard procedure 6&quot;</span>	<span class="s2">&quot;454 GS FLX&quot;</span>	<span class="s2">&quot;assay4.1&quot;</span>	<span class="s2">&quot;EXHS9OF02.sff&quot;</span>	<span class="s2">&quot;ftp://ftp.ncbi.nih.gov/pub/TraceDB/ShortRead/SRA000266/EXHS9OF02.sff&quot;</span>
+<span class="s2">&quot;GSM255773&quot;</span>	<span class="s2">&quot;nucleic acid extraction - standard procedure 2&quot;</span>	<span class="s2">&quot;genomic DNA extraction - standard procedure 4&quot;</span>	<span class="s2">&quot;GSM255773.e1&quot;</span>	<span class="s2">&quot;deoxyribonucleic acid&quot;</span>	<span class="s2">&quot;CHEBI&quot;</span>	<span class="s2">&quot;http://purl.obolibrary.org/obo/CHEBI_16991&quot;</span>	<span class="s2">&quot;library construction&quot;</span>	<span class="s2">&quot;WGS&quot;</span>	<span class="s2">&quot;RANDOM&quot;</span>	<span class="s2">&quot;SINGLE&quot;</span>	<span class="s2">&quot;pyrosequencing - standard procedure 6&quot;</span>	<span class="s2">&quot;454 GS FLX&quot;</span>	<span class="s2">&quot;assay4.2&quot;</span>	<span class="s2">&quot;EX398L101.sff&quot;</span>	<span class="s2">&quot;ftp://ftp.ncbi.nih.gov/pub/TraceDB/ShortRead/SRA000266/EX398L101.sff&quot;</span>
+</pre></div>
+</div>
+<p>The Assay Table file implements the <code class="docutils literal"><span class="pre">Assay</span></code> graphs from the ISA Abstract Model.</p>
+</div>
+<div class="section" id="special-cases">
+<h3>2.3.8. Special cases<a class="headerlink" href="#special-cases" title="Permalink to this headline">¶</a></h3>
+<p><strong>Assay with technology type: DNA microarray hybridization</strong></p>
+<p>If an Assay being described has a technology type of DNA microarray hybridization, the following additional nodes MAY apply.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Hybridization Assay Name (in place of Assay Name):</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Used as an identifier within the Assay file. This column contains an user-defined name for each hybridization. Qualifying headers for Hybridization Assay Name item include Array Design REF or Array Design File.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Scan Name:</th><td class="field-body">Used as an identifier within the Assay file. This column contains a user-defined name for each Scan event.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Array Data File (in place of Raw Data File):</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Column to provide name (or URI) of raw array data files.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Derived Array Data File (in place of Derived Data File):</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">Column to provide name (or URI) of data files resulting from data transformation or processing.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Array Data Matrix File:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Column to provide name (or URI) of raw data matrix files.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Derived Array Data Matrix File:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">Column to provide name (or URI) of processed data matrix files, resulting from data transformation or processing. Where data from multiple hybridizations is stored in a single file, the data should be mapped to the appropriate hybridization (or scan, or normalization) via the Data Matrix format itself</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Array Design File:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Column to provide name of file containing the array design, used for a particular hybridization. For submission or transfer, ADF files can be packaged with ISA-TAB files into an ISArchive, see section 2.4.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Array Design REF:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">This column is used to reference the identifier (or accession number) of an existing array design.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Assay file with technology type: Gel electrophoresis</strong></p>
+<p>If an Assay being described has a technology type of Gel electrophoresis, the following additional nodes MAY apply.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Gel Electrophoresis Assay Name (in place of Assay Name):</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Used as an identifier within the Assay file. This column contains user-defined names for each electrophoresis gel assay. For 2-dimensional gels, the following qualifying headers can be used instead:</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">First Dimension:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">The term can be free text or from, for example, a controlled vocabulary or an ontology. If the latter source is used the Term Accession Number and Term Source REF fields are required.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Second Dimension:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">The term can be free text or from, for example, a controlled vocabulary or an ontology. If the latter source is used the Term Accession Number and Term Source REF fields are required.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Scan Name:</th><td class="field-body">Used as an identifier within the Assay file. This column contains user-defined names for each Scan event.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Spot Picking File:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Column to provide name (or URI) of files file holding protein spot coordinates and metadata for use by spot picking instruments.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Assay file with technology type: Mass Spectrometry (MS)</strong></p>
+<p>If an Assay being described has a technology type of Mass Spectrometry, the following additional nodes MAY apply.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">MS Assay Name (in place of Assay Name):</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Used as an identifier within the Assay file. This column contains user-defined names for each MS Assay.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Raw Spectral Data File (in place of Raw Data File):</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">Column to provide name (or URI) of ‘raw’ spectral data files.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Derived Spectral Data File (in place of Derived Data File):</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Column to provide name (or URI) of derived spectral data files, resulting from data transformation or processing.</td>
+</tr>
+</tbody>
+</table>
+<p>When Mass Spectrometry is used in proteomics the following data files are required, according to PSI specifications and Pride submission requirements (6, 10):</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Peptide Assignment File:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Column to provide name (or URI) of file(s) containing peptide assignments.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Protein Assignment File:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">Column to provide name (or URI) of file(s) containing protein assignments.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Post Translational Modification Assignment File:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">Column to provide name (or URI) of file(s) containing posited post-translational modifications.</td>
+</tr>
+</tbody>
+</table>
+<p>Capturing data resulting from the use of mass spectrometry in metabol/nomics requires a settled definition for a
+Metabolite Assignment File (inter alia); such a file is currently under development in collaboration with the
+Metabolomics Standards Initiative (MSI).</p>
+</div>
+<div class="section" id="data-files">
+<h3>2.3.9. Data Files<a class="headerlink" href="#data-files" title="Permalink to this headline">¶</a></h3>
+<p>ISA-Tab focuses on structuring experimental metadata; raw and derived data files are considered as external files.
+The Assay file can refer to one or more of these external data files. For guidelines on how to
+format these data files, users should refer to the relevant standards group or reference
+repository.</p>
+<p>For submission or transfer, ISA-Tab files and associated data files MAY be packaged into an ISArchive, a zip file
+containing all the files together.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="isajson.html" class="btn btn-neutral float-right" title="3. ISA-JSON format" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="isamodel.html" class="btn btn-neutral" title="1. ISA Abstract Model" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

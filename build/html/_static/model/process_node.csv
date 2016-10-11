@@ -1,0 +1,4 @@
+Property,Datatype,Description
+Parameter Values,A list of Parameter Value,"Reporting on the values taken by parameters when applying a protocol. A protocol description in the Study SHOULD declare the required parameters, where here the values applied are recorded."
+Performer,String,Name of the operator who carried out the protocol. This allows account to be taken of operator effects and can be part of a quality control data tracking.
+Date,Representation of an ISO8601 date,The date on which a protocol is performed. This allows account to be taken of day effects and can be part of a quality control data tracking.

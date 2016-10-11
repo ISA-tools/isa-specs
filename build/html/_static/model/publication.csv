@@ -1,0 +1,6 @@
+Property,Datatype,Description
+PubMed ID,Representation of a PubMed ID,The PubMed IDs of the described publication(s) associated with this investigation.
+DOI,Representation of a DOI,A Digital Object Identifier (DOI) for that publication (where available).
+Author List,A list of Strings,The list of authors associated with that publication.
+Title,String,The title of publication associated with the investigation.
+Status,Ontology Annotation,"An Ontology Annotation describing the status of that publication (i.e. submitted, in preparation, published)."

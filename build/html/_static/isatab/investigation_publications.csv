@@ -1,0 +1,8 @@
+Label,Datatype,Description
+Investigation PubMed ID,String formatted as valid PubMed ID,The PubMed IDs of the described publication(s) associated with this investigation.
+Investigation Publication DOI,String formatted as valid DOI,A Digital Object Identifier (DOI) for that publication (where available).
+Investigation Publication Author List,String,The list of authors associated with that publication.
+Investigation Publication Title,String,The title of publication associated with the investigation.
+Investigation Publication Status,"String, or Ontology Annotation by providing accompanying Term Accession Number and Term Source REF","A term describing the status of that publication (i.e. submitted, in preparation, published)."
+Investigation Publication Status Term Accession Number,String or URI,The accession number from the Term Source associated with the selected term.
+Investigation Publication Status Term Source REF,String,Identifies the controlled vocabulary or ontology that this term comes from. The Source REF has to match one the Term Source Name declared in the in the Ontology Source Reference section.

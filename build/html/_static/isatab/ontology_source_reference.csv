@@ -1,0 +1,5 @@
+Label,Datatype,Description
+Term Source Name,String,The name of the source of a term; i.e. the source controlled vocabulary or ontology. These names will be used in all corresponding Term Source REF fields that occur elsewhere.
+Term Source File,String (file name or URI),A file name or a URI of an official resource.
+Term Source Version,String,The version number of the Term Source to support terms tracking.
+Term Source Description,String,Use for disambiguating resources when homologous prefixes have been used.
