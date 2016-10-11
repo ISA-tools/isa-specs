@@ -248,7 +248,7 @@ latex_elements = {
 
      # Additional stuff for the LaTeX preamble.
      #
-    'preamble': '\\usepackage{minted}\\fvset{breaklines=true}',
+     # 'preamble': '',
 
      # Latex figure (float) alignment
      #
