@@ -88,18 +88,18 @@
             
                 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">1. ISA Abstract Model</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#ontology-annotation">1.1. Ontology Annotation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ontology-source">1.2. Ontology Source</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#unit">1.3. Unit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#publication">1.4. Publication</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#contact">1.5. Contact</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#investigation-study-assay">1.6. Investigation, Study, Assay</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#investigation">1.6.1. Investigation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#study">1.6.2. Study</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#assay">1.6.3. Assay</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#study-and-assay-graphs">1.6.4. Study and Assay graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#investigation-study-assay">1.1. Investigation, Study, Assay</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#investigation">1.1.1. Investigation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#study">1.1.2. Study</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#assay">1.1.3. Assay</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#study-and-assay-graphs">1.1.4. Study and Assay graphs</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#ontology-annotation">1.2. Ontology Annotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ontology-source">1.3. Ontology Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unit">1.4. Unit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#publication">1.5. Publication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contact">1.6. Contact</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="isatab.html">2. ISA-Tab format</a></li>
@@ -158,154 +158,8 @@ tools and services associated with them. The format specifications are also avai
 advantage of ISA-formatted content.</p>
 <p>The concept map below shows the ISA objects/entities and their relation to one another:</p>
 <img alt="Concept map showing ISA objects/entities and their relation to one another." class="align-center" src="_images/isa_model_1_ccoded.png" />
-<div class="section" id="ontology-annotation">
-<h2>1.1. Ontology Annotation<a class="headerlink" href="#ontology-annotation" title="Permalink to this headline">¶</a></h2>
-<p>For a given value, an <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code> SHOULD qualify this value with an accession number taken from an <code class="docutils literal"><span class="pre">Ontology</span>
-<span class="pre">Source</span></code>.</p>
-<p>An <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code> SHOULD record the following:</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="10%" />
-<col width="10%" />
-<col width="80%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Property</th>
-<th class="head">Datatype</th>
-<th class="head">Description</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>Accession Number</td>
-<td>String or URI</td>
-<td>The accession number or reference from the Ontology Source associated with the selected term.</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="ontology-source">
-<h2>1.2. Ontology Source<a class="headerlink" href="#ontology-source" title="Permalink to this headline">¶</a></h2>
-<p>An <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Source</span></code> describes the resource from which the value of an <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code> is derived from.
-An <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Source</span></code> SHOULD be referenced by an <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code>. An <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Source</span></code> should contain enough information on which to
-be able to ascertain the provenance of an <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Source</span></code>.</p>
-<p>An <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Source</span></code> SHOULD record the following:</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="10%" />
-<col width="10%" />
-<col width="80%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Property</th>
-<th class="head">Datatype</th>
-<th class="head">Description</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>Name</td>
-<td>String</td>
-<td>The name of the source of a term; i.e. the source controlled vocabulary or ontology. These names will be used to reference the Ontology Source from an Ontology Annotation.</td>
-</tr>
-<tr class="row-odd"><td>File</td>
-<td>String</td>
-<td>A file name or a URI of an official resource.</td>
-</tr>
-<tr class="row-even"><td>Version</td>
-<td>String</td>
-<td>The version number of the Term Source to support terms tracking.</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="unit">
-<h2>1.3. Unit<a class="headerlink" href="#unit" title="Permalink to this headline">¶</a></h2>
-<p>A <code class="docutils literal"><span class="pre">Unit</span></code> is used to classify dimensional data, and used accordingly with relevant values.</p>
-<p>A <code class="docutils literal"><span class="pre">Unit</span></code> SHOULD be implemented as an <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code>.</p>
-</div>
-<div class="section" id="publication">
-<h2>1.4. Publication<a class="headerlink" href="#publication" title="Permalink to this headline">¶</a></h2>
-<p>A <code class="docutils literal"><span class="pre">Publication</span></code> SHOULD record the following:</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="10%" />
-<col width="10%" />
-<col width="80%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Property</th>
-<th class="head">Datatype</th>
-<th class="head">Description</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>PubMed ID</td>
-<td>Representation of a PubMed ID</td>
-<td>The PubMed IDs of the described publication(s) associated with this investigation.</td>
-</tr>
-<tr class="row-odd"><td>DOI</td>
-<td>Representation of a DOI</td>
-<td>A Digital Object Identifier (DOI) for that publication (where available).</td>
-</tr>
-<tr class="row-even"><td>Author List</td>
-<td>A list of Strings</td>
-<td>The list of authors associated with that publication.</td>
-</tr>
-<tr class="row-odd"><td>Title</td>
-<td>String</td>
-<td>The title of publication associated with the investigation.</td>
-</tr>
-<tr class="row-even"><td>Status</td>
-<td>Ontology Annotation</td>
-<td>An Ontology Annotation describing the status of that publication (i.e. submitted, in preparation, published).</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="contact">
-<h2>1.5. Contact<a class="headerlink" href="#contact" title="Permalink to this headline">¶</a></h2>
-<p>A <code class="docutils literal"><span class="pre">Contact</span></code> SHOULD record the following:</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="10%" />
-<col width="10%" />
-<col width="80%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Property</th>
-<th class="head">Datatype</th>
-<th class="head">Description</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>Name</td>
-<td>String</td>
-<td>The name of a person.</td>
-</tr>
-<tr class="row-odd"><td>Email</td>
-<td>Representation of an email</td>
-<td>The email address of a person.</td>
-</tr>
-<tr class="row-even"><td>Phone</td>
-<td>Representation of a phone number</td>
-<td>The telephone number of a person.</td>
-</tr>
-<tr class="row-odd"><td>Address</td>
-<td>Multi-line string</td>
-<td>The address of a person.</td>
-</tr>
-<tr class="row-even"><td>Affiliation</td>
-<td>String</td>
-<td>The organization affiliation for a person.</td>
-</tr>
-<tr class="row-odd"><td>Roles</td>
-<td>A list of Ontology Annotations</td>
-<td>Ontology Annotations to classify the roles performed by this person in the context of an Investigation or Study.</td>
-</tr>
-</tbody>
-</table>
-</div>
 <div class="section" id="investigation-study-assay">
-<h2>1.6. Investigation, Study, Assay<a class="headerlink" href="#investigation-study-assay" title="Permalink to this headline">¶</a></h2>
+<h2>1.1. Investigation, Study, Assay<a class="headerlink" href="#investigation-study-assay" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
 <dt>The ISA model consists of three core entities to capture experimental metadata:</dt>
 <dd><ul class="first last simple">
@@ -320,7 +174,7 @@ experiment; experimental steps (or sequences of events) are described in a <code
 <code class="docutils literal"><span class="pre">Investigation</span></code> there may be one or more <code class="docutils literal"><span class="pre">Study</span></code> associated with it; for each <code class="docutils literal"><span class="pre">Study</span></code> there may be one or more
 <code class="docutils literal"><span class="pre">Assay</span></code>.</p>
 <div class="section" id="investigation">
-<h3>1.6.1. Investigation<a class="headerlink" href="#investigation" title="Permalink to this headline">¶</a></h3>
+<h3>1.1.1. Investigation<a class="headerlink" href="#investigation" title="Permalink to this headline">¶</a></h3>
 <p>An <code class="docutils literal"><span class="pre">Investigation</span></code> is intended to:</p>
 <ol class="arabic simple">
 <li>to record metadata relating to a given investigation</li>
@@ -375,7 +229,7 @@ are grouped within an <code class="docutils literal"><span class="pre">Investiga
 </table>
 </div>
 <div class="section" id="study">
-<h3>1.6.2. Study<a class="headerlink" href="#study" title="Permalink to this headline">¶</a></h3>
+<h3>1.1.2. Study<a class="headerlink" href="#study" title="Permalink to this headline">¶</a></h3>
 <p>A <code class="docutils literal"><span class="pre">Study</span></code> is a central concept containing information on the subject under study, its characteristics and any
 treatments applied.</p>
 <p>A <code class="docutils literal"><span class="pre">Study</span></code> contains contextualising information for one or more <code class="docutils literal"><span class="pre">Assay``s.</span> <span class="pre">Metadata</span> <span class="pre">about</span> <span class="pre">the</span> <span class="pre">study</span> <span class="pre">design,</span> <span class="pre">study</span>
@@ -455,7 +309,7 @@ treatments applied.</p>
 </div>
 </div>
 <div class="section" id="assay">
-<h3>1.6.3. Assay<a class="headerlink" href="#assay" title="Permalink to this headline">¶</a></h3>
+<h3>1.1.3. Assay<a class="headerlink" href="#assay" title="Permalink to this headline">¶</a></h3>
 <p>An <code class="docutils literal"><span class="pre">Assay</span></code> represents a test performed either on material taken from a subject or on a whole initial subject,
 producing qualitative or quantitative measurements.</p>
 <p>An <code class="docutils literal"><span class="pre">Assay</span></code> groups descriptions of provenance of sample processing for related tests. Each test typically
@@ -498,7 +352,7 @@ protocol is applied. Where an assay produces data files, links to the data are r
 <p>Like with the study graphs, splitting and pooling can occur where appropriate in assay graphs.</p>
 </div>
 <div class="section" id="study-and-assay-graphs">
-<h3>1.6.4. Study and Assay graphs<a class="headerlink" href="#study-and-assay-graphs" title="Permalink to this headline">¶</a></h3>
+<h3>1.1.4. Study and Assay graphs<a class="headerlink" href="#study-and-assay-graphs" title="Permalink to this headline">¶</a></h3>
 <p>Experimental graphs relating to <code class="docutils literal"><span class="pre">Study</span></code> and <code class="docutils literal"><span class="pre">Assay</span></code> objects are made up of specific types of nodes.</p>
 <p>Experimental graphs MUST be <a class="reference external" href="https://en.wikipedia.org/wiki/Directed_acyclic_graph">directed and acyclic</a> (i.e. MUST NOT contain loops/cycles).</p>
 <p>All nodes in <code class="docutils literal"><span class="pre">Study</span></code> and <code class="docutils literal"><span class="pre">Assay</span></code> graphs MUST be uniquely identifiable. User-defined identifiers MAY also be used.</p>
@@ -588,6 +442,152 @@ protocol is applied. Where an assay produces data files, links to the data are r
 </table>
 <p><code class="docutils literal"><span class="pre">Process</span></code> nodes SHOULD be preceded by zero or more <code class="docutils literal"><span class="pre">Material</span></code> or <code class="docutils literal"><span class="pre">Data</span></code> nodes, and followed by zero or more <code class="docutils literal"><span class="pre">Material</span></code> or <code class="docutils literal"><span class="pre">Data</span></code> nodes.</p>
 </div>
+</div>
+<div class="section" id="ontology-annotation">
+<h2>1.2. Ontology Annotation<a class="headerlink" href="#ontology-annotation" title="Permalink to this headline">¶</a></h2>
+<p>For a given value, an <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code> SHOULD qualify this value with an accession number taken from an <code class="docutils literal"><span class="pre">Ontology</span>
+<span class="pre">Source</span></code>.</p>
+<p>An <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code> SHOULD record the following:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="10%" />
+<col width="10%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Property</th>
+<th class="head">Datatype</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Accession Number</td>
+<td>String or URI</td>
+<td>The accession number or reference from the Ontology Source associated with the selected term.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="ontology-source">
+<h2>1.3. Ontology Source<a class="headerlink" href="#ontology-source" title="Permalink to this headline">¶</a></h2>
+<p>An <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Source</span></code> describes the resource from which the value of an <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code> is derived from.
+An <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Source</span></code> SHOULD be referenced by an <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code>. An <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Source</span></code> should contain enough information on which to
+be able to ascertain the provenance of an <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Source</span></code>.</p>
+<p>An <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Source</span></code> SHOULD record the following:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="10%" />
+<col width="10%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Property</th>
+<th class="head">Datatype</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Name</td>
+<td>String</td>
+<td>The name of the source of a term; i.e. the source controlled vocabulary or ontology. These names will be used to reference the Ontology Source from an Ontology Annotation.</td>
+</tr>
+<tr class="row-odd"><td>File</td>
+<td>String</td>
+<td>A file name or a URI of an official resource.</td>
+</tr>
+<tr class="row-even"><td>Version</td>
+<td>String</td>
+<td>The version number of the Term Source to support terms tracking.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="unit">
+<h2>1.4. Unit<a class="headerlink" href="#unit" title="Permalink to this headline">¶</a></h2>
+<p>A <code class="docutils literal"><span class="pre">Unit</span></code> is used to classify dimensional data, and used accordingly with relevant values.</p>
+<p>A <code class="docutils literal"><span class="pre">Unit</span></code> SHOULD be implemented as an <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code>.</p>
+</div>
+<div class="section" id="publication">
+<h2>1.5. Publication<a class="headerlink" href="#publication" title="Permalink to this headline">¶</a></h2>
+<p>A <code class="docutils literal"><span class="pre">Publication</span></code> SHOULD record the following:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="10%" />
+<col width="10%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Property</th>
+<th class="head">Datatype</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>PubMed ID</td>
+<td>Representation of a PubMed ID</td>
+<td>The PubMed IDs of the described publication(s) associated with this investigation.</td>
+</tr>
+<tr class="row-odd"><td>DOI</td>
+<td>Representation of a DOI</td>
+<td>A Digital Object Identifier (DOI) for that publication (where available).</td>
+</tr>
+<tr class="row-even"><td>Author List</td>
+<td>A list of Strings</td>
+<td>The list of authors associated with that publication.</td>
+</tr>
+<tr class="row-odd"><td>Title</td>
+<td>String</td>
+<td>The title of publication associated with the investigation.</td>
+</tr>
+<tr class="row-even"><td>Status</td>
+<td>Ontology Annotation</td>
+<td>An Ontology Annotation describing the status of that publication (i.e. submitted, in preparation, published).</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="contact">
+<h2>1.6. Contact<a class="headerlink" href="#contact" title="Permalink to this headline">¶</a></h2>
+<p>A <code class="docutils literal"><span class="pre">Contact</span></code> SHOULD record the following:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="10%" />
+<col width="10%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Property</th>
+<th class="head">Datatype</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Name</td>
+<td>String</td>
+<td>The name of a person.</td>
+</tr>
+<tr class="row-odd"><td>Email</td>
+<td>Representation of an email</td>
+<td>The email address of a person.</td>
+</tr>
+<tr class="row-even"><td>Phone</td>
+<td>Representation of a phone number</td>
+<td>The telephone number of a person.</td>
+</tr>
+<tr class="row-odd"><td>Address</td>
+<td>Multi-line string</td>
+<td>The address of a person.</td>
+</tr>
+<tr class="row-even"><td>Affiliation</td>
+<td>String</td>
+<td>The organization affiliation for a person.</td>
+</tr>
+<tr class="row-odd"><td>Roles</td>
+<td>A list of Ontology Annotations</td>
+<td>Ontology Annotations to classify the roles performed by this person in the context of an Investigation or Study.</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 

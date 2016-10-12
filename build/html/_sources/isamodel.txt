@@ -13,55 +13,6 @@ The concept map below shows the ISA objects/entities and their relation to one a
    :align: center
    :alt: Concept map showing ISA objects/entities and their relation to one another.
 
-Ontology Annotation
-===================
-For a given value, an ``Ontology Annotation`` SHOULD qualify this value with an accession number taken from an ``Ontology
-Source``.
-
-An ``Ontology Annotation`` SHOULD record the following:
-
-.. csv-table::
-    :file: _static/model/ontology_annotation.csv
-    :header-rows: 1
-    :widths: 10, 10, 80
-
-
-Ontology Source
-===============
-An ``Ontology Source`` describes the resource from which the value of an ``Ontology Annotation`` is derived from.
-An ``Ontology Source`` SHOULD be referenced by an ``Ontology Annotation``. An ``Ontology Source`` should contain enough information on which to
-be able to ascertain the provenance of an ``Ontology Source``.
-
-An ``Ontology Source`` SHOULD record the following:
-
-.. csv-table::
-    :file: _static/model/ontology_source.csv
-    :header-rows: 1
-    :widths: 10, 10, 80
-
-Unit
-====
-A ``Unit`` is used to classify dimensional data, and used accordingly with relevant values.
-
-A ``Unit`` SHOULD be implemented as an ``Ontology Annotation``.
-
-Publication
-===========
-A ``Publication`` SHOULD record the following:
-
-.. csv-table::
-    :file: _static/model/publication.csv
-    :header-rows: 1
-    :widths: 10, 10, 80
-
-Contact
-=======
-A ``Contact`` SHOULD record the following:
-
-.. csv-table::
-    :file: _static/model/contact.csv
-    :header-rows: 1
-    :widths: 10, 10, 80
 
 Investigation, Study, Assay
 ===========================
@@ -213,4 +164,55 @@ Experimental graphs MUST be composed of the following node types
     :widths: 10, 10, 80
 
 ``Process`` nodes SHOULD be preceded by zero or more ``Material`` or ``Data`` nodes, and followed by zero or more ``Material`` or ``Data`` nodes.
+
+Ontology Annotation
+===================
+For a given value, an ``Ontology Annotation`` SHOULD qualify this value with an accession number taken from an ``Ontology
+Source``.
+
+An ``Ontology Annotation`` SHOULD record the following:
+
+.. csv-table::
+    :file: _static/model/ontology_annotation.csv
+    :header-rows: 1
+    :widths: 10, 10, 80
+
+
+Ontology Source
+===============
+An ``Ontology Source`` describes the resource from which the value of an ``Ontology Annotation`` is derived from.
+An ``Ontology Source`` SHOULD be referenced by an ``Ontology Annotation``. An ``Ontology Source`` should contain enough information on which to
+be able to ascertain the provenance of an ``Ontology Source``.
+
+An ``Ontology Source`` SHOULD record the following:
+
+.. csv-table::
+    :file: _static/model/ontology_source.csv
+    :header-rows: 1
+    :widths: 10, 10, 80
+
+Unit
+====
+A ``Unit`` is used to classify dimensional data, and used accordingly with relevant values.
+
+A ``Unit`` SHOULD be implemented as an ``Ontology Annotation``.
+
+Publication
+===========
+A ``Publication`` SHOULD record the following:
+
+.. csv-table::
+    :file: _static/model/publication.csv
+    :header-rows: 1
+    :widths: 10, 10, 80
+
+Contact
+=======
+A ``Contact`` SHOULD record the following:
+
+.. csv-table::
+    :file: _static/model/contact.csv
+    :header-rows: 1
+    :widths: 10, 10, 80
+
 
