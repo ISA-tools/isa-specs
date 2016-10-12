@@ -11,7 +11,7 @@ The concept map below shows the ISA objects/entities and their relation to one a
 
 .. image:: _static/isa_model_1_ccoded.png
    :align: center
-   :alt: Concept map showing ISA objects/entities and their relation to one another.
+   :alt: Concept map showing ISA objects/entities and their relationships.
 
 
 Investigation, Study, Assay
