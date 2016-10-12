@@ -9,7 +9,7 @@ advantage of ISA-formatted content.
 
 The concept map below shows the ISA objects/entities and their relation to one another:
 
-.. image:: _static/isa_model_1.png
+.. image:: _static/isa_model_1_ccoded.png
    :align: center
    :alt: Concept map showing ISA objects/entities and their relation to one another.
 
