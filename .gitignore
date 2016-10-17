@@ -1,6 +1,8 @@
 # Created by .ignore support plugin (hsz.mobi)
 .gitignore
 .idea/
+.DS_Store
 build/html/.doctrees
 build/latex/
 source/_templates/
+source/.DS_Store
