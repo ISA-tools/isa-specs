@@ -1,7 +1,7 @@
 ISA Model and Serialization Specifications
 ==========================================
 
-**Status**: ISA Model and Serialization Specifications 1.0 (6 October 2016)
+**Status**: ISA Model and Serialization Specifications 1.0 (18 October 2016)
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and
 "OPTIONAL" in this document are to be interpreted as described by `RFC 2119 <http://www.ietf.org/rfc/rfc2119.txt>`_.
@@ -48,15 +48,15 @@ databases, or import into analytical or other tools.
 ----------------
 Revision History
 ----------------
-+---------+----------------+------------------------------------------------------------------+
-| Version | Date           | Description                                                      |
-+=========+================+==================================================================+
-| 1.0     | 2016-10-06     | Final release of ISA Model and Serializations specification [#]_ |
-+---------+----------------+------------------------------------------------------------------+
-| 1.0RC2  | 2009-01-13     | Second release candidate of ISA-Tab specification                |
-+---------+----------------+------------------------------------------------------------------+
-| 1.0RC1  | 2008-11-26     | First release candidate of ISA-Tab specification [#]_            |
-+---------+----------------+------------------------------------------------------------------+
++---------+--------------------+-----------------------------------------------------------------------------+
+| Version | Date               | Description                                                                 |
++=========+====================+=============================================================================+
+| 1.0     | 2016-10-18         | Final release of ISA Model and Serializations specification (this document) |
++---------+--------------------+-----------------------------------------------------------------------------+
+| 1.0     | 2009-01-13         | Final release of ISA-Tab specification [#]_                                 |
++---------+--------------------+-----------------------------------------------------------------------------+
+| 1.0RC1  | 2008-11-26         | First release candidate of ISA-Tab specification [#]_                       |
++---------+--------------------+-----------------------------------------------------------------------------+
 
-.. [#] http://isa-specs.readthedocs.io
-.. [#] http://isatab.sourceforge.net/docs/ISA-TAB_release-candidate-1_v1.0_24nov08.pdf
+.. [#] Rocca-Serra, Philippe, Sansone, Susanna-Assunta, & Brandizi, Marco. (2009, January 13). Specification documentation: ISA-TAB 1.0. Zenodo. http://doi.org/10.5281/zenodo.161355
+.. [#] Rocca-Serra, Philippe, Sansone, Susanna-Assunta, & Brandizi, Marco. (2008, November 24). Specification documentation: release candidate 1, ISA-TAB 1.0. Zenodo. http://doi.org/10.5281/zenodo.161350
