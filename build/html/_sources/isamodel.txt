@@ -13,6 +13,9 @@ The concept map below shows the ISA objects/entities and their relation to one a
    :align: center
    :alt: Concept map showing ISA objects/entities and their relationships.
 
+.. note::
+    The concept ``ontology reference`` depicted above refers to a combination of the ``Ontology Annotation`` and
+    ``Ontology Source`` concepts as described below.
 
 Investigation, Study, Assay
 ===========================

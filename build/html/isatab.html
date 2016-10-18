@@ -32,9 +32,6 @@
   
 
   
-        <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="ISA Model and Serialization Specifications 1.0 documentation" href="index.html"/>
         <link rel="next" title="3. ISA-JSON format" href="isajson.html"/>
         <link rel="prev" title="1. ISA Abstract Model" href="isamodel.html"/> 
@@ -186,7 +183,7 @@ experiment; experimental steps (or sequences of events) are described in the Stu
 Investigation file there may be one or more Studies defined with a corresponding Study file; for each Study there may
 be one or more Assays defined with corresponding Assay files.</p>
 <p>Files SHOULD be encoded using <a class="reference external" href="http://www.fileformat.info/info/unicode/utf8.htm">UTF-8</a>.</p>
-<p>Column delimiters SHOULD be the Unicode Horizontal Tab character (Unicode <a class="reference external" href="http://www.fileformat.info/info/unicode/char/0009/index.htm">U+0009</a>,).</p>
+<p>Column delimiters SHOULD be the Unicode Horizontal Tab character (Unicode <a class="reference external" href="http://www.fileformat.info/info/unicode/char/0009/index.htm">U+0009</a>).</p>
 <p>In order to facilitate identification of ISA-Tab component files, specific naming patterns SHOULD follow:</p>
 <blockquote>
 <div><ul class="simple">
@@ -204,7 +201,7 @@ be one or more Assays defined with corresponding Assay files.</p>
 </div></blockquote>
 <p>Dates SHOULD be supplied in the <a class="reference external" href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO8601</a> format <code class="docutils literal"><span class="pre">YYYY-MM-DD</span></code>.</p>
 <p>All values of cells MAY be enveloped with the Unicode Quotation Mark, Unicode
-<a class="reference external" href="http://www.fileformat.info/info/unicode/char/0022/index.htm">U+0022</a>  (the &#8221; character).</p>
+<a class="reference external" href="http://www.fileformat.info/info/unicode/char/0022/index.htm">U+0022</a>  (the <code class="docutils literal"><span class="pre">&quot;</span></code> character).</p>
 <p>For maximal portability file names should only contain only ASCII characters not excluded
 already (that is <code class="docutils literal"><span class="pre">A-Za-z0-9._!#$%&amp;+,;=&#64;^(){}'[]</span></code> - we exclude space as many utilities
 do not accept spaces in file paths): non-English alphabetic characters cannot be guaranteed
@@ -242,7 +239,7 @@ in the subsequent columns. The following section headings MUST appear in the Inv
 <div class="admonition attention">
 <p class="first admonition-title">Attention</p>
 <p>Rows in which the first character in the first column is Unicode
-<a class="reference external" href="http://www.fileformat.info/info/unicode/char/0023/index.htm">U+0023</a>  (the # character) MUST be interpreted as
+<a class="reference external" href="http://www.fileformat.info/info/unicode/char/0023/index.htm">U+0023</a>  (the <code class="docutils literal"><span class="pre">#</span></code> character) MUST be interpreted as
 comments, where reference implementation parsers SHOULD ignore those lines entirely.</p>
 <p class="last">Rows where the label <code class="docutils literal"><span class="pre">Comment[&lt;comment</span> <span class="pre">name&gt;]</span></code> appear can also appear within any of the section blocks. Where
 these appear, the comment name must be unique within the context of a single block (e.g. you cannot have multiple

@@ -28,7 +28,7 @@ be one or more Assays defined with corresponding Assay files.
 
 Files SHOULD be encoded using `UTF-8 <http://www.fileformat.info/info/unicode/utf8.htm>`_.
 
-Column delimiters SHOULD be the Unicode Horizontal Tab character (Unicode `U+0009 <http://www.fileformat.info/info/unicode/char/0009/index.htm>`_,).
+Column delimiters SHOULD be the Unicode Horizontal Tab character (Unicode `U+0009 <http://www.fileformat.info/info/unicode/char/0009/index.htm>`_).
 
 In order to facilitate identification of ISA-Tab component files, specific naming patterns SHOULD follow:
 
@@ -44,7 +44,7 @@ All labels are case-sensitive:
 Dates SHOULD be supplied in the `ISO8601 <http://www.iso.org/iso/home/standards/iso8601.htm>`_ format ``YYYY-MM-DD``.
 
 All values of cells MAY be enveloped with the Unicode Quotation Mark, Unicode
-`U+0022 <http://www.fileformat.info/info/unicode/char/0022/index.htm>`_  (the " character).
+`U+0022 <http://www.fileformat.info/info/unicode/char/0022/index.htm>`_  (the ``"`` character).
 
 For maximal portability file names should only contain only ASCII characters not excluded
 already (that is ``A-Za-z0-9._!#$%&+,;=@^(){}'[]`` - we exclude space as many utilities
@@ -83,7 +83,7 @@ For a full example of a complete Investigation File, please see https://git.io/v
 
 .. attention::
     Rows in which the first character in the first column is Unicode
-    `U+0023 <http://www.fileformat.info/info/unicode/char/0023/index.htm>`_  (the # character) MUST be interpreted as
+    `U+0023 <http://www.fileformat.info/info/unicode/char/0023/index.htm>`_  (the ``#`` character) MUST be interpreted as
     comments, where reference implementation parsers SHOULD ignore those lines entirely.
 
     Rows where the label ``Comment[<comment name>]`` appear can also appear within any of the section blocks. Where
