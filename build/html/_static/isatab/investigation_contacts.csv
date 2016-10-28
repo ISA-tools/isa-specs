@@ -4,7 +4,7 @@ Investigation Person First Name,String,Investigation Person Name
 Investigation Person Mid Initials,String,The middle initials of a person associated with the investigation.
 Investigation Person Email,String formatted as email,The email address of a person associated with the investigation.
 Investigation Person Phone,String,The telephone number of a person associated with the investigation.
-IInvestigation Person Fax,String,The fax number of a person associated with the investigation.
+Investigation Person Fax,String,The fax number of a person associated with the investigation.
 Investigation Person Address,String,The address of a person associated with the investigation.
 Investigation Person Affiliation,String,The organization affiliation for a person associated with the investigation.
 Investigation Person Roles,String or Ontology Annotation if accompanied by Term Accession Numbers and Term Source REFs,"Term to classify the role(s) performed by this person in the context of the investigation, which means that the roles reported here need not correspond to roles held withing their affiliated organization. Multiple annotations or values attached to one person can be provided by using a semicolon ("";"") Unicode (U0003+B) as a separator (e.g.: submitter;funder;sponsor) .The term can be free text or from, for example, a controlled vocabulary or an ontology. If the latter source is used the Term Accession Number and Term Source REF fields below are required."
