@@ -54,7 +54,7 @@ Study
 A ``Study`` is a central concept containing information on the subject under study, its characteristics and any
 treatments applied.
 
-A ``Study`` contains contextualising information for one or more ``Assay``s. Metadata about the study design, study
+A ``Study`` contains contextualising information for one or more ``Assay``. Metadata about the study design, study
 factors used, and study protocols are recorded in ``Study`` objects, as well as information similarly to the
 ``Investigation`` including title and description of the study, and related people and scholarly publications.
 
