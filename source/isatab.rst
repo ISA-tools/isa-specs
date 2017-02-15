@@ -11,7 +11,7 @@ are `tab separated value <https://en.wikipedia.org/wiki/Tab-separated_values>`_ 
 column structures specified below.
 
 Below we provide the schemas and the content rules for valid ISA-Tab documents. Full examples of ISA content as
-ISA-Tab can be found in the test data package of the ISA API, here https://git.io/vPZdE We recommend that you study
+ISA-Tab can be found in the test data package of the ISA API, here https://git.io/vD1vC We recommend that you study
 these examples to better understand the structure of ISA-Tab documents.
 
 Format
@@ -79,7 +79,7 @@ in the subsequent columns. The following section headings MUST appear in the Inv
 
 In the following sections, examples of each section block are given beside the specification of each section.
 
-For a full example of a complete Investigation File, please see https://git.io/vPZbG.
+For a full example of a complete Investigation File, please see https://git.io/vD1va.
 
 .. attention::
     Rows in which the first character in the first column is Unicode
@@ -389,7 +389,7 @@ The ``Study`` file contains contextualizing information for one or more assays, 
 source(s); the sampling methodology; their characteristics; and any treatments or manipulations performed to
 prepare the specimens.
 
-For a full example of a complete Study Table file, please see https://git.io/vPZbF
+For a full example of a complete Study Table file, please see https://git.io/vD1vi
 
 Study Table files SHOULD have file names corresponding to the pattern ``s_*.txt``, e.g. ``s_Study01.txt``
 
@@ -451,7 +451,7 @@ measurement (e.g. gene expression) and the technology employed (e.g. DNA microar
 includes protocols, additional information relating to the execution of those protocols and references to data
 files (whether raw or derived).
 
-For a full example of a complete Assay Table file, please see https://git.io/vPZbh
+For a full example of a complete Assay Table file, please see https://git.io/vD1vy.
 
 Assay Table files SHOULD have file names corresponding to the pattern ``a_*.txt``, e.g. ``a_Assay01.txt``
 
