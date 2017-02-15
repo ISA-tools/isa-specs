@@ -11,7 +11,7 @@ are `tab separated value <https://en.wikipedia.org/wiki/Tab-separated_values>`_ 
 column structures specified below.
 
 Below we provide the schemas and the content rules for valid ISA-Tab documents. Full examples of ISA content as
-ISA-Tab can be found in the test data package of the ISA API, here https://git.io/vD1vC We recommend that you study
+ISA-Tab can be found in the ISA datasets repository, here https://git.io/vD1vC We recommend that you study
 these examples to better understand the structure of ISA-Tab documents.
 
 Format

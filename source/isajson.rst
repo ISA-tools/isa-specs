@@ -17,7 +17,7 @@ defines a JSON format for describing JSON formats.
 .. _JSON Schema Validation: http://tools.ietf.org/html/draft-fge-json-schema-validation-00
 
 Below we provide the `schemas`_ and the `content rules`_ for valid ISA-JSON documents. Full examples of ISA content as
-ISA-JSON can be found in the sample data package of the ISA API, here https://git.io/vD1vx.
+ISA-JSON can be found in the ISA datasets repository, here https://git.io/vD1vx.
 
 We recommend that you study these to better understand the structure of ISA-JSON documents.
 
