@@ -64,7 +64,7 @@ The Investigation file fulfils four needs:
 
 An Investigation file is structured as a table with vertical headings along the first column, and corresponding values
 in the subsequent columns. The following section headings MUST appear in the Investigation file (in order), and the study
- block (headings from ``STUDY`` to ``STUDY CONTACTS``) can be repeated, one block per study associated with the investigation.
+block (headings from ``STUDY`` to ``STUDY CONTACTS``) can be repeated, one block per study associated with the investigation.
 
  - ``ONTOLOGY SOURCE REFERENCE``
  - ``INVESTIGATION``
