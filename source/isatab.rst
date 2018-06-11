@@ -41,7 +41,7 @@ All labels are case-sensitive:
  - In the Investigation file, section headers MUST be completely written in upper case (e.g. STUDY), field headers MUST have the first letter of each word in upper case (e.g. Study Identifier); with the exception of the referencing label (REF).
  - In the Study and Assay files, column headers MUST also have the first letter of each word in upper case, with the exception of the referencing label (REF).
 
-Dates SHOULD be supplied in the `ISO8601 <http://www.iso.org/iso/home/standards/iso8601.htm>`_ format ``YYYY-MM-DD``.
+Dates SHOULD be supplied in the `ISO8601 <http://www.iso.org/iso/home/standards/iso8601.htm>`_ format.
 
 All values of cells MAY be enveloped with the Unicode Quotation Mark, Unicode
 `U+0022 <http://www.fileformat.info/info/unicode/char/0022/index.htm>`_  (the ``"`` character).
@@ -459,7 +459,12 @@ Assay Table files SHOULD have file names corresponding to the pattern ``a_*.txt`
 A ``Sample`` MUST be provided as the first node in the experimental graph, indicated with the column heading ``Sample Name``.
 
 ``Protocol REF`` columns MUST be used to indicate ``Process`` nodes, with values referencing protocols declared in the
-Investigation file.
+Investigation file. The ``Protocol REF`` column MAY be qualified with ``Parameter Value [<parameter term>]``, ````Performer`` and ``Date``.
+The ``Parameter Value [<parameter term>]`` field allows reporting the values taken by the parameter when applying in a protocol. Note that
+the term between [ ] must map to one (and only one) of parameters defined in the investigation file. Values can be qualitative or quantitative.
+The ``Performer`` field reports the name of the operator who carried out the protocol. This allows account to be taken of operator effects and can
+be part of a quality control data tracking. ``Date`` is the date on which a protocol is performed. This allows account to be taken of day effects and can be part
+of a quality control data tracking. Dates should be reported in `ISO8601 <http://www.iso.org/iso/home/standards/iso8601.htm>`_ format.
 
 ``Extract Name`` MUST be used as an identifier for a Extract Material node within an ``Assay`` file. This column contains user-defined names
 for each portion of extracted material. Extracts MAY be qualified with ``Characteristics``, ``Material Type`` and ``Description``.
@@ -467,8 +472,7 @@ for each portion of extracted material. Extracts MAY be qualified with ``Charact
 ``Labeled Extract`` Name MUST be used as an identifier for a Labeled Extract Material node within an ``Assay`` file. Labeled Extracts
 MAY be qualified with ``Label``, ``Characteristics``, ``Material Type``, ``Description``.
 
-``Assay Name`` MUST be used is used as an identifier for user-defined names for each assay. Assays MAY be qualified
-with an ``Assay Name``, ``Performer`` and ``Date``.
+``Assay Name`` MUST be used as an identifier for user-defined names for each assay.
 
 ``Image File``, ``Raw Data File`` or ``Derived Data File`` column heading MUST correspond to a relevant ``Data`` node to provide names or URIs of
 file locations. For submission or transfer, files MAY be packed with ISA-Tab files.
