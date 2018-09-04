@@ -41,7 +41,7 @@ Schemas
 The ISA-JSON schemas define the structure of the ISA-JSON objects that implement the ISA Abstract Model. Here we
 list the JSON schemas with their corresponding model entity, and provide show the schema implemented.
 
-You can also find these schemas in Github at https://git.io/vPZgD
+You can also find these schemas in Github at https://git.io/fARJs
 
 investigation_schema.json
 -------------------------
