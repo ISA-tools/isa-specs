@@ -25,7 +25,7 @@ descriptions of experimental metadata (i.e. sample characteristics, technology a
 relationships) so that the resulting data and discoveries are reproducible and reusable.
 
 .. note::
-    For an introduction to ISA, please read the paper, `Towards interoperable bioscience data <http://www.nature.com/ng/journal/v44/n2/full/ng.1054.html>`_ published in *Nature Genetics*. For more details on the ISA framework and supported tools, please see http://www.isa-tools.org
+    For an introduction to ISA, please read the paper, `Towards interoperable bioscience data <http://www.nature.com/ng/journal/v44/n2/full/ng.1054.html>`_ published in *Nature Genetics*. For more details on the ISA framework and supported tools, please see https://isa-tools.org
 
 The ISA Model and Serialization Specifications define an Abstract Model of the metadata framework. The ISA Abstract Model
 has been implemented in two format specifications, ISA-Tab and ISA-JSON, both of which have supporting tools and
