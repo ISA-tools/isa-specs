@@ -1,3 +1,4 @@
-Tool,Description,Format,Maintaned by,Platform
+Tool,Description,Format,Maintained by,Platform
+ISA4J <https://github.com/IPK-BIT/isa4j>`_,`isa4j: a scalable Java library for creating ISA-Tab metadata <https://f1000research.com/articles/9-1388/v1>`_,ISA-Tab,"`Leibniz Institute of Plant Genetics and Crop Plant Research (IPK) Gatersleben, Seeland, 06466, Germany <https://github.com/IPK-BIT/isa4j>`_",Java
 `ISA to RDF <https://github.com/ToxBank/isa2rdf>`_,Convert from ISA-Tab to RDF,ISA-Tab,`ToxBank project <http://toxbank.github.io/isa2rdf/>`_,Java 1.6
 `Bio-Parser-ISATab <https://github.com/bobular/Bio-Parser-ISATab>`_,PERL Parser for ISA-Tab,ISA-Tab,Unknown,PERL
