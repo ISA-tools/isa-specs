@@ -1,54 +1,57 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>1. ISA Abstract Model &mdash; ISA Model and Serialization Specifications 1.0 documentation</title>
   
 
   
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+
+  
   
 
   
 
   
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
-  
-
-  
-    <link rel="top" title="ISA Model and Serialization Specifications 1.0 documentation" href="index.html"/>
-        <link rel="next" title="2. ISA-Tab format" href="isatab.html"/>
-        <link rel="prev" title="ISA Model and Serialization Specifications" href="index.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2. ISA-Tab format" href="isatab.html" />
+    <link rel="prev" title="ISA Model and Serialization Specifications" href="index.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
+   
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -79,12 +82,16 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
             
-                <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="">1. ISA Abstract Model</a><ul>
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. ISA Abstract Model</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#investigation-study-assay">1.1. Investigation, Study, Assay</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#investigation">1.1.1. Investigation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#study">1.1.2. Study</a></li>
@@ -108,40 +115,63 @@
             
           
         </div>
+        
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">ISA Model and Serialization Specifications</a>
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ISA Model and Serialization Specifications</a>
+        
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
- 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li>1. ISA Abstract Model</li>
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>1. ISA Abstract Model</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/isamodel.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/isamodel.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -150,443 +180,442 @@
   <div class="section" id="isa-abstract-model">
 <h1>1. ISA Abstract Model<a class="headerlink" href="#isa-abstract-model" title="Permalink to this headline">¶</a></h1>
 <p>This ISA specification defines an Abstract Model of the metadata framework. The ISA Abstract Model has been implemented
-in two format specifications, <a class="reference internal" href="isatab.html"><em>ISA-Tab</em></a> and <a class="reference internal" href="isajson.html"><em>ISA-JSON</em></a>, both of which have supporting
+in two format specifications, <a class="reference internal" href="isatab.html"><span class="doc">ISA-Tab</span></a> and <a class="reference internal" href="isajson.html"><span class="doc">ISA-JSON</span></a>, both of which have supporting
 tools and services associated with them. The format specifications are also available for additional tooling to take
 advantage of ISA-formatted content.</p>
 <p>The concept map below shows the ISA objects/entities and their relation to one another:</p>
 <img alt="Concept map showing ISA objects/entities and their relationships." class="align-center" src="_images/isa_model_1_ccoded.png" />
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The concept <code class="docutils literal"><span class="pre">ontology</span> <span class="pre">reference</span></code> depicted above refers to a combination of the <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code> and
-<code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Source</span></code> concepts as described below.</p>
+<p class="admonition-title">Note</p>
+<p>The concept <code class="docutils literal notranslate"><span class="pre">ontology</span> <span class="pre">reference</span></code> depicted above refers to a combination of the <code class="docutils literal notranslate"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code> and
+<code class="docutils literal notranslate"><span class="pre">Ontology</span> <span class="pre">Source</span></code> concepts as described below.</p>
 </div>
 <div class="section" id="investigation-study-assay">
 <h2>1.1. Investigation, Study, Assay<a class="headerlink" href="#investigation-study-assay" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt>The ISA model consists of three core entities to capture experimental metadata:</dt>
-<dd><ul class="first last simple">
-<li><code class="docutils literal"><span class="pre">Investigation</span></code></li>
-<li><code class="docutils literal"><span class="pre">Study</span></code></li>
-<li><code class="docutils literal"><span class="pre">Assay</span></code></li>
+<dl class="simple">
+<dt>The ISA model consists of three core entities to capture experimental metadata:</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Investigation</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Study</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Assay</span></code></p></li>
 </ul>
 </dd>
 </dl>
-<p>An <code class="docutils literal"><span class="pre">Investigation</span></code> contains all the information needed to understand the overall goals and means used in an
-experiment; experimental steps (or sequences of events) are described in a <code class="docutils literal"><span class="pre">Study</span></code> and <code class="docutils literal"><span class="pre">Assay</span></code> . For each
-<code class="docutils literal"><span class="pre">Investigation</span></code> there may be one or more <code class="docutils literal"><span class="pre">Study</span></code> associated with it; for each <code class="docutils literal"><span class="pre">Study</span></code> there may be one or more
-<code class="docutils literal"><span class="pre">Assay</span></code>.</p>
+<p>An <code class="docutils literal notranslate"><span class="pre">Investigation</span></code> contains all the information needed to understand the overall goals and means used in an
+experiment; experimental steps (or sequences of events) are described in a <code class="docutils literal notranslate"><span class="pre">Study</span></code> and <code class="docutils literal notranslate"><span class="pre">Assay</span></code> . For each
+<code class="docutils literal notranslate"><span class="pre">Investigation</span></code> there may be one or more <code class="docutils literal notranslate"><span class="pre">Study</span></code> associated with it; for each <code class="docutils literal notranslate"><span class="pre">Study</span></code> there may be one or more
+<code class="docutils literal notranslate"><span class="pre">Assay</span></code>.</p>
 <div class="section" id="investigation">
 <h3>1.1.1. Investigation<a class="headerlink" href="#investigation" title="Permalink to this headline">¶</a></h3>
-<p>An <code class="docutils literal"><span class="pre">Investigation</span></code> is intended to:</p>
+<p>An <code class="docutils literal notranslate"><span class="pre">Investigation</span></code> is intended to:</p>
 <ol class="arabic simple">
-<li>to record metadata relating to a given investigation</li>
-<li>to link related <code class="docutils literal"><span class="pre">Study</span></code> objects under an <code class="docutils literal"><span class="pre">Investigation</span></code> (this only becomes necessary when two or more <code class="docutils literal"><span class="pre">Study</span></code> objects need to be grouped)</li>
+<li><p>to record metadata relating to a given investigation</p></li>
+<li><p>to link related <code class="docutils literal notranslate"><span class="pre">Study</span></code> objects under an <code class="docutils literal notranslate"><span class="pre">Investigation</span></code> (this only becomes necessary when two or more <code class="docutils literal notranslate"><span class="pre">Study</span></code> objects need to be grouped)</p></li>
 </ol>
-<p>An <code class="docutils literal"><span class="pre">Investigation</span></code> is used to record metadata relating to the description of the investigation context, such as the title and
-description of the investigation as well as about related people and scholarly publications. <code class="docutils literal"><span class="pre">Study</span></code> and <code class="docutils literal"><span class="pre">Assay</span></code> objects
-are grouped within an <code class="docutils literal"><span class="pre">Investigation</span></code> to record other metadata within the relevant contexts.</p>
-<p>An <code class="docutils literal"><span class="pre">Investigation</span></code> SHOULD record the following:</p>
-<table border="1" class="docutils">
+<p>An <code class="docutils literal notranslate"><span class="pre">Investigation</span></code> is used to record metadata relating to the description of the investigation context, such as the title and
+description of the investigation as well as about related people and scholarly publications. <code class="docutils literal notranslate"><span class="pre">Study</span></code> and <code class="docutils literal notranslate"><span class="pre">Assay</span></code> objects
+are grouped within an <code class="docutils literal notranslate"><span class="pre">Investigation</span></code> to record other metadata within the relevant contexts.</p>
+<p>An <code class="docutils literal notranslate"><span class="pre">Investigation</span></code> SHOULD record the following:</p>
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="10%" />
-<col width="80%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 80%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Property</th>
-<th class="head">Datatype</th>
-<th class="head">Description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Datatype</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>Identifier</td>
-<td>String</td>
-<td>A identifier or an accession number provided by a repository. This SHOULD be locally unique.</td>
+<tbody>
+<tr class="row-even"><td><p>Identifier</p></td>
+<td><p>String</p></td>
+<td><p>A identifier or an accession number provided by a repository. This SHOULD be locally unique.</p></td>
 </tr>
-<tr class="row-odd"><td>Title</td>
-<td>String</td>
-<td>A concise name given to the investigation.</td>
+<tr class="row-odd"><td><p>Title</p></td>
+<td><p>String</p></td>
+<td><p>A concise name given to the investigation.</p></td>
 </tr>
-<tr class="row-even"><td>Description</td>
-<td>String</td>
-<td>A textual description of the investigation.</td>
+<tr class="row-even"><td><p>Description</p></td>
+<td><p>String</p></td>
+<td><p>A textual description of the investigation.</p></td>
 </tr>
-<tr class="row-odd"><td>Submission Date</td>
-<td>Representation of a ISO8601 date</td>
-<td>The date on which the investigation was reported to the repository.</td>
+<tr class="row-odd"><td><p>Submission Date</p></td>
+<td><p>Representation of a ISO8601 date</p></td>
+<td><p>The date on which the investigation was reported to the repository.</p></td>
 </tr>
-<tr class="row-even"><td>Public Release Date</td>
-<td>Representation of a ISO8601 date</td>
-<td>The date on which the investigation was released publicly.</td>
+<tr class="row-even"><td><p>Public Release Date</p></td>
+<td><p>Representation of a ISO8601 date</p></td>
+<td><p>The date on which the investigation was released publicly.</p></td>
 </tr>
-<tr class="row-odd"><td>Publications</td>
-<td>A list of Publication</td>
-<td>A list of Publications relating to the investigation.</td>
+<tr class="row-odd"><td><p>Publications</p></td>
+<td><p>A list of Publication</p></td>
+<td><p>A list of Publications relating to the investigation.</p></td>
 </tr>
-<tr class="row-even"><td>Contacts</td>
-<td>A list of Contact</td>
-<td>A list of Contacts relating to the investigation.</td>
+<tr class="row-even"><td><p>Contacts</p></td>
+<td><p>A list of Contact</p></td>
+<td><p>A list of Contacts relating to the investigation.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="study">
 <h3>1.1.2. Study<a class="headerlink" href="#study" title="Permalink to this headline">¶</a></h3>
-<p>A <code class="docutils literal"><span class="pre">Study</span></code> is a central concept containing information on the subject under study, its characteristics and any
+<p>A <code class="docutils literal notranslate"><span class="pre">Study</span></code> is a central concept containing information on the subject under study, its characteristics and any
 treatments applied.</p>
-<p>A <code class="docutils literal"><span class="pre">Study</span></code> contains contextualising information for one or more <code class="docutils literal"><span class="pre">Assay</span></code>. Metadata about the study design, study
-factors used, and study protocols are recorded in <code class="docutils literal"><span class="pre">Study</span></code> objects, as well as information similarly to the
-<code class="docutils literal"><span class="pre">Investigation</span></code> including title and description of the study, and related people and scholarly publications.</p>
-<p>A <code class="docutils literal"><span class="pre">Study</span></code> SHOULD record the following:</p>
-<table border="1" class="docutils">
+<p>A <code class="docutils literal notranslate"><span class="pre">Study</span></code> contains contextualising information for one or more <code class="docutils literal notranslate"><span class="pre">Assay</span></code>. Metadata about the study design, study
+factors used, and study protocols are recorded in <code class="docutils literal notranslate"><span class="pre">Study</span></code> objects, as well as information similarly to the
+<code class="docutils literal notranslate"><span class="pre">Investigation</span></code> including title and description of the study, and related people and scholarly publications.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">Study</span></code> SHOULD record the following:</p>
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="10%" />
-<col width="80%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 80%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Property</th>
-<th class="head">Datatype</th>
-<th class="head">Description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Datatype</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>Identifier</td>
-<td>String</td>
-<td>A identifier or an accession number provided by a repository. This SHOULD be locally unique.</td>
+<tbody>
+<tr class="row-even"><td><p>Identifier</p></td>
+<td><p>String</p></td>
+<td><p>A identifier or an accession number provided by a repository. This SHOULD be locally unique.</p></td>
 </tr>
-<tr class="row-odd"><td>Title</td>
-<td>String</td>
-<td>A concise name given to the investigation.</td>
+<tr class="row-odd"><td><p>Title</p></td>
+<td><p>String</p></td>
+<td><p>A concise name given to the investigation.</p></td>
 </tr>
-<tr class="row-even"><td>Description</td>
-<td>String</td>
-<td>A textual description of the investigation.</td>
+<tr class="row-even"><td><p>Description</p></td>
+<td><p>String</p></td>
+<td><p>A textual description of the investigation.</p></td>
 </tr>
-<tr class="row-odd"><td>Submission Date</td>
-<td>Representation of a ISO8601 date</td>
-<td>The date on which the investigation was reported to the repository.</td>
+<tr class="row-odd"><td><p>Submission Date</p></td>
+<td><p>Representation of a ISO8601 date</p></td>
+<td><p>The date on which the investigation was reported to the repository.</p></td>
 </tr>
-<tr class="row-even"><td>Public Release Date</td>
-<td>Representation of a ISO8601 date</td>
-<td>The date on which the investigation was released publicly.</td>
+<tr class="row-even"><td><p>Public Release Date</p></td>
+<td><p>Representation of a ISO8601 date</p></td>
+<td><p>The date on which the investigation was released publicly.</p></td>
 </tr>
-<tr class="row-odd"><td>Publications</td>
-<td>A list of Publication</td>
-<td>A list of Publications relating to the study.</td>
+<tr class="row-odd"><td><p>Publications</p></td>
+<td><p>A list of Publication</p></td>
+<td><p>A list of Publications relating to the study.</p></td>
 </tr>
-<tr class="row-even"><td>Contacts</td>
-<td>A list of Contact</td>
-<td>A list of Contacts relating to the study.</td>
+<tr class="row-even"><td><p>Contacts</p></td>
+<td><p>A list of Contact</p></td>
+<td><p>A list of Contacts relating to the study.</p></td>
 </tr>
-<tr class="row-odd"><td>Design Type</td>
-<td>Ontology Annotation</td>
-<td>A classifier of the study based on the overall experimental design, e.g cross-over design or parallel group design.</td>
+<tr class="row-odd"><td><p>Design Type</p></td>
+<td><p>Ontology Annotation</p></td>
+<td><p>A classifier of the study based on the overall experimental design, e.g cross-over design or parallel group design.</p></td>
 </tr>
-<tr class="row-even"><td>Factor Name</td>
-<td>String</td>
-<td>The name of one factor used in the Study and/or Assay files. A factor corresponds to an independent variable manipulated by the experimentalist with the intention to affect biological systems in a way that can be measured by an assay. The value of a factor is given in the Study or Assay file, accordingly.</td>
+<tr class="row-even"><td><p>Factor Name</p></td>
+<td><p>String</p></td>
+<td><p>The name of one factor used in the Study and/or Assay files. A factor corresponds to an independent variable manipulated by the experimentalist with the intention to affect biological systems in a way that can be measured by an assay. The value of a factor is given in the Study or Assay file, accordingly.</p></td>
 </tr>
-<tr class="row-odd"><td>Factor Type</td>
-<td>Ontology Annotation</td>
-<td>An classification of this factor into categories.</td>
+<tr class="row-odd"><td><p>Factor Type</p></td>
+<td><p>Ontology Annotation</p></td>
+<td><p>An classification of this factor into categories.</p></td>
 </tr>
 </tbody>
 </table>
-<p>In a <code class="docutils literal"><span class="pre">Study</span></code> object we record the provenance of biological samples, from source material through a collection process to sample material, represented with directed acyclic graphs (direct graphs with no loops/cycles). The pattern of nodes is usually formed of a source material node, followed by a sample collection process node, followed by a sample material node.</p>
+<p>In a <code class="docutils literal notranslate"><span class="pre">Study</span></code> object we record the provenance of biological samples, from source material through a collection process to sample material, represented with directed acyclic graphs (direct graphs with no loops/cycles). The pattern of nodes is usually formed of a source material node, followed by a sample collection process node, followed by a sample material node.</p>
 <p>For example:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>(source material)-&gt;(sample collection)-&gt;(sample material)
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(source material)-&gt;(sample collection)-&gt;(sample material)
 </pre></div>
 </div>
 <p>These study graphs MAY split and pool depending on how the samples are collected.</p>
 <p>In a splitting example, multiple samples might be derived from the same source:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>(source material 1)-&gt;(sample collection)-&gt;(sample material 1)
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(source material 1)-&gt;(sample collection)-&gt;(sample material 1)
 (source material 1)-&gt;(sample collection)-&gt;(sample material 2)
 </pre></div>
 </div>
 <p>In a pooling example, multiple sources may be used to create a single sample:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>(source material 1)-&gt;(sample collection)-&gt;(sample material 1)
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(source material 1)-&gt;(sample collection)-&gt;(sample material 1)
 (source material 2)-&gt;(sample collection)-&gt;(sample material 1)
 </pre></div>
 </div>
 </div>
 <div class="section" id="assay">
 <h3>1.1.3. Assay<a class="headerlink" href="#assay" title="Permalink to this headline">¶</a></h3>
-<p>An <code class="docutils literal"><span class="pre">Assay</span></code> represents a test performed either on material taken from a subject or on a whole initial subject,
+<p>An <code class="docutils literal notranslate"><span class="pre">Assay</span></code> represents a test performed either on material taken from a subject or on a whole initial subject,
 producing qualitative or quantitative measurements.</p>
-<p>An <code class="docutils literal"><span class="pre">Assay</span></code> groups descriptions of provenance of sample processing for related tests. Each test typically
+<p>An <code class="docutils literal notranslate"><span class="pre">Assay</span></code> groups descriptions of provenance of sample processing for related tests. Each test typically
 follows the steps of one particular experimental workflow described by a particular protocol.</p>
-<p><code class="docutils literal"><span class="pre">Assay</span></code>-related metadata includes descriptions of the measurement type and technology used, and a link to what study
+<p><code class="docutils literal notranslate"><span class="pre">Assay</span></code>-related metadata includes descriptions of the measurement type and technology used, and a link to what study
 protocol is applied. Where an assay produces data files, links to the data are recorded here.</p>
-<p>An <code class="docutils literal"><span class="pre">Assay</span></code> SHOULD record the following:</p>
-<table border="1" class="docutils">
+<p>An <code class="docutils literal notranslate"><span class="pre">Assay</span></code> SHOULD record the following:</p>
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="10%" />
-<col width="80%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 80%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Property</th>
-<th class="head">Datatype</th>
-<th class="head">Description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Datatype</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>Measurement Type</td>
-<td>Ontology Annotation</td>
-<td>An Ontology Annotation to qualify the endpoint, or what is being measured (e.g. gene expression profiling or protein identification).</td>
+<tbody>
+<tr class="row-even"><td><p>Measurement Type</p></td>
+<td><p>Ontology Annotation</p></td>
+<td><p>An Ontology Annotation to qualify the endpoint, or what is being measured (e.g. gene expression profiling or protein identification).</p></td>
 </tr>
-<tr class="row-odd"><td>Technology Type</td>
-<td>Ontology Annotation</td>
-<td>An Ontology Annotation to identify the technology used to perform the measurement, e.g. DNA microarray, mass spectrometry.</td>
+<tr class="row-odd"><td><p>Technology Type</p></td>
+<td><p>Ontology Annotation</p></td>
+<td><p>An Ontology Annotation to identify the technology used to perform the measurement, e.g. DNA microarray, mass spectrometry.</p></td>
 </tr>
-<tr class="row-even"><td>Technology Platform</td>
-<td>String</td>
-<td>The manufacturer and platform name, e.g. Bruker AVANCE, of the technology used.</td>
+<tr class="row-even"><td><p>Technology Platform</p></td>
+<td><p>String</p></td>
+<td><p>The manufacturer and platform name, e.g. Bruker AVANCE, of the technology used.</p></td>
 </tr>
 </tbody>
 </table>
-<p>In an <code class="docutils literal"><span class="pre">Assay</span></code> we record the provenance of biological samples, from sample material through an experimental workflow, represented with directed acyclic graphs. <code class="docutils literal"><span class="pre">Assay</span></code> graphs usually follow the pattern of a sample material, followed by a series of process and material/data nodes.</p>
+<p>In an <code class="docutils literal notranslate"><span class="pre">Assay</span></code> we record the provenance of biological samples, from sample material through an experimental workflow, represented with directed acyclic graphs. <code class="docutils literal notranslate"><span class="pre">Assay</span></code> graphs usually follow the pattern of a sample material, followed by a series of process and material/data nodes.</p>
 <p>For example, to show a sample that goes through some extraction process (e.g. nucleic acid extraction) through to producing some sequenced data, we might produce something like:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>(sample material)-&gt;(extraction process)-&gt;(extract)-&gt;(sequencing process)-&gt;(raw data file)
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(sample material)-&gt;(extraction process)-&gt;(extract)-&gt;(sequencing process)-&gt;(raw data file)
 </pre></div>
 </div>
 <p>Like with the study graphs, splitting and pooling can occur where appropriate in assay graphs.</p>
 </div>
 <div class="section" id="study-and-assay-graphs">
 <h3>1.1.4. Study and Assay graphs<a class="headerlink" href="#study-and-assay-graphs" title="Permalink to this headline">¶</a></h3>
-<p>Experimental graphs relating to <code class="docutils literal"><span class="pre">Study</span></code> and <code class="docutils literal"><span class="pre">Assay</span></code> objects are made up of specific types of nodes.</p>
+<p>Experimental graphs relating to <code class="docutils literal notranslate"><span class="pre">Study</span></code> and <code class="docutils literal notranslate"><span class="pre">Assay</span></code> objects are made up of specific types of nodes.</p>
 <p>Experimental graphs MUST be <a class="reference external" href="https://en.wikipedia.org/wiki/Directed_acyclic_graph">directed and acyclic</a> (i.e. MUST NOT contain loops/cycles).</p>
-<p>All nodes in <code class="docutils literal"><span class="pre">Study</span></code> and <code class="docutils literal"><span class="pre">Assay</span></code> graphs MUST be uniquely identifiable. User-defined identifiers MAY also be used.</p>
+<p>All nodes in <code class="docutils literal notranslate"><span class="pre">Study</span></code> and <code class="docutils literal notranslate"><span class="pre">Assay</span></code> graphs MUST be uniquely identifiable. User-defined identifiers MAY also be used.</p>
 <p>Experimental graphs MUST be composed of the following node types</p>
 <p><strong>Material nodes</strong></p>
-<p><code class="docutils literal"><span class="pre">Material</span></code> nodes can also be used as a generic structure to describe materials consumed or produced during an experimental workflow.
-<code class="docutils literal"><span class="pre">Material</span></code> nodes SHOULD record the following:</p>
-<table border="1" class="docutils">
+<p><code class="docutils literal notranslate"><span class="pre">Material</span></code> nodes can also be used as a generic structure to describe materials consumed or produced during an experimental workflow.
+<code class="docutils literal notranslate"><span class="pre">Material</span></code> nodes SHOULD record the following:</p>
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="10%" />
-<col width="80%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 80%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Property</th>
-<th class="head">Datatype</th>
-<th class="head">Description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Datatype</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>Characteristics</td>
-<td>A list of Characteristic</td>
-<td>A list of material characteristics that may be qualitative or quantitative in description. Qualitative values MAY be Ontology Annotations, while quantitative values MAY be qualified with a Unit definition.</td>
+<tbody>
+<tr class="row-even"><td><p>Characteristics</p></td>
+<td><p>A list of Characteristic</p></td>
+<td><p>A list of material characteristics that may be qualitative or quantitative in description. Qualitative values MAY be Ontology Annotations, while quantitative values MAY be qualified with a Unit definition.</p></td>
 </tr>
-<tr class="row-odd"><td>Material Type</td>
-<td>Ontology Annotation</td>
-<td>An Ontology Annotation describing the material.</td>
+<tr class="row-odd"><td><p>Material Type</p></td>
+<td><p>Ontology Annotation</p></td>
+<td><p>An Ontology Annotation describing the material.</p></td>
 </tr>
 </tbody>
 </table>
-<p><code class="docutils literal"><span class="pre">Source</span></code> nodes are a special kind of <code class="docutils literal"><span class="pre">Material</span></code> node and are considered as the starting biological material used in a study.
-<code class="docutils literal"><span class="pre">Source</span></code> nodes SHOULD be followed by a <code class="docutils literal"><span class="pre">Process</span></code> node describing a sample collection process, and SHOULD only appear in
-<code class="docutils literal"><span class="pre">Study</span></code> graphs.</p>
-<p><code class="docutils literal"><span class="pre">Sample</span></code> nodes are a special kind of <code class="docutils literal"><span class="pre">Material</span></code> node and represent major outputs resulting from a protocol application.
-<code class="docutils literal"><span class="pre">Sample</span></code> nodes in the <code class="docutils literal"><span class="pre">Study</span></code> graphs SHOULD be preceded by a <code class="docutils literal"><span class="pre">Process</span></code> node describing a sample collection process. <code class="docutils literal"><span class="pre">Sample</span></code> nodes in the <code class="docutils literal"><span class="pre">Assay</span></code> graphs SHOULD be followed by a <code class="docutils literal"><span class="pre">Process</span></code> node and SHOULD NOT be preceded by any node.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Source</span></code> nodes are a special kind of <code class="docutils literal notranslate"><span class="pre">Material</span></code> node and are considered as the starting biological material used in a study.
+<code class="docutils literal notranslate"><span class="pre">Source</span></code> nodes SHOULD be followed by a <code class="docutils literal notranslate"><span class="pre">Process</span></code> node describing a sample collection process, and SHOULD only appear in
+<code class="docutils literal notranslate"><span class="pre">Study</span></code> graphs.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Sample</span></code> nodes are a special kind of <code class="docutils literal notranslate"><span class="pre">Material</span></code> node and represent major outputs resulting from a protocol application.
+<code class="docutils literal notranslate"><span class="pre">Sample</span></code> nodes in the <code class="docutils literal notranslate"><span class="pre">Study</span></code> graphs SHOULD be preceded by a <code class="docutils literal notranslate"><span class="pre">Process</span></code> node describing a sample collection process. <code class="docutils literal notranslate"><span class="pre">Sample</span></code> nodes in the <code class="docutils literal notranslate"><span class="pre">Assay</span></code> graphs SHOULD be followed by a <code class="docutils literal notranslate"><span class="pre">Process</span></code> node and SHOULD NOT be preceded by any node.</p>
 <p><strong>Data nodes</strong></p>
-<p><code class="docutils literal"><span class="pre">Data</span></code> nodes represent outputs resulting from a protocol application that corresponds to some process that produces data, typically in the form of data files. <code class="docutils literal"><span class="pre">Data</span></code> nodes SHOULD record the following:</p>
-<table border="1" class="docutils">
+<p><code class="docutils literal notranslate"><span class="pre">Data</span></code> nodes represent outputs resulting from a protocol application that corresponds to some process that produces data, typically in the form of data files. <code class="docutils literal notranslate"><span class="pre">Data</span></code> nodes SHOULD record the following:</p>
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="10%" />
-<col width="80%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 80%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Property</th>
-<th class="head">Datatype</th>
-<th class="head">Description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Datatype</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>File name</td>
-<td>String</td>
-<td>A file name or full path referencing a data file produced by the related process that MAY be packaged with, or is accessible via, the ISA reference implementation content.</td>
+<tbody>
+<tr class="row-even"><td><p>File name</p></td>
+<td><p>String</p></td>
+<td><p>A file name or full path referencing a data file produced by the related process that MAY be packaged with, or is accessible via, the ISA reference implementation content.</p></td>
 </tr>
 </tbody>
 </table>
-<p><code class="docutils literal"><span class="pre">Data</span></code> nodes SHOULD be preceded by a <code class="docutils literal"><span class="pre">Process</span></code> node describing a data-producing process, such as NMR scanning or DNA sequencing.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Data</span></code> nodes SHOULD be preceded by a <code class="docutils literal notranslate"><span class="pre">Process</span></code> node describing a data-producing process, such as NMR scanning or DNA sequencing.</p>
 <p><strong>Process nodes</strong></p>
-<p><code class="docutils literal"><span class="pre">Process</span></code> nodes represent the application of a protocol to some input material (e.g. a <code class="docutils literal"><span class="pre">Source</span></code>) to produce some output (e.g.a <code class="docutils literal"><span class="pre">Sample</span></code>).</p>
-<p><code class="docutils literal"><span class="pre">Process</span></code> nodes SHOULD record the following:</p>
-<table border="1" class="docutils">
+<p><code class="docutils literal notranslate"><span class="pre">Process</span></code> nodes represent the application of a protocol to some input material (e.g. a <code class="docutils literal notranslate"><span class="pre">Source</span></code>) to produce some output (e.g.a <code class="docutils literal notranslate"><span class="pre">Sample</span></code>).</p>
+<p><code class="docutils literal notranslate"><span class="pre">Process</span></code> nodes SHOULD record the following:</p>
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="10%" />
-<col width="80%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 80%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Property</th>
-<th class="head">Datatype</th>
-<th class="head">Description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Datatype</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>Parameter Values</td>
-<td>A list of Parameter Value</td>
-<td>Reporting on the values taken by parameters when applying a protocol. A protocol description in the Study SHOULD declare the required parameters, where here the values applied are recorded.</td>
+<tbody>
+<tr class="row-even"><td><p>Parameter Values</p></td>
+<td><p>A list of Parameter Value</p></td>
+<td><p>Reporting on the values taken by parameters when applying a protocol. A protocol description in the Study SHOULD declare the required parameters, where here the values applied are recorded.</p></td>
 </tr>
-<tr class="row-odd"><td>Performer</td>
-<td>String</td>
-<td>Name of the operator who carried out the protocol. This allows account to be taken of operator effects and can be part of a quality control data tracking.</td>
+<tr class="row-odd"><td><p>Performer</p></td>
+<td><p>String</p></td>
+<td><p>Name of the operator who carried out the protocol. This allows account to be taken of operator effects and can be part of a quality control data tracking.</p></td>
 </tr>
-<tr class="row-even"><td>Date</td>
-<td>Representation of an ISO8601 date</td>
-<td>The date on which a protocol is performed. This allows account to be taken of day effects and can be part of a quality control data tracking.</td>
+<tr class="row-even"><td><p>Date</p></td>
+<td><p>Representation of an ISO8601 date</p></td>
+<td><p>The date on which a protocol is performed. This allows account to be taken of day effects and can be part of a quality control data tracking.</p></td>
 </tr>
 </tbody>
 </table>
-<p><code class="docutils literal"><span class="pre">Process</span></code> nodes SHOULD be preceded by zero or more <code class="docutils literal"><span class="pre">Material</span></code> or <code class="docutils literal"><span class="pre">Data</span></code> nodes, and followed by zero or more <code class="docutils literal"><span class="pre">Material</span></code> or <code class="docutils literal"><span class="pre">Data</span></code> nodes.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Process</span></code> nodes SHOULD be preceded by zero or more <code class="docutils literal notranslate"><span class="pre">Material</span></code> or <code class="docutils literal notranslate"><span class="pre">Data</span></code> nodes, and followed by zero or more <code class="docutils literal notranslate"><span class="pre">Material</span></code> or <code class="docutils literal notranslate"><span class="pre">Data</span></code> nodes.</p>
 </div>
 </div>
 <div class="section" id="ontology-annotation">
 <h2>1.2. Ontology Annotation<a class="headerlink" href="#ontology-annotation" title="Permalink to this headline">¶</a></h2>
-<p>For a given value, an <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code> SHOULD qualify this value with an accession number taken from an <code class="docutils literal"><span class="pre">Ontology</span>
+<p>For a given value, an <code class="docutils literal notranslate"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code> SHOULD qualify this value with an accession number taken from an <code class="docutils literal notranslate"><span class="pre">Ontology</span>
 <span class="pre">Source</span></code>.</p>
-<p>An <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code> SHOULD record the following:</p>
-<table border="1" class="docutils">
+<p>An <code class="docutils literal notranslate"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code> SHOULD record the following:</p>
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="10%" />
-<col width="80%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 80%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Property</th>
-<th class="head">Datatype</th>
-<th class="head">Description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Datatype</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>Accession Number</td>
-<td>String or URI</td>
-<td>The accession number or reference from the Ontology Source associated with the selected term.</td>
+<tbody>
+<tr class="row-even"><td><p>Accession Number</p></td>
+<td><p>String or URI</p></td>
+<td><p>The accession number or reference from the Ontology Source associated with the selected term.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="ontology-source">
 <h2>1.3. Ontology Source<a class="headerlink" href="#ontology-source" title="Permalink to this headline">¶</a></h2>
-<p>An <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Source</span></code> describes the resource from which the value of an <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code> is derived from.
-An <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Source</span></code> SHOULD be referenced by an <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code>. An <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Source</span></code> should contain enough information on which to
-be able to ascertain the provenance of an <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Source</span></code>.</p>
-<p>An <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Source</span></code> SHOULD record the following:</p>
-<table border="1" class="docutils">
+<p>An <code class="docutils literal notranslate"><span class="pre">Ontology</span> <span class="pre">Source</span></code> describes the resource from which the value of an <code class="docutils literal notranslate"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code> is derived from.
+An <code class="docutils literal notranslate"><span class="pre">Ontology</span> <span class="pre">Source</span></code> SHOULD be referenced by an <code class="docutils literal notranslate"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code>. An <code class="docutils literal notranslate"><span class="pre">Ontology</span> <span class="pre">Source</span></code> should contain enough information on which to
+be able to ascertain the provenance of an <code class="docutils literal notranslate"><span class="pre">Ontology</span> <span class="pre">Source</span></code>.</p>
+<p>An <code class="docutils literal notranslate"><span class="pre">Ontology</span> <span class="pre">Source</span></code> SHOULD record the following:</p>
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="10%" />
-<col width="80%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 80%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Property</th>
-<th class="head">Datatype</th>
-<th class="head">Description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Datatype</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>Name</td>
-<td>String</td>
-<td>The name of the source of a term; i.e. the source controlled vocabulary or ontology. These names will be used to reference the Ontology Source from an Ontology Annotation.</td>
+<tbody>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>String</p></td>
+<td><p>The name of the source of a term; i.e. the source controlled vocabulary or ontology. These names will be used to reference the Ontology Source from an Ontology Annotation.</p></td>
 </tr>
-<tr class="row-odd"><td>File</td>
-<td>String</td>
-<td>A file name or a URI of an official resource.</td>
+<tr class="row-odd"><td><p>File</p></td>
+<td><p>String</p></td>
+<td><p>A file name or a URI of an official resource.</p></td>
 </tr>
-<tr class="row-even"><td>Version</td>
-<td>String</td>
-<td>The version number of the Term Source to support terms tracking.</td>
+<tr class="row-even"><td><p>Version</p></td>
+<td><p>String</p></td>
+<td><p>The version number of the Term Source to support terms tracking.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="unit">
 <h2>1.4. Unit<a class="headerlink" href="#unit" title="Permalink to this headline">¶</a></h2>
-<p>A <code class="docutils literal"><span class="pre">Unit</span></code> is used to classify dimensional data, and used accordingly with relevant values.</p>
-<p>A <code class="docutils literal"><span class="pre">Unit</span></code> SHOULD be implemented as an <code class="docutils literal"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code>.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">Unit</span></code> is used to classify dimensional data, and used accordingly with relevant values.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">Unit</span></code> SHOULD be implemented as an <code class="docutils literal notranslate"><span class="pre">Ontology</span> <span class="pre">Annotation</span></code>.</p>
 </div>
 <div class="section" id="publication">
 <h2>1.5. Publication<a class="headerlink" href="#publication" title="Permalink to this headline">¶</a></h2>
-<p>A <code class="docutils literal"><span class="pre">Publication</span></code> SHOULD record the following:</p>
-<table border="1" class="docutils">
+<p>A <code class="docutils literal notranslate"><span class="pre">Publication</span></code> SHOULD record the following:</p>
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="10%" />
-<col width="80%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 80%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Property</th>
-<th class="head">Datatype</th>
-<th class="head">Description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Datatype</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>PubMed ID</td>
-<td>Representation of a PubMed ID</td>
-<td>The PubMed IDs of the described publication(s) associated with this investigation.</td>
+<tbody>
+<tr class="row-even"><td><p>PubMed ID</p></td>
+<td><p>Representation of a PubMed ID</p></td>
+<td><p>The PubMed IDs of the described publication(s) associated with this investigation.</p></td>
 </tr>
-<tr class="row-odd"><td>DOI</td>
-<td>Representation of a DOI</td>
-<td>A Digital Object Identifier (DOI) for that publication (where available).</td>
+<tr class="row-odd"><td><p>DOI</p></td>
+<td><p>Representation of a DOI</p></td>
+<td><p>A Digital Object Identifier (DOI) for that publication (where available).</p></td>
 </tr>
-<tr class="row-even"><td>Author List</td>
-<td>A list of Strings</td>
-<td>The list of authors associated with that publication.</td>
+<tr class="row-even"><td><p>Author List</p></td>
+<td><p>A list of Strings</p></td>
+<td><p>The list of authors associated with that publication.</p></td>
 </tr>
-<tr class="row-odd"><td>Title</td>
-<td>String</td>
-<td>The title of publication associated with the investigation.</td>
+<tr class="row-odd"><td><p>Title</p></td>
+<td><p>String</p></td>
+<td><p>The title of publication associated with the investigation.</p></td>
 </tr>
-<tr class="row-even"><td>Status</td>
-<td>Ontology Annotation</td>
-<td>An Ontology Annotation describing the status of that publication (i.e. submitted, in preparation, published).</td>
+<tr class="row-even"><td><p>Status</p></td>
+<td><p>Ontology Annotation</p></td>
+<td><p>An Ontology Annotation describing the status of that publication (i.e. submitted, in preparation, published).</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="contact">
 <h2>1.6. Contact<a class="headerlink" href="#contact" title="Permalink to this headline">¶</a></h2>
-<p>A <code class="docutils literal"><span class="pre">Contact</span></code> SHOULD record the following:</p>
-<table border="1" class="docutils">
+<p>A <code class="docutils literal notranslate"><span class="pre">Contact</span></code> SHOULD record the following:</p>
+<table class="colwidths-given docutils align-default">
 <colgroup>
-<col width="10%" />
-<col width="10%" />
-<col width="80%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 80%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Property</th>
-<th class="head">Datatype</th>
-<th class="head">Description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Datatype</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>Name</td>
-<td>String</td>
-<td>The name of a person.</td>
+<tbody>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>String</p></td>
+<td><p>The name of a person.</p></td>
 </tr>
-<tr class="row-odd"><td>Email</td>
-<td>Representation of an email</td>
-<td>The email address of a person.</td>
+<tr class="row-odd"><td><p>Email</p></td>
+<td><p>Representation of an email</p></td>
+<td><p>The email address of a person.</p></td>
 </tr>
-<tr class="row-even"><td>Phone</td>
-<td>Representation of a phone number</td>
-<td>The telephone number of a person.</td>
+<tr class="row-even"><td><p>Phone</p></td>
+<td><p>Representation of a phone number</p></td>
+<td><p>The telephone number of a person.</p></td>
 </tr>
-<tr class="row-odd"><td>Address</td>
-<td>Multi-line string</td>
-<td>The address of a person.</td>
+<tr class="row-odd"><td><p>Address</p></td>
+<td><p>Multi-line string</p></td>
+<td><p>The address of a person.</p></td>
 </tr>
-<tr class="row-even"><td>Affiliation</td>
-<td>String</td>
-<td>The organization affiliation for a person.</td>
+<tr class="row-even"><td><p>Affiliation</p></td>
+<td><p>String</p></td>
+<td><p>The organization affiliation for a person.</p></td>
 </tr>
-<tr class="row-odd"><td>Roles</td>
-<td>A list of Ontology Annotations</td>
-<td>Ontology Annotations to classify the roles performed by this person in the context of an Investigation or Study.</td>
+<tr class="row-odd"><td><p>Roles</p></td>
+<td><p>A list of Ontology Annotations</p></td>
+<td><p>Ontology Annotations to classify the roles performed by this person in the context of an Investigation or Study.</p></td>
 </tr>
 </tbody>
 </table>
@@ -595,31 +624,32 @@ be able to ascertain the provenance of an <code class="docutils literal"><span c
 
 
            </div>
+           
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="isatab.html" class="btn btn-neutral float-right" title="2. ISA-Tab format" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="index.html" class="btn btn-neutral" title="ISA Model and Serialization Specifications" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="isatab.html" class="btn btn-neutral float-right" title="2. ISA-Tab format" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="ISA Model and Serialization Specifications" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright .
+        &#169; Copyright .
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -628,36 +658,15 @@ be able to ascertain the provenance of an <code class="docutils literal"><span c
   </div>
   
 
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'1.0',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>

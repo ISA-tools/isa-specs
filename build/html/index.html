@@ -1,53 +1,56 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>ISA Model and Serialization Specifications &mdash; ISA Model and Serialization Specifications 1.0 documentation</title>
   
 
   
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+
+  
+  
+
+  
   
 
   
 
   
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
 
-  
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
-  
-
-  
-    <link rel="top" title="ISA Model and Serialization Specifications 1.0 documentation" href="#"/>
-        <link rel="next" title="1. ISA Abstract Model" href="isamodel.html"/> 
-
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. ISA Abstract Model" href="isamodel.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
+   
   <div class="wy-grid-for-nav">
-
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
+        <div class="wy-side-nav-search" >
           
 
           
@@ -78,11 +81,15 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
             
-                <ul>
+              
+            
+            
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="isamodel.html">1. ISA Abstract Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="isatab.html">2. ISA-Tab format</a></li>
 <li class="toctree-l1"><a class="reference internal" href="isajson.html">3. ISA-JSON format</a></li>
@@ -93,40 +100,63 @@
             
           
         </div>
+        
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="#">ISA Model and Serialization Specifications</a>
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">ISA Model and Serialization Specifications</a>
+        
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
- 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="#">Docs</a> &raquo;</li>
-      
-    <li>ISA Model and Serialization Specifications</li>
+    
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>ISA Model and Serialization Specifications</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/index.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -135,18 +165,17 @@
   <div class="section" id="isa-model-and-serialization-specifications">
 <h1>ISA Model and Serialization Specifications<a class="headerlink" href="#isa-model-and-serialization-specifications" title="Permalink to this headline">¶</a></h1>
 <p><strong>Status</strong>: ISA Model and Serialization Specifications 1.0 (28 October 2016)</p>
-<p>The key words &#8220;MUST&#8221;, &#8220;MUST NOT&#8221;, &#8220;REQUIRED&#8221;, &#8220;SHALL&#8221;, &#8220;SHALL NOT&#8221;, &#8220;SHOULD&#8221;, &#8220;SHOULD NOT&#8221;, &#8220;RECOMMENDED&#8221;, &#8220;MAY&#8221;, and
-&#8220;OPTIONAL&#8221; in this document are to be interpreted as described by <a class="reference external" href="http://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a>.</p>
+<p>The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and
+“OPTIONAL” in this document are to be interpreted as described by <a class="reference external" href="http://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a>.</p>
 <p>The ISA Model and Serialization Specifications are licensed under <a class="reference external" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
-<p>The ISA Model and Serialization Specifications are maintained by Susanna-Assunta Sansone <a class="footnote-reference" href="#id5" id="id1">[1]</a>, Philippe Rocca-Serra <a class="footnote-reference" href="#id5" id="id2">[1]</a>, Alejandra
-Gonzalez-Beltran <a class="footnote-reference" href="#id5" id="id3">[1]</a> and David Johnson <a class="footnote-reference" href="#id5" id="id4">[1]</a> on behalf of the <a class="reference external" href="http://www.isacommons.org">ISA Community</a>.</p>
-<table class="docutils footnote" frame="void" id="id5" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>, <a class="fn-backref" href="#id3">3</a>, <a class="fn-backref" href="#id4">4</a>)</em> Oxford e-Research Centre, University of Oxford, UK.</td></tr>
-</tbody>
-</table>
-<p>If you wish to make comments regarding these specifications, please see the page on <a class="reference internal" href="contributing.html"><em>how to contribute</em></a>.</p>
+<p>The ISA Model and Serialization Specifications are maintained by Susanna-Assunta Sansone <a class="footnote-reference brackets" href="#id5" id="id1">1</a>, Philippe Rocca-Serra <a class="footnote-reference brackets" href="#id5" id="id2">1</a>, Alejandra
+Gonzalez-Beltran <a class="footnote-reference brackets" href="#id5" id="id3">1</a> and David Johnson <a class="footnote-reference brackets" href="#id5" id="id4">1</a> on behalf of the <a class="reference external" href="http://www.isacommons.org">ISA Community</a>.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id5"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>,<a href="#id3">3</a>,<a href="#id4">4</a>)</span></dt>
+<dd><p>Oxford e-Research Centre, University of Oxford, UK.</p>
+</dd>
+</dl>
+<p>If you wish to make comments regarding these specifications, please see the page on <a class="reference internal" href="contributing.html"><span class="doc">how to contribute</span></a>.</p>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>ISA is a metadata framework to manage an increasingly diverse set of life science, environmental and biomedical experiments that employ one or a
@@ -155,8 +184,8 @@ and <strong>Assay</strong> (analytical measurements) concepts, ISA helps you to 
 descriptions of experimental metadata (i.e. sample characteristics, technology and measurement types, sample-to-data
 relationships) so that the resulting data and discoveries are reproducible and reusable.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">For an introduction to ISA, please read the paper, <a class="reference external" href="http://www.nature.com/ng/journal/v44/n2/full/ng.1054.html">Towards interoperable bioscience data</a> published in <em>Nature Genetics</em>. For more details on the ISA framework and supported tools, please see <a class="reference external" href="http://www.isa-tools.org">http://www.isa-tools.org</a></p>
+<p class="admonition-title">Note</p>
+<p>For an introduction to ISA, please read the paper, <a class="reference external" href="http://www.nature.com/ng/journal/v44/n2/full/ng.1054.html">Towards interoperable bioscience data</a> published in <em>Nature Genetics</em>. For more details on the ISA framework and supported tools, please see <a class="reference external" href="https://isa-tools.org">https://isa-tools.org</a></p>
 </div>
 <p>The ISA Model and Serialization Specifications define an Abstract Model of the metadata framework. The ISA Abstract Model
 has been implemented in two format specifications, ISA-Tab and ISA-JSON, both of which have supporting tools and
@@ -198,79 +227,74 @@ databases, or import into analytical or other tools.</p>
 </div>
 <div class="section" id="revision-history">
 <h2>Revision History<a class="headerlink" href="#revision-history" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="9%" />
-<col width="21%" />
-<col width="69%" />
+<col style="width: 9%" />
+<col style="width: 21%" />
+<col style="width: 69%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Version</th>
-<th class="head">Date</th>
-<th class="head">Description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Date</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>1.0</td>
-<td>2016-10-28</td>
-<td>Final release of ISA Model and Serialization specifications <a class="footnote-reference" href="#id9" id="id6">[2]</a></td>
+<tbody>
+<tr class="row-even"><td><p>1.0</p></td>
+<td><p>2016-10-28</p></td>
+<td><p>Final release of ISA Model and Serialization specifications <a class="footnote-reference brackets" href="#id9" id="id6">2</a></p></td>
 </tr>
-<tr class="row-odd"><td>1.0</td>
-<td>2009-01-13</td>
-<td>Final release of ISA-Tab specification <a class="footnote-reference" href="#id10" id="id7">[3]</a></td>
+<tr class="row-odd"><td><p>1.0</p></td>
+<td><p>2009-01-13</p></td>
+<td><p>Final release of ISA-Tab specification <a class="footnote-reference brackets" href="#id10" id="id7">3</a></p></td>
 </tr>
-<tr class="row-even"><td>1.0RC1</td>
-<td>2008-11-26</td>
-<td>First release candidate of ISA-Tab specification <a class="footnote-reference" href="#id11" id="id8">[4]</a></td>
+<tr class="row-even"><td><p>1.0RC1</p></td>
+<td><p>2008-11-26</p></td>
+<td><p>First release candidate of ISA-Tab specification <a class="footnote-reference brackets" href="#id11" id="id8">4</a></p></td>
 </tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id9" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id6">[2]</a></td><td>Sansone, Susanna-Assunta, Rocca-Serra, Philippe, Gonzalez-Beltran, Alejandra, Johnson, David &amp; ISA Community. (2016, October 28). ISA Model and Serialization Specifications 1.0. Zenodo. <a class="reference external" href="http://doi.org/10.5281/zenodo.163640">http://doi.org/10.5281/zenodo.163640</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id10" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id7">[3]</a></td><td>Rocca-Serra, Philippe, Sansone, Susanna-Assunta, &amp; Brandizi, Marco. (2009, January 13). Specification documentation: ISA-TAB 1.0. Zenodo. <a class="reference external" href="http://doi.org/10.5281/zenodo.161355">http://doi.org/10.5281/zenodo.161355</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id11" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id8">[4]</a></td><td>Rocca-Serra, Philippe, Sansone, Susanna-Assunta, &amp; Brandizi, Marco. (2008, November 24). Specification documentation: release candidate 1, ISA-TAB 1.0. Zenodo. <a class="reference external" href="http://doi.org/10.5281/zenodo.161350">http://doi.org/10.5281/zenodo.161350</a></td></tr>
-</tbody>
-</table>
+<dl class="footnote brackets">
+<dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id6">2</a></span></dt>
+<dd><p>Sansone, Susanna-Assunta, Rocca-Serra, Philippe, Gonzalez-Beltran, Alejandra, Johnson, David &amp; ISA Community. (2016, October 28). ISA Model and Serialization Specifications 1.0. Zenodo. <a class="reference external" href="http://doi.org/10.5281/zenodo.163640">http://doi.org/10.5281/zenodo.163640</a></p>
+</dd>
+<dt class="label" id="id10"><span class="brackets"><a class="fn-backref" href="#id7">3</a></span></dt>
+<dd><p>Rocca-Serra, Philippe, Sansone, Susanna-Assunta, &amp; Brandizi, Marco. (2009, January 13). Specification documentation: ISA-TAB 1.0. Zenodo. <a class="reference external" href="http://doi.org/10.5281/zenodo.161355">http://doi.org/10.5281/zenodo.161355</a></p>
+</dd>
+<dt class="label" id="id11"><span class="brackets"><a class="fn-backref" href="#id8">4</a></span></dt>
+<dd><p>Rocca-Serra, Philippe, Sansone, Susanna-Assunta, &amp; Brandizi, Marco. (2008, November 24). Specification documentation: release candidate 1, ISA-TAB 1.0. Zenodo. <a class="reference external" href="http://doi.org/10.5281/zenodo.161350">http://doi.org/10.5281/zenodo.161350</a></p>
+</dd>
+</dl>
 </div>
 </div>
 
 
            </div>
+           
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="isamodel.html" class="btn btn-neutral float-right" title="1. ISA Abstract Model" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
+        <a href="isamodel.html" class="btn btn-neutral float-right" title="1. ISA Abstract Model" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright .
+        &#169; Copyright .
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -279,36 +303,15 @@ databases, or import into analytical or other tools.</p>
   </div>
   
 
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'1.0',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
+
+  
+  
+    
    
 
 </body>
