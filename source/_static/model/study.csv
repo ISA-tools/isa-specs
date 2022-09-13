@@ -1,9 +1,9 @@
 Property,Datatype,Description
 Identifier,String,A identifier or an accession number provided by a repository. This SHOULD be locally unique.
-Title,String,A concise name given to the investigation.
-Description,String,A textual description of the investigation.
-Submission Date,Representation of a ISO8601 date,The date on which the investigation was reported to the repository.
-Public Release Date,Representation of a ISO8601 date,The date on which the investigation was released publicly.
+Title,String,A concise name given to the study.
+Description,String,A textual description of the study.
+Submission Date,Representation of a ISO8601 date,The date on which the study was reported to the repository.
+Public Release Date,Representation of a ISO8601 date,The date on which the study was released publicly.
 Publications,A list of Publication,A list of Publications relating to the study.
 Contacts,A list of Contact,A list of Contacts relating to the study.
 Design Type,Ontology Annotation,"A classifier of the study based on the overall experimental design, e.g cross-over design or parallel group design."
