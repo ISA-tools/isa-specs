@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Study JSON Schema",
   "description": "JSON Schema describing an Study",
   "@context": {
@@ -13,8 +13,30 @@
     "identifier" : { "type" : "string" },
     "title" : { "type" : "string"},
     "description" : { "type" : "string"},
-    "submissionDate" : { "type" : "string", "format" : "date-time"},
-    "publicReleaseDate" : { "type" : "string", "format" : "date-time"},
+    "submissionDate" : {
+      "type": "string",
+      "anyOf": [
+         {
+           "format": "date-time"
+         },
+         {
+           "format": "date"
+         }
+       ]
+
+    },
+    "publicReleaseDate" : {
+      "type": "string",
+      "anyOf": [
+         {
+           "format": "date-time"
+         },
+         {
+           "format": "date"
+         }
+       ]
+
+    },
     "publications" : {
       "type" : "array",
       "items" : {
