@@ -1,10 +1,10 @@
 {
-    "$schema": "http://json-schema.org/draft-04/schema",
+    "$schema": "http://json-schema.org/draft-07/schema",
     "title": "ISA process or protocol application schema, corresponds to 'Protocol REF' columns in the study and assay files",
     "description": "JSON-schema representing a protocol application in the ISA model",
     "type": "object",
     "properties": {
-        "@id": { "type": "string", "format": "uri" },
+        "@id": { "type": "string", "format": "uri-reference" },
         "name": {
             "type": "string"
         },
@@ -22,7 +22,15 @@
         },
         "date": {
              "type": "string",
-              "format": "date-time"
+             "oneOf": [
+                {
+                  "format": "date-time"
+                },
+                {
+                  "format": "date"
+                }
+              ]
+
         },
         "previousProcess" : {
              "$ref" : "process_schema.json#"

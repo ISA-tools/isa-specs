@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Assay JSON Schema",
   "name": "Assay JSON Schema",
   "description": "JSON Schema describing an Assay",
@@ -9,7 +9,7 @@
   },
   "type": "object",
   "properties": {
-    "@id": { "type": "string", "format": "uri" },
+    "@id": { "type": "string", "format": "uri-reference" },
     "comments" : {
       "type": "array",
       "items": {

@@ -1,5 +1,5 @@
 {
-    "$schema": "http://json-schema.org/draft-04/schema",
+    "$schema": "http://json-schema.org/draft-07/schema",
     "title" : "ISA process parameter value schema",
     "description" : "JSON-schema representing a Parameter Value (associated with a Protocol REF) in the ISA model",
     "type" : "object",

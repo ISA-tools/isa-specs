@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Study JSON Schema",
   "description": "JSON Schema describing an Study",
   "@context": {
@@ -8,13 +8,35 @@
   },
   "type": "object",
   "properties": {
-    "@id": { "type": "string", "format": "uri" },
+    "@id": { "type": "string", "format": "uri-reference" },
     "filename" : { "type" : "string"},
     "identifier" : { "type" : "string" },
     "title" : { "type" : "string"},
     "description" : { "type" : "string"},
-    "submissionDate" : { "type" : "string", "format" : "date-time"},
-    "publicReleaseDate" : { "type" : "string", "format" : "date-time"},
+    "submissionDate" : {
+      "type": "string",
+      "oneOf": [
+         {
+           "format": "date-time"
+         },
+         {
+           "format": "date"
+         }
+       ]
+
+    },
+    "publicReleaseDate" : {
+      "type": "string",
+      "oneOf": [
+         {
+           "format": "date-time"
+         },
+         {
+           "format": "date"
+         }
+       ]
+
+    },
     "publications" : {
       "type" : "array",
       "items" : {
