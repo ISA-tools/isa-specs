@@ -11,7 +11,7 @@
         "description" : { "type" : "string"},
         "submissionDate" : {
             "type": "string",
-            "anyOf": [
+            "oneOf": [
                {
                  "format": "date-time"
                },
@@ -23,7 +23,7 @@
         },
         "publicReleaseDate" :{
             "type": "string",
-            "anyOf": [
+            "oneOf": [
                {
                  "format": "date-time"
                },

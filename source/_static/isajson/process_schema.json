@@ -22,7 +22,7 @@
         },
         "date": {
              "type": "string",
-             "anyOf": [
+             "oneOf": [
                 {
                   "format": "date-time"
                 },
