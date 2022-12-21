@@ -373,8 +373,8 @@ can be qualified with an Ontology Annotation of a term from NCBI Taxonomy as fol
 Factor Value
 ------------
 A factor is an independent variable manipulated by an experimentalist with the intention to affect biological systems
-in a way that can be measured by an assay. This field holds the actual data for the ``Factor Value`` named between the
-square brackets (as declared in the Investigation file) so MUST match; for example, ``Factor Value [compound]``. The
+in a way that can be measured by an assay. This field holds the actual data for the ``Factor`` named between the
+square brackets (as declared in the Study file) so MUST match; for example, ``Factor Value [compound]``. The
 value MUST be free text, numeric, or an ``Ontology Annotation``.
 
 +----------------------+-----------------+-----------------------+
