@@ -1,6 +1,10 @@
 ISA Model and Serialization Specifications
 ==========================================
 
+**Note**: The latest version of the specification and documentation can be found at:
+https://isa-tools.org/isa-api/content/index.html
+
+
 **Status**: ISA Model and Serialization Specifications 1.0 (28 October 2016)
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and
