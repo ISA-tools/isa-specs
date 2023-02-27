@@ -22,14 +22,14 @@
         "generatedBy": {
             "type": "string"
         },
-        "attribute": {
+        "explication": {
             "$ref": "ontology_annotation_schema.json#"
         },
         "unit": {
             "$ref": "ontology_annotation_schema.json#"
         },
         "objectType": {
-            "type": "string"
+            "$ref": "ontology_annotation_schema.json#"
         },
         "label": {
             "type": "string"
