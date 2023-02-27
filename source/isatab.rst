@@ -577,7 +577,7 @@ It MAY be a REGEX pattern.
 
 Attribute
 ---------
-To contextualize the meaning of value, an ``Attribute`` MAY be used. In this case, an ``Attribute`` heading MUST be present, and MAY be further annotated as an ``Ontology Annotation``.
+To contextualize the meaning of the values, an ``Attribute`` MAY be used. In this case, an ``Attribute`` heading MUST be present, and MAY be further annotated as an ``Ontology Annotation``.
 
 For example, to contextualize the values in the datafile as being an  ``Arithmetic Mean`` qualified as an ``Ontology Annotation`` from the NCIT Ontology declared
 in the Ontology Sources with ``NCIT``:
@@ -601,5 +601,15 @@ in the Ontology Sources with ``UO``:
 |parts per million | UO              | http://.../obo/UO_0000169  |
 +------------------+-----------------+----------------------------+
 
+Dataset Table file
+------------------
+The ``Dataset`` file does not represent processes with inputs and outputs, like studies and assays, but rather statically describes the values that can be found in data files. 
+It contextualizes the data, so that it can be more easily interpreted without preceding knowledge about it.
 
+Dataset Table files SHOULD have file names corresponding to the pattern ``d_*.txt``, e.g. ``d_Dataset01.txt``
 
+For example:
+
+.. literalinclude:: _static/isatab/d_sleuth.txt
+
+The Dataset Table file implements the ``Data`` graphs from the ISA Abstract Model.
