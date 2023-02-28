@@ -1,11 +1,14 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema",
     "title": "ISA data schema",
-    "description": "JSON-schema representing a data file in the ISA model",
+    "description": "JSON-schema representing a data object in the ISA model",
     "type": "object",
     "properties": {
         "@id": { "type": "string", "format": "uri" },
-        "name": {
+        "filename": {
+            "type": "string"
+        },
+        "pointer": {
             "type": "string"
         },
         "type": {
@@ -15,6 +18,21 @@
                 "Derived Data File",
                 "Image File"
             ]
+        },
+        "generatedBy": {
+            "type": "string"
+        },
+        "explication": {
+            "$ref": "ontology_annotation_schema.json#"
+        },
+        "unit": {
+            "$ref": "ontology_annotation_schema.json#"
+        },
+        "objectType": {
+            "$ref": "ontology_annotation_schema.json#"
+        },
+        "label": {
+            "type": "string"
         },
         "comments" : {
             "type": "array",
